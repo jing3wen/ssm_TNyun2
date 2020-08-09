@@ -1,3 +1,4 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>  
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -12,24 +13,31 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
+
+    <link rel="stylesheet" href="css/fujiacss.css">
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="../../css/前台css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/前台css/bootstrap.min.css">
     <!-- style css -->
-    <link rel="stylesheet" href="../../css/前台css/style.css">
+    <link rel="stylesheet" href="css/前台css/style.css">
     <!-- Responsive-->
-    <link rel="stylesheet" href="../../css/前台css/responsive.css">
+    <link rel="stylesheet" href="css/前台css/responsive.css">
     <!-- fevicon -->
     <link rel="icon" href="images/fevicon.png" type="image/gif" />
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="../../css/前台css/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="css/前台css/jquery.mCustomScrollbar.min.css">
     <!-- Tweaks for older IEs-->
-    <link rel="stylesheet" href="../../css/前台css/font-awesome.css">
-    <link rel="stylesheet" href="../../css/前台css/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="css/前台css/font-awesome.css">
+    <link rel="stylesheet" href="css/前台css/jquery.fancybox.min.css" media="screen">
 
-    <link rel="stylesheet" href="../../css/附加css.css">
+
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+    <style>
+
+
+    </style>
 </head>
 <!-- body -->
 <body class="main-layout">
@@ -42,7 +50,7 @@
                     <div class="full">
                         <div class="center-desk">
                             <div class="logo">
-                                <a href="#"><img src="../../images/logo2.4.png" alt="#" /></a>
+                                <a href="#"><img src="images/logo2.4.png" alt="#" /></a>
                             </div>
                         </div>
                     </div>
@@ -55,16 +63,16 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="前台页面.html">首页</a>
+                                    <a class="nav-link" href="http://localhost:8082/">首页</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="前台页面.html#about"> 关于  </a>
+                                    <a class="nav-link" href="http://localhost:8082/#about"> 关于  </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="前台页面.html#service"> 服务</a>
+                                    <a class="nav-link" href="http://localhost:8082/#service"> 服务</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="前台页面.html#contact">注册</a>
+                                    <a class="nav-link" href="http://localhost:8082/#contact">注册</a>
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">登陆</a>
@@ -85,32 +93,32 @@
         <div class="row d_flex">
             <div class="col-md-7">
                 <div class="text-img">
-                    <figure><img src="../../images/img.png" /></figure>
+                    <figure><img src="images/img.png" /></figure>
                 </div>
             </div>
             <div class="col-md-5">
-
                 <div id="contact2" class="contact2" >
                     <div class="row">
-                        <form class="main_form2">
-                            <div class="text-bg" style="text-align:center">
+                        <form class="main_form2" >
+                            <div class="text-bg" style="text-align:center;padding-bottom: 20px" >
                                 <span style="color: white">请登录</span>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <input class="contactus2" placeholder="电话" type="text" name="phone">
+                                    <input class="contactus2" placeholder="电话" type="text" name="phone" id="phone">
                                 </div>
                                 <div class="col-sm-12">
-                                    <input class="contactus2" placeholder="密码" type="text" name="password">
+                                    <input class="contactus2" placeholder="密码" type="password" name="password" id="password" style="width: 500px">
                                 </div>
-                                <div class="col-sm-12">
-                                    <button class="send2">登陆</button>
-                                </div>
+                            </div>
+                            <div class="row">
+                                <button type="button" class="icon ion-person send2" id="customer_login" style="font-size: 20px;">顾客登陆</button>
+                                <button type="button" class="icon ion-person-add send2" id="admin_login" style="font-size: 20px;color: #34ce57">管理登陆</button>
                             </div>
                         </form>
                     </div>
                 </div>
-             </div>
+            </div>
         </div>
     </div>
 </section>
@@ -118,17 +126,61 @@
 
 
 
-
 <!-- Javascript files-->
-<script src="../../js/前台js/jquery.min.js"></script>
-<script src="../../js/前台js/popper.min.js"></script>
-<script src="../../js/前台js/bootstrap.bundle.min.js"></script>
-<script src="../../js/前台js/jquery-3.0.0.min.js"></script>
-<script src="../../js/前台js/plugin.js"></script>
+<script src="js/前台js/jquery.min.js"></script>
+<script src="js/前台js/popper.min.js"></script>
+<script src="js/前台js/bootstrap.bundle.min.js"></script>
+<script src="js/前台js/jquery-3.0.0.min.js"></script>
+<script src="js/前台js/plugin.js"></script>
 <!-- sidebar -->
-<script src="../../js/前台js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="../../js/前台js/custom.js"></script>
-<script src="../../js/前台js/jquery.fancybox.min.js"></script>
+<script src="js/前台js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/前台js/custom.js"></script>
+<script src="js/前台js/jquery.fancybox.min.js"></script>
+
+<script>
+    $("#customer_login").click(function () {
+        var customer={
+            "phone":$("#phone").val(),
+            "password":$("#password").val()
+        }
+        if(customer.phone!=null||customer.password!=null){
+            $.ajax({
+                type: "POST",
+                url: "/customer/customerlogin_post",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(customer),
+                dataType:"text",
+                async: "false",
+                success: function (result) {
+                    console.log("服务器请求成功");
+                    if(result=="customer login is ok"){
+                        alert("欢迎您顾客")
+                        window.location.href="http://localhost:8082/";
+                    }
+                    else if(result=="the customer has logined"){
+                        alert("该账号已登录不能重复登陆");
+                    }
+                    else if(result=="the password is error"){
+                        alert("密码错误")
+                    }
+                    else alert("该用户不存在")
+                },
+                error: function () {
+                    console.log("404 服务器请求失败");
+                }
+            })
+        }
+        else if(customer.phone==null){
+            alert("请输入账号");
+        }
+        else alert("请输入密码");
+
+    })
+
+</script>
+
+
+
 </body>
 </html>
 

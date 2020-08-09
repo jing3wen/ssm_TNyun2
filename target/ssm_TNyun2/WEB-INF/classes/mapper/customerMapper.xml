@@ -29,7 +29,7 @@
     <select id="findCustomerById"
             parameterType="java.lang.Integer"
             resultType="com.TNyun.entity.customer">
-        select password from customer where id = #{id}
+        select * from customer where id = #{id}
     </select>
 
     <!--查找ID最大的用户来自动生成ID-->

@@ -65,41 +65,33 @@ public class customerServiceimpl implements customerService {
     }
 
     @Override
-    public customer login2(String phone,String password){
+    public String login2(String phone,String password){
         customer cus=customerMapper.findCustomerByPhone(phone);
-        if (cus!=null&&cus.getPassword().equals(password)){
+        if (cus!=null&&cus.getPassword().equals(password)&&cus.getStatus().equals("0")){
             System.out.println("the current user is: "+cus.cus_print()+ "login is ok");
             cus.setStatus("1");
             customerMapper.set_status1(cus.getId());
-            return cus;
+            return "customer login is ok";
         }
-        else{
-            return cus;
+        else if (cus!=null&&cus.getPassword().equals(password)&&cus.getStatus().equals("1")){
+            return "the customer has logined";
         }
+        else if(cus!=null&& !(cus.getPassword().equals(password)) ){
+            return "the password is error";
+        }
+        else return "the customer is not here";
 
     }
 
     @Override
     public int logout(int id) {
         customer cus3=customerMapper.findCustomerById(id);
-        System.out.println(cus3.cus_print());
-        System.out.println(cus3.getStatus());
         if(cus3!=null && cus3.getStatus().equals("1")) {
+            System.out.println("要登出的用户: "+cus3.cus_print());
             customerMapper.set_status0(id);
-            System.out.println("可以登出");
+           return 1;
         }else {
             System.out.println("未登录");
-            return 2;
-        }
-
-        cus3=customerMapper.findCustomerById(id);
-        System.out.println(cus3.cus_print());
-        System.out.println(cus3.getStatus());
-        if(cus3!=null && cus3.getStatus().equals("0")) {
-            System.out.println("serviceimpl logout success");
-            return 1;
-        }else {
-            System.out.println("serviceimpl logout fail");
             return 0;
         }
 

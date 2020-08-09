@@ -19,7 +19,7 @@ public interface customerService {
     //顾客登录
     public customer login(int cstid, String psword);
 
-    public customer login2(String phone,String password);
+    public String login2(String phone,String password);
 
     public int logout(int id);
 

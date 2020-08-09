@@ -1,18 +1,18 @@
 package com.TNyun.dao;
 
 import com.TNyun.entity.customer;
+import com.TNyun.entity.Sys_Service;
 import com.TNyun.service.customerService;
+import com.TNyun.service.Sys_ServiceService;
 import org.junit.Test;
-import org.junit.jupiter.api.DynamicTest;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Date;
 import java.util.List;
 
 
@@ -22,6 +22,9 @@ public class test1 {
 
     @Autowired
     private customerService customerService;
+    @Autowired
+    private Sys_ServiceService Sys_ServiceService;
+
     @Test
     public void Simulation_register(){
 
@@ -68,21 +71,17 @@ public class test1 {
     public void Simulation_login2(){
         customer cus2=new customer();
         int id=111111;
-        String phone="17130130130";
-        String psword="123456";
+        String phone="03432456679";
+        String psword="nuowa1234";
 
-        cus2=customerService.login2(phone,psword);
-        if(cus2!=null){
-            System.out.println(cus2.cus_print()+"登录成功");
-        }else {
-            System.out.println("try again");
-        }
+        String result=customerService.login2(phone,psword);
+        System.out.println(result);
     }
 
     @Test
     public void Simulation_logout(){
         customer cus3=new customer();
-        int id=111111;
+        int id=123458;
         String name="张三";
         String psword="123456";
 
@@ -115,5 +114,19 @@ public class test1 {
         }else {
             System.out.println("try again");
         }
+    }
+
+    @Test
+    public void testbuyservice(){
+        Sys_Service ser=new Sys_Service();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//设置日期格式
+        String time=df.format(new Date());// new Date()为获取当前系统时间
+        ser.setTime(time);
+        ser.setC_id(123458);
+        ser.setC_name("诺娃");
+        ser.setS_id(4);
+        ser.setS_name("云体验销售中心");
+        ser.setAgree("1");
+        Sys_ServiceService.addService(ser);
     }
 }
