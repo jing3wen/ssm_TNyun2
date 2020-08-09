@@ -10,12 +10,23 @@
         values(#{id},#{phone},#{name},#{password},#{status})
     </insert>
 
-    <delete id="deleteCustomerByPhone"
-            parameterType="String">
-        delete from customer where phone like concat('%',#{phone},'%')
-    </delete>
+    <!--根据客户编号获取客户信息 -->
+    <select id="findCustomerById"
+            parameterType="java.lang.Integer"
+            resultType="com.TNyun.entity.customer">
+        select password from customer where id = #{id}
+    </select>
 
+    <!--查询全部客户 -->
+    <select id="Select_all"  resultType="com.TNyun.entity.customer">
+        select * from customer
+    </select>
 
+    <select id="findCustomerByPhone"
+            parameterType="java.lang.String"
+            resultType="com.TNyun.entity.customer">
+        select * from customer where phone like concat('%',#{phone},'%')
+    </select>
 
     <update id="set_status1" parameterType="java.lang.Integer">
         update customer set status=1 where id= #{id}
@@ -24,31 +35,5 @@
     <update id="set_status0" parameterType="java.lang.Integer">
         update customer set status=0 where id= #{id}
     </update>
-
-    <!--根据客户编号获取客户信息 -->
-    <select id="findCustomerById"
-            parameterType="java.lang.Integer"
-            resultType="com.TNyun.entity.customer">
-        select password from customer where id = #{id}
-    </select>
-
-    <!--查找ID最大的用户来自动生成ID-->
-    <select id="findMaxId"
-            resultType="com.TNyun.entity.customer">
-        select * from customer order by id desc limit 0,1;
-    </select>
-
-    <!--查询全部客户 -->
-    <select id="Select_all"  resultType="com.TNyun.entity.customer">
-        select * from customer
-    </select>
-
-    <!--根据用户电话来查询用户-->
-    <select id="findCustomerByPhone"
-            parameterType="java.lang.String"
-            resultType="com.TNyun.entity.customer">
-        select * from customer where phone like concat('%',#{phone},'%')
-    </select>
-
 
 </mapper>

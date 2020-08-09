@@ -12,7 +12,9 @@ import java.util.List;
 
 public interface customerService {
     //顾客注册
-    public int register(customer cus);
+    public String register(customer cus);
+
+    public String deletecustomer(customer cus);
 
     //顾客登录
     public customer login(int cstid, String psword);

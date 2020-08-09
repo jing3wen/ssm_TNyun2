@@ -11,11 +11,7 @@
        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
-    <!--开启注解扫描，只扫描Controller注解-->
-    <context:component-scan base-package="com.TNyun">
-        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
-    </context:component-scan>
-
+    <context:component-scan base-package="com.TNyun.controller"/>
 
     <mvc:annotation-driven />
 
