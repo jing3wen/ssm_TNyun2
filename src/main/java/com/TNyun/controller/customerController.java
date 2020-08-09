@@ -23,6 +23,9 @@ public class customerController {
     @Autowired
     private customerService customerService;
 
+    //定义一个静态变量来保存当前登陆用户
+    public static customer cur_customer=new customer();
+
     @RequestMapping(value = "/register_post",method= RequestMethod.POST)
     @ResponseBody
     public String register(@RequestBody customer cus){
@@ -31,4 +34,24 @@ public class customerController {
         System.out.println("返回: "+result);
         return result;
     }
+
+    @RequestMapping(value = "/customerlogin_post",method = RequestMethod.POST)
+    @ResponseBody
+    public String customerlogin(@RequestBody customer cus){
+        System.out.println("收到customerlogin_post: "+cus.cus_print());
+        String result=customerService.login2(cus.getPhone(),cus.getPassword());
+        cur_customer=customerService.findCustomerByPhone(cus.getPhone());
+        System.out.println("result: "+result);
+        return result;
+    }
+
+    @RequestMapping(value = "/current_customer_post",method = RequestMethod.POST)
+    @ResponseBody
+    public customer send_cur_customer(){
+        System.out.println("收到current_customer_post：");
+        System.out.println("当前登陆用户是: "+cur_customer.cus_print());
+        return cur_customer;
+    }
+
+
 }
