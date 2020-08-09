@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * (ﾉꐦ ๑´Д`๑)ﾉ彡┻━┻  I have to type the code again   (▼皿▼#)
  **/
 @Controller
-@RequestMapping(value = "/page")
+@RequestMapping(value = "")
 public class foreController {
 
     @RequestMapping("back")

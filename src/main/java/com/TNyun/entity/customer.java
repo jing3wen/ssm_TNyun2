@@ -61,8 +61,8 @@ public class customer {
     }
 
     public String  cus_print(){
-        String re="{ id:"+Integer.toString(this.getId())+", phone:'"+ this.getPhone()+"', name:'"+
-                this.getName()+"', password:'"+this.getPassword()+"', status:'"+this.getStatus()+"' }";
+        String re="{ "+Integer.toString(this.getId())+",  "+ this.getPhone()+",  "+
+                this.getName()+",  "+this.getPassword()+",  "+this.getStatus()+" }";
         return re;
     }
 }

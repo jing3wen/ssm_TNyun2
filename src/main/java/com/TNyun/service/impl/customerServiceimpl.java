@@ -27,26 +27,12 @@ public class customerServiceimpl implements customerService {
     private int age;
 
     @Override
-    public String register(customer cus) {
+    public int register(customer cus) {
         //System.out.println("test1");
-        if (customerMapper.findCustomerByPhone(cus.getPhone())!=null){
-            return "the account has been registered";
-        } else {
-            customer lastcus = customerMapper.findMaxId();
-            cus.setId(lastcus.getId() + 1);
-            if (cus.getStatus() == null) cus.setStatus("0");
-            System.out.println("要注册的顾客是: " + cus.cus_print());
-            customerMapper.addcustomer(cus);
-            //System.out.println("test2");
-            return "register is ok";
-        }
-    }
-
-    @Override
-    public String deletecustomer(customer cus){
-        System.out.println("要删除的顾客是:"+cus.cus_print());
-        customerMapper.deleteCustomerByPhone(cus.getPhone());
-        return "删除成功";
+        if(cus.getStatus() == null) cus.setStatus("0");
+        customerMapper.addcustomer(cus);
+        System.out.println("test2");
+        return 0;
     }
 
     @Override

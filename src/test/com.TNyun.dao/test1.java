@@ -26,27 +26,14 @@ public class test1 {
     public void Simulation_register(){
 
         customer cus1=new customer();
-        cus1.setName("阿巴瑟");
-        cus1.setPassword("abas");
-        cus1.setPhone("1901199789");
-        //System.out.println(cus1.cus_print());
+        cus1.setId(111111);
+        cus1.setName("张三");
+        cus1.setPassword("123456");
+        cus1.setPhone("17130130130");
+        System.out.println(cus1.cus_print());
         System.out.println(customerService.register(cus1));
 
     }
-
-    @Test
-    public void Simulation_delete(){
-
-        customer cus1=new customer();
-        cus1.setName("阿巴瑟");
-        cus1.setPassword("abas");
-        cus1.setPhone("1901199789");
-        //System.out.println(cus1.cus_print());
-        System.out.println(customerService.deletecustomer(cus1));
-
-    }
-
-
 
 
     @Test

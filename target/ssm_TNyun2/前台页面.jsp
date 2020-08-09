@@ -68,7 +68,10 @@
 										<a class="nav-link" href="#contact">注册</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" href="#">登陆</a>
+										<text class="nav-link" id="customer_name"></text>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="WEB-INF/Page/login.jsp">登陆</a>
 									</li>
 								</ul>
 							</div>
@@ -140,9 +143,9 @@
 			<div class="row">
 				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
 					<div class="Services-box">
-						<i><img src="images/service1.png" alt="#" /></i>
-						<h3> 云业务超市</h3>
-						<p>云超市，是一种社区电子商务的交易形式，即网上预定和下单、线下快速到货的一种超市形式。</p>
+						<i><img src="images/service1.png" alt="#" id="open_img_1" onclick="service(1)"/></i>
+						<h3 id="open_h3_1" onclick="service(1)">云超市</h3>
+						<p id="open_p_1" onclick="service(1)" >云超市，是一种社区电子商务的交易形式，即网上预定和下单、线下快速到货的一种超市形式。</p>
 					</div>
 				</div>
 				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
@@ -284,6 +287,34 @@
 
 	</footer>
 	<!-- end footer -->
+
+	<!-- 模态框（Modal） -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+		 style="z-index: 1200;">
+		<div class="modal-dialog">
+			<div class="modal-content" style="background-color: white">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">×
+					</button>
+				</div>
+				<div class="modal-body">
+					<h1 id="mod_system_name">1234</h1>
+					<h2 id="mod_system_pay">还未购买</h2>
+					<p id="mod_system_price">价格0元</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="icon ion-close-circled btn btn-outline-secondary" data-dismiss="modal" style="color: #6c757d">
+						我再想想
+					</button>
+					<button type="button" class="icon ion-checkmark-circled btn btn-outline-dark" style="color: #1e7e34">
+						确定购买
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
 	<!-- Javascript files-->
 	<script src="js/前台js/jquery.min.js"></script>
 	<script src="js/前台js/popper.min.js"></script>
@@ -298,20 +329,44 @@
 </body>
 
 	<script>
+
+		var cur_customer={
+			"id":123,
+			"phone":"39967332389",
+			"name":"凯迪"
+		}
+
+		var cus_service;
+
+		var subsystem={
+			"s_id":3,
+			"s_name":"云超市",
+			"s_herf":"yunchaoshi.html",
+			"s_introduction":"云超市，是一种社区电子商务的交易形式，即网上预定和下单、线下快速到货的一种超市形式。"
+		};
+
+
+		$(function () {
+			$("#customer_name").html(cur_customer.name)
+		})
+
+
 		$("#register").click(function () {
 			var customer={
 				"phone":$("#phone").val(),
 				"name":$("#name").val(),
 				"password":$("#password").val()
 			}
-			if(customer.password!=$("#conpassword").val()) alert("两次输入的密码不同，请重新输入");
+			if(customer.phone==""||customer.name==""||customer.password==""||$("#conpassword").val()=="") alert("输入的信息有缺失");
+			else if(!(/^1[3456789]\d{9}$/.test(customer.phone)))  alert("手机号码有误，请重填");
+			else if(customer.password!=$("#conpassword").val()) alert("两次输入的密码不同，请重新输入");
 			else {
 				$.ajax({
 					type: "POST",
 					url: "/customer/register_post",
 					contentType: "application/json; charset=utf-8",
 					data: JSON.stringify(customer),
-
+					dataType:"json",
 					async: "false",
 					success: function (result) {
 						console.log("服务器请求成功");
@@ -324,8 +379,40 @@
 					}
 				})
 			}
-
 		})
+
+
+		function login() {
+			console.log("登陆事件触发")
+			if($("#customer_name").val()=="") window.location.href="login.jsp";
+		}
+
+
+		function service(number){
+
+			console.log("购买子系统"+$("#open_h3_"+number.toString()).val());
+
+			if(cur_customer==null){
+				console.log(" 身份为，"+$("#customer_name").val()+"跳转到登陆界面")
+				//window.location.href="login.jsp";
+			}
+			//else if()
+			else {
+				myModalshow($("#open_h3_"+number.toString()).val(),
+						"还未购买",
+						"0元")
+			}
+
+		}
+
+		function myModalshow(system_name,system_pay,system_price) {
+			console.log("模态框事件触发");
+			$("#mod_system_name").text(system_name);
+			$("#mod_system_pay").text(system_pay);
+			$("#mod_system_pay").text(system_price);
+			$("#myModal").modal('show');
+		}
+
 
 
 	</script>
