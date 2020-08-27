@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.lang.reflect.Method;
-
 /**
  * @Author jingwen
  * @Date 2020/8/8 18:02
@@ -45,6 +43,8 @@ public class customerController {
         System.out.println("result: "+result);
         return result;
     }
+
+
 
     @RequestMapping(value = "/customerloginout_post",method = RequestMethod.POST)
     @ResponseBody

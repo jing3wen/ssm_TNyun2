@@ -1,9 +1,9 @@
 package com.TNyun.dao;
 
 import com.TNyun.entity.customer;
-import com.TNyun.entity.Sys_Service;
+import com.TNyun.entity.serviceorder;
 import com.TNyun.service.customerService;
-import com.TNyun.service.Sys_ServiceService;
+import com.TNyun.service.serviceorderService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class test1 {
     @Autowired
     private customerService customerService;
     @Autowired
-    private Sys_ServiceService Sys_ServiceService;
+    private serviceorderService serviceOrderService;
 
     @Test
     public void Simulation_register(){
@@ -50,8 +50,7 @@ public class test1 {
     }
 
 
-
-
+    /*
     @Test
     public void Simulation_login(){
         customer cus2=new customer();
@@ -66,13 +65,13 @@ public class test1 {
             System.out.println("try again");
         }
     }
-
+*/
     @Test
     public void Simulation_login2(){
         customer cus2=new customer();
         int id=111111;
-        String phone="03432456679";
-        String psword="nuowa1234";
+        String phone="13432456679";
+        String psword="nuowa123";
 
         String result=customerService.login2(phone,psword);
         System.out.println(result);
@@ -118,7 +117,22 @@ public class test1 {
 
     @Test
     public void testbuyservice(){
-        Sys_Service ser=new Sys_Service();
+        serviceorder ser=new serviceorder();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//设置日期格式
+        String time=df.format(new Date());// new Date()为获取当前系统时间
+        ser.setTime(time);
+        ser.setC_id(123458);
+        ser.setC_name("诺娃");
+        ser.setS_id(4);
+        ser.setS_name("SI管理系统");
+        ser.setRent_time("3days");
+        ser.setAgree("1");
+        serviceOrderService.addService(ser);
+    }
+
+    @Test
+    public void testfindallByC_id(){
+        serviceorder ser=new serviceorder();
         SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//设置日期格式
         String time=df.format(new Date());// new Date()为获取当前系统时间
         ser.setTime(time);
@@ -127,6 +141,10 @@ public class test1 {
         ser.setS_id(4);
         ser.setS_name("云体验销售中心");
         ser.setAgree("1");
-        Sys_ServiceService.addService(ser);
+
+        List<serviceorder> serviceList= serviceOrderService.findallByC_id(123458);
+        for(int i=0;i<serviceList.size();i++)
+            System.out.println(serviceList.get(i).ser_print());
     }
 }
+

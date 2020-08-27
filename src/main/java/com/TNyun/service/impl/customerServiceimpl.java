@@ -35,6 +35,7 @@ public class customerServiceimpl implements customerService {
             customer lastcus = customerMapper.findMaxId();
             cus.setId(lastcus.getId() + 1);
             if (cus.getStatus() == null) cus.setStatus("0");
+            if (cus.getType() == null) cus.setType("customer");
             System.out.println("要注册的顾客是: " + cus.cus_print());
             customerMapper.addcustomer(cus);
             //System.out.println("test2");
@@ -50,18 +51,9 @@ public class customerServiceimpl implements customerService {
     }
 
     @Override
-    public customer login(int cstid, String psword) {
-        customer cus2=customerMapper.findCustomerById(cstid);
-        if(cus2!=null && cus2.getPassword().equals(psword)) {
-            System.out.println("serviceimpl login success");
-            cus2.setStatus("1");
-            customerMapper.set_status1(cstid);
-            return cus2;
-        }else {
-            System.out.println("serviceimpl login fail");
-            return null;
-        }
+    public customer login(String phone, String password) {
 
+       return customerMapper.findCustomerByPhone(phone);
     }
 
     @Override

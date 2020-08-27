@@ -16,10 +16,11 @@ public interface customerService {
 
     public String deletecustomer(customer cus);
 
-    //顾客登录
-    public customer login(int cstid, String psword);
-
+    //顾客登陆,以session形式
+    public customer login(String phone, String password);
+    //顾客登陆，以单个用户测试
     public String login2(String phone,String password);
+
 
     public int logout(int id);
 

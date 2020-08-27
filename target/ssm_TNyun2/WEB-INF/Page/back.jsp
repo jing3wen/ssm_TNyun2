@@ -60,7 +60,7 @@
               <a href="Projectlist">用户列表</a>
             </li>
             <li>
-              <a href="#">未分配</a>
+              <a href="#">用户购买/入驻申请</a>
             </li>
           </ul>
         </li>
@@ -71,10 +71,10 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="Projectlist.jsp">项目列表</a>
+              <a href="Projectlist">项目列表</a>
             </li>
             <li>
-              <a href="#">添加项目</a>
+              <a href="#">部署服务</a>
             </li>
             <li>
               <a href="#">未分配</a>
@@ -91,7 +91,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseMulti">
             <li>
-              <a href="#">Second Level Item</a>
+              <a href="#">警告服务商</a>
             </li>
             <li>
               <a href="#">Second Level Item</a>
@@ -202,7 +202,7 @@
                 <td>july@example.com</td>
                 <td>61</td>
                 <td>2011/04/25</td>
-                <td>$320,800</td>
+                <td>999test,800</td>
               </tr>
               <tr>
                 <td>July</td>

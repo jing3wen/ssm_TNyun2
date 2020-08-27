@@ -318,6 +318,7 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
+
 	<!-- Javascript files-->
 	<script src="js/前台js/jquery.min.js"></script>
 	<script src="js/前台js/popper.min.js"></script>
@@ -383,11 +384,9 @@
 
 
 		$("#login").click(function () {
-
 				 window.location.href="login";
-
-
 		 })
+
 
 		$("#login_out").click(function () {
 			$.ajax({
@@ -453,6 +452,30 @@
 						"0元")
 			}
 
+		}
+		//查找当前用户所有的服务系统
+		function findallService() {
+			$.ajax({
+				type: "POST",
+				url: "/customer/current_customer_post",
+				contentType: "application/json; charset=utf-8",
+				dataType:"json",
+				async: "false",
+				success: function (result) {
+					console.log("服务器请求成功");
+					console.log("当前登录的用户"+result);
+					cur_customer=result;
+					if(cur_customer.id!=0){
+						$("#customer_name").html(cur_customer.name);
+						$("#login").hide();
+						$("#login_out").show();
+					}
+
+				},
+				error: function () {
+					console.log("404 服务器请求失败");
+				}
+			})
 		}
 
 		function myModalshow(system_name,system_pay,system_price) {
