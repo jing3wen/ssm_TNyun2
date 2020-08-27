@@ -18,4 +18,5 @@ public interface serviceorderService {
     //查询相关顾客所有购买的子系统服务
     List<serviceorder> findallByC_id(int c_id);
 
+    //查询服务
 }
