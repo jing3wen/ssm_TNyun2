@@ -5,6 +5,9 @@
       <artifact name="ssm_TNyun2:war" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -24,11 +27,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="查询代码后台代码实现1">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/SubsystemMapper.xml" afterDir="false" />
+    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="与SI_admin有关实体、mapper、service的代码；修改了customer的type，改为email">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/SubsystemMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/SubsystemMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/SubsystemServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/SubsystemServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/entity/customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/entity/customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/entity/customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/entity/customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/customerServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/customerServiceimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/customerMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +97,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1foAOpBhBeQnPIMs3aRqJgxyMiz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="新增" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -142,7 +148,7 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="JUnit.testsubsystem.Simulaton_select_all">
+  <component name="RunManager" selected="JUnit.xue.Simulation_select_customer">
     <configuration name="testadmin.simulation_ad_login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ssm_TNyun2" />
       <extension name="coverage">
@@ -201,6 +207,22 @@
       <option name="PACKAGE_NAME" value="com.TNyun.dao" />
       <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.testsubsystem" />
       <option name="METHOD_NAME" value="Simulaton_select_all" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="xue.Simulation_select_customer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ssm_TNyun2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.TNyun.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.TNyun.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.xue" />
+      <option name="METHOD_NAME" value="Simulation_select_customer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -315,8 +337,16 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.testadmin.simulation_ad_login" />
+      <item itemvalue="JUnit.testsubsystem" />
+      <item itemvalue="JUnit.testsubsystem.Simulation_select_all" />
+      <item itemvalue="JUnit.testsubsystem.Simulaton_select_all" />
+      <item itemvalue="JUnit.xue.Simulation_select_customer" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.xue.Simulation_select_customer" />
         <item itemvalue="JUnit.testsubsystem.Simulaton_select_all" />
         <item itemvalue="JUnit.testsubsystem" />
         <item itemvalue="JUnit.testsubsystem.Simulation_select_all" />
@@ -439,6 +469,7 @@
         <entry key="1" value="TOOL_WINDOW" />
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="干死黄旭东" />
@@ -490,29 +521,33 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="630" y="303" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1596877300486" />
-    <state width="1237" height="160" key="GridCell.Tab.0.bottom" timestamp="1598886589433">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1598889152651">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1237" height="160" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1598886589433" />
     <state width="1237" height="174" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1598889152651" />
     <state width="1235" height="252" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598489366153" />
-    <state width="1237" height="160" key="GridCell.Tab.0.center" timestamp="1598886589432">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1598889152651">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1237" height="160" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1598886589432" />
     <state width="1237" height="174" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1598889152651" />
     <state width="1235" height="252" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598489366153" />
-    <state width="1237" height="160" key="GridCell.Tab.0.left" timestamp="1598886589432">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1598889152650">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1237" height="160" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1598886589432" />
     <state width="1237" height="174" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1598889152650" />
     <state width="1235" height="252" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598489366153" />
-    <state width="1237" height="160" key="GridCell.Tab.0.right" timestamp="1598886589433">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1598889152651">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1237" height="160" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1598886589433" />
     <state width="1237" height="174" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1598889152651" />
     <state width="1235" height="252" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598489366153" />
     <state width="273" height="213" key="GridCell.Tab.1.bottom" timestamp="1598838934381">
       <screen x="0" y="0" width="1280" height="680" />
@@ -638,5 +673,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="449" y="96" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1596875882925" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ssm_TNyun2$xue_login.ic" NAME="xue.login Coverage Results" MODIFIED="1598877940385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.TNyun.dao.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ssm_TNyun2$test1_Simulation_login2.ic" NAME="test1.Simulation_login2 Coverage Results" MODIFIED="1598873312793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.TNyun.dao.*</FILTER>
+    </SUITE>
   </component>
 </project>

@@ -72,7 +72,7 @@ public class customer {
 
     public String  cus_print(){
         String re="{ id:"+Integer.toString(this.getId())+", phone:'"+ this.getPhone()+"', name:'"+ this.getName()
-                +"', password:'"+this.getPassword()+"', type:'"+this.getEmail()+"', status:'"+this.getStatus()+"' }";
+                +"', password:'"+this.getPassword()+"', email:'"+this.getEmail()+"', status:'"+this.getStatus()+"' }";
         return re;
     }
 }
