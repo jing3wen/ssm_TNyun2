@@ -23,6 +23,8 @@ public class testsubsystem {
     public void Simulaton_select_all() throws Exception{
         List<Subsystem> subsystems=new ArrayList<>();
         subsystems=subsystemService.Select_all();
+        for (int i=0;i<subsystems.size();i++)
+            System.out.println(subsystems.get(i).toString());
     }
 
 }
