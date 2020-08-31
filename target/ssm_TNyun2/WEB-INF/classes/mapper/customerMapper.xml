@@ -6,8 +6,8 @@
     <!-- 添加客户信息 -->
     <insert id="addcustomer"
             parameterType="com.TNyun.entity.customer">
-        insert into customer(id,phone,name,password,status)
-        values(#{id},#{phone},#{name},#{password},#{status})
+        insert into customer(id,phone,name,password,type,status)
+        values(#{id},#{phone},#{name},#{password},#{type},#{status})
     </insert>
 
     <delete id="deleteCustomerByPhone"

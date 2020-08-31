@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.TNyun.dao.SubsystemMapper">
+    <!-- 添加客户信息 -->
+    <insert id="addcustomer"
+            parameterType="com.TNyun.entity.customer">
+        insert into customer(id,phone,name,password,type,status)
+        values(#{id},#{phone},#{name},#{password},#{type},#{status})
+    </insert>
+
+    <delete id="deleteCustomerByPhone"
+            parameterType="String">
+        delete from customer where phone like concat('%',#{phone},'%')
+    </delete>
+
+
+
+    <update id="set_status1" parameterType="java.lang.Integer">
+        update customer set status=1 where id= #{id}
+    </update>
+
+    <update id="set_status0" parameterType="java.lang.Integer">
+        update customer set status=0 where id= #{id}
+    </update>
+
+    <!--根据客户编号获取客户信息 -->
+    <select id="findCustomerById"
+            parameterType="java.lang.Integer"
+            resultType="com.TNyun.entity.customer">
+        select * from customer where id = #{id}
+    </select>
+
+    <!--查找ID最大的用户来自动生成ID-->
+    <select id="findMaxId"
+            resultType="com.TNyun.entity.customer">
+        select * from customer order by id desc limit 0,1;
+    </select>
+
+    <!--查询全部服务 -->
+    <select id="Select_service_all"  resultType="com.TNyun.entity.Subsystem">
+        select * from subsystem;
+    </select>
+
+    <!--根据用户电话来查询用户-->
+    <select id="findCustomerByPhone"
+            parameterType="java.lang.String"
+            resultType="com.TNyun.entity.customer">
+        select * from customer where phone like concat('%',#{phone},'%')
+    </select>
+
+
+</mapper>
