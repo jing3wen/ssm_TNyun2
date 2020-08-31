@@ -10,8 +10,7 @@
             values(#{time},#{c_id},#{c_name},#{s_id},#{s_name},#{rent_time},#{agree})
     </insert>
 
-    <delete id="deleteOneByC_idAndS_id"
-            >
+    <delete id="deleteOneByC_idAndS_id">
         delete * from  serviceorder where c_id=#{c_id} and s_id=#{s_id}
     </delete>
 

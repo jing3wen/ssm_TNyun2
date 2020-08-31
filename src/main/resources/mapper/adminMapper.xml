@@ -17,4 +17,39 @@
         update customer set status=0 where id= #{id}
     </update>
 
+    <update id="SetSI_Apply1" parameterType="String">
+        update SI_apply set si_agree=1 where si_email= #{si_email} and si_phone like concat('%',#{si_phone},'%')
+    </update>
+
+    <update id="SetSI_Apply0" parameterType="String">
+        update SI_apply set si_agree=0 where si_email= #{si_email} and si_phone like concat('%',#{si_phone},'%')
+    </update>
+
+    <select id="Select_all_service"  resultType="com.TNyun.entity.serviceorder">
+        select * from serviceorder
+    </select>
+
+    <select id="findMaxId"
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin order by si_id desc limit 0,1;
+    </select>
+
+    <insert id="addSI_admin"
+            parameterType="com.TNyun.entity.SI_admin">
+        insert into SI_admin(si_id,si_name,si_password,si_phone,si_email,si_status)
+        values(#{si_id},#{si_name},#{si_password},#{si_phone},#{si_email},#{si_status})
+    </insert>
+
+    <select id="findSI_adminbyphone"
+            parameterType="java.lang.String"
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin where si_phone like concat('%',#{si_phone},'%')
+    </select>
+
+    <delete id="deleteSI_adminByPhone"
+            parameterType="String">
+        delete from SI_apply where si_phone like concat('%',#{si_phone},'%')
+    </delete>
+
+
 </mapper>

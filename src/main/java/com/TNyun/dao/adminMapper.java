@@ -1,8 +1,11 @@
 package com.TNyun.dao;
 
 
+import com.TNyun.entity.SI_admin;
 import com.TNyun.entity.admin;
+import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -20,9 +23,16 @@ public interface adminMapper {
 
     serviceorder findServiceByDoubleId(String phone);//通过双id查找服务
 
-    serviceorder SetAgree1(int c_id, int s_id);//将状态置1——体验
+    void SetSI_Apply1(@Param("si_phone")String si_phone, @Param("si_email")String si_email, @Param("si_name")String si_name, @Param("si_password")String si_password);//将状态置1——同意
 
-    serviceorder SetAgree2(int c_id, int s_id);//将状态置2——购买
+    void SetSI_Apply0(@Param("si_phone")String si_phone, @Param("si_email")String si_email);//将状态置2——拒绝
 
-    serviceorder SetAgree3(int c_id, int s_id);//将状态置3——过期
+    SI_admin findMaxId();//找si_id的最大值
+
+    void addSI_admin(SI_admin sia);//添加新的SI_admin
+
+    SI_admin findSI_adminbyphone(String si_phone);//通过电话查找SI_admin
+
+    void deleteSI_adminByPhone(String si_phone);//根绝phone删除用户
+
 }

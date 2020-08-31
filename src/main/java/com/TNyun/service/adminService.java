@@ -13,15 +13,12 @@ public interface adminService {
 
     public admin login(int id, String psword);
 
-
     public int logout(int id);
 
     public List<serviceorder> Select_all_service();
 
-    public serviceorder AgreeExperience(serviceorder serviceOrder);
+    public String SetSI_Apply1(String si_phone, String si_email,String si_name,String si_password);//将状态置1——同意
 
-    public serviceorder AgreePurchase(serviceorder serviceOrder);
-
-    public serviceorder Overdue(serviceorder serviceOrder);
+    public void SetSI_Apply0(String si_phone, String si_email);//将状态置2——拒绝
 
 }

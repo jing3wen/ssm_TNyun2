@@ -1,6 +1,7 @@
 package com.TNyun.dao;
 
 import com.TNyun.entity.admin;
+import com.TNyun.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

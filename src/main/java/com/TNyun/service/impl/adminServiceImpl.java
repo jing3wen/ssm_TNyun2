@@ -1,9 +1,12 @@
 package com.TNyun.service.impl;
 
 import com.TNyun.dao.adminMapper;
+import com.TNyun.entity.SI_admin;
 import com.TNyun.entity.admin;
+import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
 import com.TNyun.service.adminService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,21 +64,39 @@ public class adminServiceImpl implements adminService {
 
     @Override
     public List<serviceorder> Select_all_service() {
-        return null;
+        return adminMapper.Select_all_service();
     }
 
     @Override
-    public serviceorder AgreeExperience(serviceorder serviceOrder) {
-        return null;
+    public String SetSI_Apply1( String si_phone, String si_email,  String si_name, String si_password) {
+
+        adminMapper.SetSI_Apply1(si_phone,si_email,si_name,si_password);
+
+        if (adminMapper.findSI_adminbyphone(si_phone)!=null){
+            return "the SI_admin has been exit";
+        } else {
+            SI_admin  sia=new SI_admin();
+            SI_admin sid=adminMapper.findMaxId();
+            sia.setSI_id(sid.getSI_id() + 1);
+            sia.setSI_name(si_name);
+            sia.setSI_email(si_email);
+            sia.setSI_password(si_password);
+            sia.setSI_phone(si_phone);
+            if (sia.getSI_status() == null) sia.setSI_status("0");
+            System.out.println("新添加的SI开发商是: " + sia.toString());
+            adminMapper.addSI_admin(sia);
+            return "register is ok";
+        }
+
+
+
     }
 
     @Override
-    public serviceorder AgreePurchase(serviceorder serviceOrder) {
-        return null;
-    }
+    public void SetSI_Apply0(String si_phone, String si_email) {
 
-    @Override
-    public serviceorder Overdue(serviceorder serviceOrder) {
-        return null;
+        adminMapper.SetSI_Apply0(si_phone,si_email);
+        System.out.println("delete SI_Apply");
+
     }
 }

@@ -19,7 +19,7 @@ public class customer {
     private String phone;
     private String name;
     private String password;
-    private String type;
+    private String email;
     private String status;
 
     public int getId() {
@@ -54,12 +54,12 @@ public class customer {
         this.password = password;
     }
 
-    public String getType() {
-        return type;
+    public String getEmail() {
+        return email;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setEmail(String type) {
+        this.email = type;
     }
 
     public String getStatus() {
@@ -72,7 +72,7 @@ public class customer {
 
     public String  cus_print(){
         String re="{ id:"+Integer.toString(this.getId())+", phone:'"+ this.getPhone()+"', name:'"+ this.getName()
-                +"', password:'"+this.getPassword()+"', type:'"+this.getType()+"', status:'"+this.getStatus()+"' }";
+                +"', password:'"+this.getPassword()+"', type:'"+this.getEmail()+"', status:'"+this.getStatus()+"' }";
         return re;
     }
 }

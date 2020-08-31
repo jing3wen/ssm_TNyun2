@@ -35,7 +35,7 @@ public class customerServiceimpl implements customerService {
             customer lastcus = customerMapper.findMaxId();
             cus.setId(lastcus.getId() + 1);
             if (cus.getStatus() == null) cus.setStatus("0");
-            if (cus.getType() == null) cus.setType("customer");
+            //无getEmail
             System.out.println("要注册的顾客是: " + cus.cus_print());
             customerMapper.addcustomer(cus);
             //System.out.println("test2");
