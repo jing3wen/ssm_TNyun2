@@ -1,5 +1,7 @@
 package com.TNyun.entity;
 
+import java.util.Objects;
+
 /**
  * Created by kyq on 2020/8/31 9:56
  */
@@ -89,5 +91,25 @@ public class Subsystem {
                 ", s_website2='" + s_website2 + '\'' +
                 ", s_status='" + s_status + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Subsystem subsystem = (Subsystem) o;
+        return s_id == subsystem.s_id &&
+                si_id == subsystem.si_id &&
+                Objects.equals(s_name, subsystem.s_name) &&
+                Objects.equals(s_introduction, subsystem.s_introduction) &&
+                Objects.equals(s_price, subsystem.s_price) &&
+                Objects.equals(s_website1, subsystem.s_website1) &&
+                Objects.equals(s_website2, subsystem.s_website2) &&
+                Objects.equals(s_status, subsystem.s_status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(s_id, s_name, si_id, s_introduction, s_price, s_website1, s_website2, s_status);
     }
 }
