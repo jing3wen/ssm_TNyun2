@@ -3,11 +3,18 @@ package com.TNyun.dao;
 import com.TNyun.entity.SI_admin;
 import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
+import com.TNyun.entity.siapply;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface SI_adminMapper {
+
+    siapply findSI_applybyphone(String phone);//手机号查找是否已经是si_admin
+
+    siapply findMaxId();//查找最大ID
+
+    void addsiapply(siapply sa);//将申请成为si_admin的用户信息放入si_apply表
 
     SI_admin findSI_AdminByphone(String  si_phone);//名字查找SI用户密码
 
