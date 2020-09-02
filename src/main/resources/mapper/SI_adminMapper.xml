@@ -3,6 +3,24 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.TNyun.dao.SI_adminMapper">
+
+    <select id="findSI_applyByphone"
+            parameterType="java.lang.String"
+            resultType="com.TNyun.entity.siapply">
+        select * from SI_apply where si_phone like concat('%',#{phone},'%')
+    </select>
+
+    <select id="findMaxId"
+            resultType="com.TNyun.entity.siapply">
+        select * from SI_apply order by id desc limit 0,1;
+    </select>
+
+    <insert id="addsiapply"
+            parameterType="com.TNyun.entity.siapply">
+        insert into SI_apply(si_id,si_phone,si_name,si_password,si_email,si_status)
+        values(#{id},#{phone},#{name},#{password},#{email},#{status})
+    </insert>
+
     <select id="findSI_AdminByphone"
             parameterType="java.lang.String"
             resultType="com.TNyun.entity.SI_admin">
