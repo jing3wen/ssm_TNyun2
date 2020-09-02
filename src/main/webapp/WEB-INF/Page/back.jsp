@@ -74,7 +74,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="Projectlist">项目列表</a>
+              <a href="#Projectlist">项目列表</a>
             </li>
             <li>
               <a href="#">部署服务</a>

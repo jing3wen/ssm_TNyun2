@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +61,10 @@
                         <a href="Customerlist">用户列表</a>
                     </li>
                     <li>
-                        <a href="#">未分配</a>
+                    <a href="customerpurchase">用户购买</a>
+                    </li>
+                    <li>
+                    <a href="customerpurchase">入驻申请</a>
                     </li>
                 </ul>
             </li>
@@ -71,7 +75,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="#">项目列表</a>
+                        <a href="/Projectlist/subsystemlist">项目列表</a>
                     </li>
                     <li>
                         <a href="#">未分配</a>
@@ -155,23 +159,27 @@
             <li class="breadcrumb-item active">项目列表</li>
         </ol>
 
-        <!-- 已购业务表格-->
+        <!-- 全部系统服务表格-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> 已购系统列表</div>
+                <i class="fa fa-table"></i> 系统服务列表</div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>项目ID</th>
-                            <th>项目名称</th>
-                            <th>详细介绍</th>
-                            <th>注册人数</th>
-                            <th>是否启用</th>
+                            <th>服务ID</th>
+                            <th>服务名称</th>
+                            <th>服务商ID</th>
+                            <th>价格</th>
+                            <th>前端站点</th>
+                            <th>后端站点</th>
+                            <th>服务状态</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
+                        <!--
                         <tr>
                             <td>03</td>
                             <td>超市子系统</td>
@@ -181,46 +189,32 @@
                                 <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                            <td>61</td>
-                            <td>
-                                <button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
-                                <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>61</td>
-                            <td>
-                                <button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
-                                <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>61</td>
-                            <td>
-                                <button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
-                                <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>61</td>
-                            <td>
-                                <button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
-                                <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
-                            </td>
-                        </tr>
+                        -->
+                        <c:forEach items="${subsystemlist}" var="subsystem">
+                            <tr class="text-c">
+                                <td>${subsystem.s_id}</td>
+                                <td>${subsystem.s_name}</td>
+                                <td>${subsystem.si_id}</td>
+                                <td>${subsystem.s_introduction}</td>
+                                <td>${subsystem.s_price}</td>
+                                <td>${subsystem.s_website1}</td>
+                                <td>${subsystem.s_website2}</td>
+                                <td>
+                                    <c:if test="${subsystem.s_status==1}">可用</c:if>
+                                    <c:if test="${subsystem.s_status==0}">不可用</c:if>
+                                </td>
+                                <td>
+                                    <a title="删除" href="javascript:;"
+                                       onclick="subsystem_delete(this,${subsystem.s_id})"
+                                       class="ml-5" style="...">
+                                        <span class="label label-success radius">删除</span>
+                                    </a>
+                                    <a title="编辑">
+
+                                    </a>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -280,6 +274,13 @@
     <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
     <script src="../../js/后台js/sb-admin-charts.min.js"></script>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $("")
+
+    })
+</script>
+
 </body>
 
 </html>

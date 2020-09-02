@@ -8,7 +8,7 @@ import java.util.List;
  * Created by kyq on 2020/8/31 17:22
  */
 public interface SubsystemService {
-    List<Subsystem> Select_all();
+    List<Subsystem> Select_subsystem_all();
     String Insert_new_service(Subsystem subsystem);
     String Update_s_introduction(Subsystem subsystem);
     String Update_s_price(Subsystem subsystem);

@@ -46,4 +46,5 @@ public class foreController {
     public String fore5(){
         return "tables";
     }
+
 }

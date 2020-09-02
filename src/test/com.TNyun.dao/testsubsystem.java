@@ -22,7 +22,7 @@ public class testsubsystem {
     @Test
     public void Simulaton_select_all() throws Exception{
         List<Subsystem> subsystems=new ArrayList<>();
-        subsystems=subsystemService.Select_all();
+        subsystems=subsystemService.Select_subsystem_all();
         for (int i=0;i<subsystems.size();i++)
             System.out.println(subsystems.get(i).toString());
     }
@@ -58,7 +58,7 @@ public class testsubsystem {
         subsystem2.setS_website2("google.com");
         System.out.println(subsystemService.Update_s_website1(subsystem2));
         System.out.println(subsystemService.Update_s_website2(subsystem2));
-        int t=subsystemService.Delete_subsystem_by_s_id(7);
+        int t=subsystemService.Delete_subsystem_by_s_id(8);
         if(t==1){
             System.out.println("删除成功");
         }else{

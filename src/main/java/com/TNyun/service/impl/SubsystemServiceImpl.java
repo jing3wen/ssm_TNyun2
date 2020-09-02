@@ -18,7 +18,7 @@ public class SubsystemServiceImpl implements SubsystemService {
     @Autowired
     private SubsystemMapper subsystemMapper;
     @Override
-    public List<Subsystem> Select_all() {
+    public List<Subsystem> Select_subsystem_all() {
         return subsystemMapper.Select_service_all();
     }
 

@@ -42,7 +42,7 @@ public class customerController {
         return result;
     }
 
-    @RequestMapping(value = "/customerlogin_post",method = RequestMethod.POST)
+
     @ResponseBody
     public String customerlogin(@RequestBody customer cus){
         System.out.println("收到customerlogin_post: "+cus.cus_print());
