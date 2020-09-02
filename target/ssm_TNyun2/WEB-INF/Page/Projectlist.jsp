@@ -11,13 +11,13 @@
     <meta name="author" content="">
     <title>TN云</title>
     <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- Page level plugin CSS-->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin SS-->
+    <link href="../../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="css/后台css/sb-admin.css" rel="stylesheet">
+    <link href="../../css/后台css/sb-admin.css" rel="stylesheet">
 
     <!--icon图标库css-->
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
@@ -75,7 +75,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="/Projectlist/subsystemlist">项目列表</a>
+                        <a href="${pageContext.request.contextPath}/Projectlist/subsystemlist">项目列表</a>
                     </li>
                     <li>
                         <a href="#">未分配</a>
@@ -171,6 +171,7 @@
                             <th>服务ID</th>
                             <th>服务名称</th>
                             <th>服务商ID</th>
+                            <th>介绍</th>
                             <th>价格</th>
                             <th>前端站点</th>
                             <th>后端站点</th>
@@ -204,14 +205,16 @@
                                     <c:if test="${subsystem.s_status==0}">不可用</c:if>
                                 </td>
                                 <td>
-                                    <a title="删除" href="javascript:;"
-                                       onclick="subsystem_delete(this,${subsystem.s_id})"
+                                    <a title="编辑" href="javascript:;"
+                                       onclick="bianjifuwu(this,${subsystem.s_id},${subsystem.s_website1})"
+                                       class="ml-5" style="text-decoration:none">
+                                        <span class="label label-success radius">编辑</span>
+                                    </a>
+                                    <a deleteLink="true" href="/Projectlist/del_subsystem?id=${subsystem.s_id}"
                                        class="ml-5" style="...">
                                         <span class="label label-success radius">删除</span>
                                     </a>
-                                    <a title="编辑">
 
-                                    </a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -266,17 +269,27 @@
     <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
     <script src="../../vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../../vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="../../js/后台js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
     <script src="../../js/后台js/sb-admin-charts.min.js"></script>
 </div>
 <script type="text/javascript">
     $(function () {
-        $("")
+        $("a").click(function () {
+            var deleteLink = $(this).attr("deleteLink");
+            console.log(deleteLink);
+            if("true"==deleteLink){
+                var confirmDelete=confirm("确定要删除")；
+                if(confirmDelete)
+                    return true;
+                return false;
+            }
+
+        })
 
     })
 </script>

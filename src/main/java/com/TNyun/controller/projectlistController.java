@@ -34,5 +34,11 @@ public class projectlistController {
         //model.addAttribute("totals",total);
         return "Projectlist";
     }
+    @RequestMapping("del_subsystem")
+    public String del_subsystem(int s_id){
+        subsystemService.Delete_subsystem_by_s_id(s_id);
+            return "redirect:subsystemlist";
+
+    }
 
 }

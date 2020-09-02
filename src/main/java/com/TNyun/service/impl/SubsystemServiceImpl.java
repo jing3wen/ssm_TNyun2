@@ -102,15 +102,9 @@ public class SubsystemServiceImpl implements SubsystemService {
     }
 
     @Override
-    public int Delete_subsystem_by_s_id(int s_id) {
+    public void Delete_subsystem_by_s_id(int s_id) {
         subsystemMapper.Delete_subsystem_by_s_id(s_id);
-        Subsystem subsystem1=new Subsystem();
-        subsystem1=subsystemMapper.Find_sub_by_id(s_id);
-        if(subsystem1==null){
-            return 1;
-        }else {
-            return 0;
-        }
+
 
     }
 

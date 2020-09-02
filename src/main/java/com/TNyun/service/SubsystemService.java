@@ -14,6 +14,6 @@ public interface SubsystemService {
     String Update_s_price(Subsystem subsystem);
     String Update_s_website1(Subsystem subsystem);
     String Update_s_website2(Subsystem subsystem);
-    int Delete_subsystem_by_s_id(int s_id);
+    void Delete_subsystem_by_s_id(int s_id);
 
 }
