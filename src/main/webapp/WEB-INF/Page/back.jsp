@@ -60,7 +60,10 @@
               <a href="Projectlist">用户列表</a>
             </li>
             <li>
-              <a href="#">用户购买/入驻申请</a>
+              <a href="customerpurchase">用户购买</a>
+            </li>
+            <li>
+               <a href="customerpurchase">入驻申请</a>
             </li>
           </ul>
         </li>
@@ -271,6 +274,14 @@
     <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
     <script src="../../js/后台js/sb-admin-charts.min.js"></script>
   </div>
-</body>
 
+  <script>
+
+
+ </script>
+
+
+
+
+</body>
 </html>

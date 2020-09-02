@@ -60,7 +60,10 @@
                         <a href="Customerlist">用户列表</a>
                     </li>
                     <li>
-                        <a href="#">未分配</a>
+                        <a href="customerpurchase">用户购买</a>
+                    </li>
+                    <li>
+                        <a href="customerpurchase">入驻申请</a>
                     </li>
                 </ul>
             </li>
@@ -155,60 +158,26 @@
             <li class="breadcrumb-item active">用户列表</li>
         </ol>
 
-        <!-- 已购业务表格-->
+        <!-- 用户列表-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> 已购系统列表</div>
+                <i class="fa fa-table"></i>用户列表</div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table id ="tab" class="table table-bordered">
                         <thead>
                         <tr>
                             <th>账号ID</th>
                             <th>姓名</th>
                             <th>电话</th>
+                            <th>邮箱</th>
                             <th>状态</th>
-                            <th>是否停用</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>123456</td>
-                            <td>小明</td>
-                            <td>13244567890</td>
-                            <td class="icon ion-checkmark" style="color: green">在线</td>
-                            <td><button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button></td>
-                        </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                            <td class="icon ion-close" style="color: #c0392b">离线</td>
-                            <td><button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button></td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td></td>
-                            <td><button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button></td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td></td>
-                            <td><button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button></td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td></td>
-                            <td><button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button></td>
-                        </tr>
-                        </tbody>
                     </table>
+                    <div class="pagination pagination-centered">
+                       <button type="button" class="icon icon ion-gear-b btn btn-outline-dark" data-toggle="modal" id="list">list</button>
+                       </div>
                 </div>
 
             </div>
@@ -265,7 +234,39 @@
     <!-- Custom scripts for this page-->
     <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
     <script src="../../js/后台js/sb-admin-charts.min.js"></script>
+
 </div>
 </body>
+
+    <script>
+            $("#list").click(function () {
+                $.ajax({
+                    type: "POST",
+                    url: "/customer/customerlist",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    async: "false",
+                    success: function (result) {
+                        console.log("服务器请求成功");
+                        console.log("there are " + result.length + " customers");
+                        if (result == "") alert("There are not customer !");
+                        console.log(result);
+                        var num = 5;
+                        var tr=null;
+                        if (result.length <= 5) num = result.length;
+                        for (i = 0; i <= num; i++) {
+                        tr = "<tr ><td>"+result[i].id+"</td><td>"+result[i].name+"</td><td>"
+                        					+result[i].phone+"</td><td>"+result[i].email+"</td><td>"
+                        					+result[i].status+"</td></tr>";
+                        $("#tab").append(tr);
+                        }
+                    },
+                    error: function () {
+                        console.log("404 服务器请求失败");
+                    }
+                })
+            });
+
+    </script>
 
 </html>

@@ -114,7 +114,6 @@
                             <div class="row">
                                 <button type="button" class="icon ion-person send2" id="customer_login" style="font-size: 20px;">顾客登陆</button>
                                 <button type="button" class="icon ion-person-add send2" id="admin_login" style="font-size: 20px;color: #34ce57">管理登陆</button>
-                            </div>
                         </form>
                     </div>
                 </div>
@@ -176,6 +175,7 @@
         else alert("请输入密码");
 
     })
+
 
 </script>
 
