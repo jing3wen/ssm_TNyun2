@@ -8,6 +8,9 @@ import java.util.List;
 
 public interface SI_adminService {
 
+    //申请成为服务开发商
+    public String applyForSiadmin(customer cust);
+
     public String  si_login(String  si_phone, String si_password);
 
     public int si_logout(String  si_phone);
