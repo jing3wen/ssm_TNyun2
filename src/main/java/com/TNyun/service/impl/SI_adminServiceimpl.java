@@ -3,6 +3,7 @@ package com.TNyun.service.impl;
 import com.TNyun.entity.SI_admin;
 import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
+import com.TNyun.entity.siapply;
 import com.TNyun.service.SI_adminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,27 @@ public class SI_adminServiceimpl implements SI_adminService{
 
     @Autowired
     private com.TNyun.dao.SI_adminMapper SI_adminMapper;
+
+    @Override
+    public String applyForSiadmin(customer cust){
+        if (SI_adminMapper.findSI_applybyphone(cust.getPhone())!=null){
+            return "you are already a SI_admin";
+        } else {
+            siapply sa = new siapply();
+
+            siapply lastsa = SI_adminMapper.findMaxId();
+            sa.setSi_id(lastsa.getSi_id() + 1);
+            sa.setSi_phone(cust.getPhone());
+            sa.setSi_name(cust.getName());
+            sa.setSi_password(cust.getPassword());
+            sa.setSi_status(cust.getStatus());
+            sa.setSi_email(cust.getEmail());
+            System.out.println("要申请成为服务提供商的用户是: " + sa.toString());
+            SI_adminMapper.addsiapply(sa);
+
+            return "apply for si_admin request is ok";
+        }
+    }
 
     @Override
     public String  si_login(String  si_phone, String si_password) {
