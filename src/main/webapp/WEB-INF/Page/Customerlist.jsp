@@ -74,7 +74,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="/Projectlist/subsystemlist">项目列表</a>
+                        <a href="/Projectlist">项目列表</a>
                     </li>
                     <li>
                         <a href="#">未分配</a>
@@ -239,7 +239,7 @@
 </body>
 
     <script>
-            $("#list").click(function () {
+            $(function () {
                 $.ajax({
                     type: "POST",
                     url: "/customer/customerlist",

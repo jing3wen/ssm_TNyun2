@@ -61,7 +61,7 @@
                         <a href="Customerlist">用户列表</a>
                     </li>
                     <li>
-                    <a href="customerpurchase">用户购买</a>
+                    <a href="Customerlist">用户购买</a>
                     </li>
                     <li>
                     <a href="customerpurchase">入驻申请</a>
