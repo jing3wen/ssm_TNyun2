@@ -42,6 +42,7 @@ public class SubsystemServiceImpl implements SubsystemService {
         subsystem1=subsystemMapper.Duplicate_check(subsystem);
         //if(subsystem1.getS_id()==subsystem.getS_id()) {
         if(subsystem.equals(subsystem1)){
+            System.out.println("charuchenggong");
             return "插入成功";
         }else {
             return "error";

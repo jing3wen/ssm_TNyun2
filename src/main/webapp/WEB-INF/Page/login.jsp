@@ -126,11 +126,11 @@
 
 
 <!-- Javascript files-->
-<script src="js/前台js/jquery.min.js"></script>
-<script src="js/前台js/popper.min.js"></script>
-<script src="js/前台js/bootstrap.bundle.min.js"></script>
-<script src="js/前台js/jquery-3.0.0.min.js"></script>
-<script src="js/前台js/plugin.js"></script>
+<script src="../../js/前台js/jquery.min.js"></script>
+<script src="../../js/前台js/popper.min.js"></script>
+<script src="../../js/前台js/bootstrap.bundle.min.js"></script>
+<script src="../../js/前台js/jquery-3.0.0.min.js"></script>
+<script src="../../js/前台js/plugin.js"></script>
 <!-- sidebar -->
 <script src="js/前台js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="js/前台js/custom.js"></script>

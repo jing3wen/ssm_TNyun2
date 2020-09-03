@@ -162,7 +162,83 @@
         <!-- 全部系统服务表格-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> 系统服务列表</div>
+                <i class="fa fa-table"></i> 系统服务列表
+                <button type="button"
+                        style="float:right"
+                        class="icon icon ion-plus-round btn btn-outline-dark"
+                        data-toggle="modal"
+                        data-target="#myModal"
+                        id="insert_subsystem1">添加
+                </button>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">请输入服务信息</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- 模态框主体 -->
+                            <div class="modal-body">
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">服务名称</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="服务名称" id="s_name" name="s_name">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">服务商ID</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="服务商ID" id="si_id" name="si_id">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">介  绍</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="介绍" id="s_introduction" name="s_introduction">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">价     格</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="价格" id="s_price" name="s_price">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">前端站点</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="前端站点" id="s_website1" name="s_website1">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">后端站点</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="后端站点" id="s_website2" name="s_website2">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">服务状态</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="1" id="s_status" name="s_status">
+                                </div>
+
+
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" id="submit_insert_subsystem">提交</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered">
@@ -210,7 +286,7 @@
                                        class="ml-5" style="text-decoration:none">
                                         <span class="label label-success radius">编辑</span>
                                     </a>
-                                    <a deleteLink="true" href="/Projectlist/del_subsystem?id=${subsystem.s_id}"
+                                    <a deleteLink="true" href="/Projectlist/del_subsystem?s_id=${subsystem.s_id}"
                                        class="ml-5" style="...">
                                         <span class="label label-success radius">删除</span>
                                     </a>
@@ -283,7 +359,7 @@
             var deleteLink = $(this).attr("deleteLink");
             console.log(deleteLink);
             if("true"==deleteLink){
-                var confirmDelete=confirm("确定要删除")；
+                var confirmDelete=confirm("确定要删除");
                 if(confirmDelete)
                     return true;
                 return false;
@@ -291,7 +367,71 @@
 
         })
 
-    })
+    });
+
+    $("#submit_insert_subsystem").click(function () {
+        const subsystem = {
+
+            "s_name": $("#s_name").val(),
+            "si_id": $("#si_id").val(),
+            "s_introduction": $("#s_introduction").val(),
+            "s_price": $("#s_price").val(),
+            "s_website1": $("#s_website1").val(),
+            "s_website2": $("#s_website2").val(),
+            "s_status": $("#s_status").val()
+        };
+        /*layer.confirm('确定添加',function() {
+            $.get(
+                "submit_insert_subsystem",
+                subsystem,
+                function (result) {
+                    if("插入成功"==result){
+                        layer.msg('已插入成功',{icon:6 ,time:3000});
+                        location.reload();
+                    }
+
+                }
+            )
+
+        });*/
+
+        var confirmInsert=confirm("确定添加")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/submit_insert_subsystem",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#myModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+                error: function (result) {
+                    result=JSON.parse(result);
+                    alert(result);
+                    alert("失败");
+                    console.log("404 服务器请求失败");
+                }
+            });
+        }
+    });
+
+
 </script>
 
 </body>

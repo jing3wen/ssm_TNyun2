@@ -76,7 +76,7 @@ public class test1 {
         String result=customerService.login2(phone,psword);
         System.out.println(result);
     }
-
+    /*
     @Test
     public void Simulation_logout(){
         customer cus3=new customer();
@@ -90,7 +90,7 @@ public class test1 {
         }else {
             System.out.println("try again");
         }
-    }
+    }*/
 
     @Test
     public void Simulation_select_all() throws Exception {
@@ -127,7 +127,7 @@ public class test1 {
         ser.setS_name("SI管理系统");
         ser.setRent_time("3days");
         ser.setAgree("1");
-        serviceOrderService.addService(ser);
+        //serviceOrderService.addService(ser);
     }
 
     @Test

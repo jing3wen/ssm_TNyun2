@@ -182,12 +182,7 @@
 
                             <!-- 模态框主体 -->
                             <div class="modal-body">
-                                <div class="input-group mb-3 input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">服 务 ID</span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="服务ID" id="s_id" name="s_id">
-                                </div>
+
                                 <div class="input-group mb-3 input-group-sm">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">服务名称</span>
@@ -350,8 +345,14 @@
     <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
     <script src="../../vendor/chart.js/Chart.min.js"></script>
-    <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+
+    <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+
     <script src="../../vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <script type="text/javascript" src="../../vendor/datatables/jquery.dataTables.js"></script>
+
+
     <!-- Custom scripts for all pages-->
     <script src="../../js/后台js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
@@ -372,7 +373,71 @@
 
         })
 
-    })
+    });
+
+    $("#submit_insert_subsystem").click(function () {
+        const subsystem = {
+
+            "s_name": $("#s_name").val(),
+            "si_id": $("#si_id").val(),
+            "s_introduction": $("#s_introduction").val(),
+            "s_price": $("#s_price").val(),
+            "s_website1": $("#s_website1").val(),
+            "s_website2": $("#s_website2").val(),
+            "s_status": $("#s_status").val()
+        };
+        /*layer.confirm('确定添加',function() {
+            $.get(
+                "submit_insert_subsystem",
+                subsystem,
+                function (result) {
+                    if("插入成功"==result){
+                        layer.msg('已插入成功',{icon:6 ,time:3000});
+                        location.reload();
+                    }
+
+                }
+            )
+
+        });*/
+
+        var confirmInsert=confirm("确定添加")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/submit_insert_subsystem",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#myModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+                /*error: function (result) {
+                    result=JSON.parse(result);
+                    alert(result);
+                    alert("失败");
+                    console.log("404 服务器请求失败");
+                }*/
+            });
+        }
+    });
+
+
 </script>
 
 </body>
