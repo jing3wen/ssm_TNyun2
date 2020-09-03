@@ -3,51 +3,54 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace表示命名空间 -->
 <mapper namespace="com.TNyun.dao.SubsystemMapper">
-    <!-- 添加客户信息 -->
-    <insert id="addcustomer"
-            parameterType="com.TNyun.entity.customer">
-        insert into customer(id,phone,name,password,type,status)
-        values(#{id},#{phone},#{name},#{password},#{type},#{status})
+    <!--添加新服务子系统-->
+    <insert id="Insert_subsystem" parameterType="com.TNyun.entity.Subsystem">
+        insert into subsystem(s_id,s_name,si_id,s_introduction,s_price,s_website1,s_website2,s_status)
+        values(#{s_id},#{s_name},#{si_id},#{s_introduction},#{s_price},#{s_website1},#{s_website2},#{s_status})
     </insert>
-
-    <delete id="deleteCustomerByPhone"
-            parameterType="String">
-        delete from customer where phone like concat('%',#{phone},'%')
+    <!--删除服务-->
+    <delete id="Delete_subsystem_by_s_id"
+            parameterType="java.lang.Integer">
+        delete from subsystem where s_id like concat('%',#{s_id},'%')
     </delete>
 
-
-
-    <update id="set_status1" parameterType="java.lang.Integer">
-        update customer set status=1 where id= #{id}
+    <!--更新介绍-->
+    <update id="Update_s_introduction" parameterType="com.TNyun.entity.Subsystem">
+        update subsystem set s_introduction=#{s_introduction} where s_id = #{s_id}
     </update>
-
-    <update id="set_status0" parameterType="java.lang.Integer">
-        update customer set status=0 where id= #{id}
+    <!--更新价格-->
+    <update id="Update_s_price" parameterType="com.TNyun.entity.Subsystem">
+        update subsystem set s_price=#{s_price} where s_id = #{s_id}
     </update>
-
-    <!--根据客户编号获取客户信息 -->
-    <select id="findCustomerById"
-            parameterType="java.lang.Integer"
-            resultType="com.TNyun.entity.customer">
-        select * from customer where id = #{id}
-    </select>
-
-    <!--查找ID最大的用户来自动生成ID-->
-    <select id="findMaxId"
-            resultType="com.TNyun.entity.customer">
-        select * from customer order by id desc limit 0,1;
-    </select>
+    <!--更新website1-->
+    <update id="Update_s_website1" parameterType="com.TNyun.entity.Subsystem">
+        update subsystem set s_website1=#{s_website1} where s_id = #{s_id}
+    </update>
+    <!--更新website2-->
+    <update id="Update_s_website2" parameterType="com.TNyun.entity.Subsystem">
+        update subsystem set s_website2=#{s_website2} where s_id = #{s_id}
+    </update>
 
     <!--查询全部服务 -->
     <select id="Select_service_all"  resultType="com.TNyun.entity.Subsystem">
         select * from subsystem;
     </select>
-
-    <!--根据用户电话来查询用户-->
-    <select id="findCustomerByPhone"
-            parameterType="java.lang.String"
-            resultType="com.TNyun.entity.customer">
-        select * from customer where phone like concat('%',#{phone},'%')
+    <!--查重-->
+    <select id="Duplicate_check"
+            parameterType="com.TNyun.entity.Subsystem"
+            resultType="com.TNyun.entity.Subsystem">
+        select * from subsystem where s_name = #{s_name} and si_id=#{si_id}
+    </select>
+    <!--查找最大id-->
+    <select id="Find_max_s_id"
+            resultType="java.lang.Integer">
+        select s_id from subsystem order by s_id desc limit 0,1;
+    </select>
+    <!--通过id查找-->
+    <select id="Find_sub_by_id"
+            parameterType="java.lang.Integer"
+            resultType="com.TNyun.entity.Subsystem">
+        select * from subsystem where s_id like concat('%',#{s_id},'%')
     </select>
 
 

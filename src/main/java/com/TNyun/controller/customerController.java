@@ -1,7 +1,11 @@
 package com.TNyun.controller;
 
 import com.TNyun.entity.customer;
+import com.TNyun.service.SI_adminService;
 import com.TNyun.service.customerService;
+import com.mysql.cj.xdevapi.JsonArray;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 import com.TNyun.utils.SendMail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +13,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author jingwen
@@ -21,6 +28,8 @@ public class customerController {
 
     @Autowired
     private customerService customerService;
+    @Autowired
+    private SI_adminService SI_adminService;
 
     //用@autowired注入JavaMailSender后，表示整个类交给了spring管理（类上加@Component ），在其他地方调用的时候，也应该从spring容器中获取，而不能用new去实例化
     @Autowired
@@ -81,6 +90,34 @@ public class customerController {
         System.out.println("收到current_customer_post：");
         System.out.println("当前登陆用户是: "+cur_customer.cus_print());
         return cur_customer;
+    }
+
+
+    @RequestMapping(value = "/customerlist",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONArray get_customer(){
+        System.out.println("收到customerlist：");
+        List<customer> cus=new ArrayList<>();
+        cus=SI_adminService.Select_all_customer();
+        customer[] cust=new customer[cus.size()];
+        for ( int q = 0; q < cust.length; q++) {
+            cust[q] = new customer();
+        }
+        int j=0;
+        JSONObject resultJson=new JSONObject(); //JSONObject是对象形式
+
+        JSONArray jsonArray=new JSONArray();    //JSONArray是数组形式
+        for (int i=0;i<cus.size();i++) {
+            JSONObject lan=new JSONObject();
+            lan.put("id",cus.get(i).getId());
+            lan.put("name",cus.get(i).getId());
+            lan.put("phone",cus.get(i).getPhone());
+            lan.put("email",cus.get(i).getEmail());
+            lan.put("status",cus.get(i).getStatus());
+            jsonArray.add(lan);
+        }
+
+        return jsonArray;
     }
 
 

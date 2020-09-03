@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,13 +11,13 @@
     <meta name="author" content="">
     <title>TN云</title>
     <!-- Bootstrap core CSS-->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- Page level plugin CSS-->
-    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin SS-->
+    <link href="../../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="css/后台css/sb-admin.css" rel="stylesheet">
+    <link href="../../css/后台css/sb-admin.css" rel="stylesheet">
 
     <!--icon图标库css-->
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
@@ -60,7 +61,10 @@
                         <a href="Customerlist">用户列表</a>
                     </li>
                     <li>
-                        <a href="#">未分配</a>
+                    <a href="Customerlist">用户购买</a>
+                    </li>
+                    <li>
+                    <a href="customerpurchase">入驻申请</a>
                     </li>
                 </ul>
             </li>
@@ -71,7 +75,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="#">项目列表</a>
+                        <a href="${pageContext.request.contextPath}/Projectlist/subsystemlist">项目列表</a>
                     </li>
                     <li>
                         <a href="#">未分配</a>
@@ -155,23 +159,109 @@
             <li class="breadcrumb-item active">项目列表</li>
         </ol>
 
-        <!-- 已购业务表格-->
+        <!-- 全部系统服务表格-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i> 已购系统列表</div>
+                <i class="fa fa-table"></i> 系统服务列表
+                <button type="button"
+                        style="float:right"
+                        class="icon icon ion-plus-round btn btn-outline-dark"
+                        data-toggle="modal"
+                        data-target="#myModal"
+                        id="insert_subsystem1">添加
+                </button>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">请输入服务信息</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- 模态框主体 -->
+                            <div class="modal-body">
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">服 务 ID</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="服务ID" id="s_id" name="s_id">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">服务名称</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="服务名称" id="s_name" name="s_name">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">服务商ID</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="服务商ID" id="si_id" name="si_id">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">介  绍</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="介绍" id="s_introduction" name="s_introduction">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">价     格</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="价格" id="s_price" name="s_price">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">前端站点</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="前端站点" id="s_website1" name="s_website1">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">后端站点</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="后端站点" id="s_website2" name="s_website2">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">服务状态</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="1" id="s_status" name="s_status">
+                                </div>
+
+
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" id="submit_insert_subsystem">提交</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>项目ID</th>
-                            <th>项目名称</th>
-                            <th>详细介绍</th>
-                            <th>注册人数</th>
-                            <th>是否启用</th>
+                            <th>服务ID</th>
+                            <th>服务名称</th>
+                            <th>服务商ID</th>
+                            <th>介绍</th>
+                            <th>价格</th>
+                            <th>前端站点</th>
+                            <th>后端站点</th>
+                            <th>服务状态</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
+                        <!--
                         <tr>
                             <td>03</td>
                             <td>超市子系统</td>
@@ -181,46 +271,34 @@
                                 <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
                             </td>
                         </tr>
-                        <tr>
-                            <td>Mary</td>
-                            <td>Moe</td>
-                            <td>mary@example.com</td>
-                            <td>61</td>
-                            <td>
-                                <button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
-                                <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>61</td>
-                            <td>
-                                <button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
-                                <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>61</td>
-                            <td>
-                                <button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
-                                <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>July</td>
-                            <td>Dooley</td>
-                            <td>july@example.com</td>
-                            <td>61</td>
-                            <td>
-                                <button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
-                                <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
-                            </td>
-                        </tr>
+                        -->
+                        <c:forEach items="${subsystemlist}" var="subsystem">
+                            <tr class="text-c">
+                                <td>${subsystem.s_id}</td>
+                                <td>${subsystem.s_name}</td>
+                                <td>${subsystem.si_id}</td>
+                                <td>${subsystem.s_introduction}</td>
+                                <td>${subsystem.s_price}</td>
+                                <td>${subsystem.s_website1}</td>
+                                <td>${subsystem.s_website2}</td>
+                                <td>
+                                    <c:if test="${subsystem.s_status==1}">可用</c:if>
+                                    <c:if test="${subsystem.s_status==0}">不可用</c:if>
+                                </td>
+                                <td>
+                                    <a title="编辑" href="javascript:;"
+                                       onclick="bianjifuwu(this,${subsystem.s_id},${subsystem.s_website1})"
+                                       class="ml-5" style="text-decoration:none">
+                                        <span class="label label-success radius">编辑</span>
+                                    </a>
+                                    <a deleteLink="true" href="/Projectlist/del_subsystem?s_id=${subsystem.s_id}"
+                                       class="ml-5" style="...">
+                                        <span class="label label-success radius">删除</span>
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -272,14 +350,31 @@
     <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
     <script src="../../vendor/chart.js/Chart.min.js"></script>
-    <script src="vendor/datatables/jquery.dataTables.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+    <script src="../../vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin.min.js"></script>
+    <script src="../../js/后台js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
     <script src="../../js/后台js/sb-admin-charts.min.js"></script>
 </div>
+<script type="text/javascript">
+    $(function () {
+        $("a").click(function () {
+            var deleteLink = $(this).attr("deleteLink");
+            console.log(deleteLink);
+            if("true"==deleteLink){
+                var confirmDelete=confirm("确定要删除");
+                if(confirmDelete)
+                    return true;
+                return false;
+            }
+
+        })
+
+    })
+</script>
+
 </body>
 
 </html>

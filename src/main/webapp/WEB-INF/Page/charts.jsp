@@ -54,7 +54,10 @@
               <a href="Customerlist">用户列表</a>
             </li>
             <li>
-              <a href="#">未分配</a>
+            <a href="customerpurchase">用户购买</a>
+            </li>
+            <li>
+            <a href="customerpurchase">入驻申请</a>
             </li>
           </ul>
         </li>

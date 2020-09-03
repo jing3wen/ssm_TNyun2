@@ -9,5 +9,16 @@ import java.util.List;
  */
 public interface SubsystemMapper {
 
-    public List<Subsystem> Select_service_all();
+    List<Subsystem> Select_service_all();//查询所有子系统服务
+    Subsystem Duplicate_check(Subsystem subsystem);//查重
+    int Find_max_s_id();
+    void Insert_subsystem(Subsystem subsystem);
+    Subsystem Find_sub_by_id(int s_id);
+    void Update_s_introduction(Subsystem subsystem);
+    void Update_s_price(Subsystem subsystem);
+    void Update_s_website1(Subsystem subsystem);
+    void Update_s_website2(Subsystem subsystem);
+    void Delete_subsystem_by_s_id(int s_id);
+
+
 }
