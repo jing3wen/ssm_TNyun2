@@ -4,16 +4,20 @@ import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
 import com.TNyun.service.customerService;
 import com.TNyun.service.serviceorderService;
+import com.TNyun.utils.SendMail;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.mail.MessagingException;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -145,6 +149,21 @@ public class test1 {
         List<serviceorder> serviceList= serviceOrderService.findallByC_id(123458);
         for(int i=0;i<serviceList.size();i++)
             System.out.println(serviceList.get(i).ser_print());
+    }
+
+    @Autowired
+    SendMail SendMail;
+
+    @Test
+    public void testMail() throws IOException, MessagingException {
+
+        System.out.println( SendMail.sendmail("1584591284@qq.com","jing文"));
+    }
+
+    @Test
+    public  void  testActivate(){
+
+        System.out.println(customerService.activateCustomerByPhone("12345678901"));
     }
 }
 

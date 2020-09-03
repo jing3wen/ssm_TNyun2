@@ -15,9 +15,11 @@ public interface customerMapper {
 
     void deleteCustomerByPhone(String phone);//根绝phone删除用户
 
-    void set_status1(int id);//将状态置1（登录时使用）
+    void set_status1(int id);//将状态置1
 
-    void set_status0(int id);//将状态置0（登出时使用）
+    void set_status0(int id);//将状态置0
+
+    void set_status1ByPhone(String phone);//通通过电话激活账户（将状态置1）
 
     customer findCustomerById(int id);//通过id查找
 
