@@ -6,36 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="9月3号，靖文提交：完成用户注册的邮箱验证，">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/utils/SendMail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mail.properties" afterDir="false" />
+    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="9月3号，靖文提交：完成用户注册的邮箱验证，添加一个工具包utils,发送邮箱的类SendMail">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/customer/activateSuccess.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/customerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/customerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/customerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/customerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/entity/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/entity/admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/customerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/customerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/customerServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/customerServiceimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/customerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com.TNyun.dao/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/com.TNyun.dao/test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/customerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/customerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/entity/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/customerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/customerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/customerServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/customerServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/customerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/customerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/customerMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/entity/customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/entity/customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/customerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/customerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/customerServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/customerServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/customerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/test1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/test1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +46,7 @@
         <option value="Interface" />
         <option value="properties文件" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -131,6 +106,9 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\WEB-INF\Page" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.TNyun.dao" />
     </key>
@@ -140,9 +118,6 @@
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src" />
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\resources" />
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\java" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\WEB-INF\Page" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -465,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598489597665</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="9月3号，靖文提交：完成用户注册的邮箱验证，添加一个工具包utils,发送邮箱的类SendMail">
+      <created>1599102311154</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1599102311154</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,7 +459,8 @@
     <MESSAGE value="顾客登陆功能实现" />
     <MESSAGE value="8/27提交版本：任务以分配完毕，项目开始阶段，注意：用户登陆模块有问题，为了测试只用了一个静态变量，应用session来登陆" />
     <MESSAGE value="9月3号，靖文提交：完成用户注册的邮箱验证，" />
-    <option name="LAST_COMMIT_MESSAGE" value="9月3号，靖文提交：完成用户注册的邮箱验证，" />
+    <MESSAGE value="9月3号，靖文提交：完成用户注册的邮箱验证，添加一个工具包utils,发送邮箱的类SendMail" />
+    <option name="LAST_COMMIT_MESSAGE" value="9月3号，靖文提交：完成用户注册的邮箱验证，添加一个工具包utils,发送邮箱的类SendMail" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="71" key="#Notifications" timestamp="1599094490611">
@@ -504,10 +487,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598487774722" />
-    <state x="337" y="8" key="CommitChangelistDialog2" timestamp="1599102180965">
+    <state x="337" y="8" key="CommitChangelistDialog2" timestamp="1599102395780">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="337" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599102180965" />
+    <state x="337" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599102395780" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1596876660388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -516,54 +499,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="630" y="303" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1596877300486" />
-    <state width="1177" height="228" key="GridCell.Tab.0.bottom" timestamp="1599102181115">
+    <state width="952" height="228" key="GridCell.Tab.0.bottom" timestamp="1599102661502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
-    <state width="1177" height="228" key="GridCell.Tab.0.center" timestamp="1599102181115">
+    <state width="952" height="228" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102661502" />
+    <state width="952" height="228" key="GridCell.Tab.0.center" timestamp="1599102661502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
-    <state width="1177" height="228" key="GridCell.Tab.0.left" timestamp="1599102181115">
+    <state width="952" height="228" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599102661502" />
+    <state width="952" height="228" key="GridCell.Tab.0.left" timestamp="1599102661502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
-    <state width="1177" height="228" key="GridCell.Tab.0.right" timestamp="1599102181115">
+    <state width="952" height="228" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599102661502" />
+    <state width="952" height="228" key="GridCell.Tab.0.right" timestamp="1599102661502">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
-    <state width="1177" height="228" key="GridCell.Tab.1.bottom" timestamp="1599102181116">
+    <state width="952" height="228" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599102661502" />
+    <state width="1177" height="228" key="GridCell.Tab.1.bottom" timestamp="1599102661367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
-    <state width="1177" height="228" key="GridCell.Tab.1.center" timestamp="1599102181115">
+    <state width="1177" height="228" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102661367" />
+    <state width="1177" height="228" key="GridCell.Tab.1.center" timestamp="1599102661366">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
-    <state width="1177" height="228" key="GridCell.Tab.1.left" timestamp="1599102181115">
+    <state width="1177" height="228" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599102661366" />
+    <state width="1177" height="228" key="GridCell.Tab.1.left" timestamp="1599102661366">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
-    <state width="1177" height="228" key="GridCell.Tab.1.right" timestamp="1599102181115">
+    <state width="1177" height="228" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599102661366" />
+    <state width="1177" height="228" key="GridCell.Tab.1.right" timestamp="1599102661367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
-    <state width="1177" height="228" key="GridCell.Tab.2.bottom" timestamp="1599102181116">
+    <state width="1177" height="228" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599102661367" />
+    <state width="1177" height="228" key="GridCell.Tab.2.bottom" timestamp="1599102661367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
-    <state width="1177" height="228" key="GridCell.Tab.2.center" timestamp="1599102181116">
+    <state width="1177" height="228" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102661367" />
+    <state width="1177" height="228" key="GridCell.Tab.2.center" timestamp="1599102661367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
-    <state width="1177" height="228" key="GridCell.Tab.2.left" timestamp="1599102181116">
+    <state width="1177" height="228" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599102661367" />
+    <state width="1177" height="228" key="GridCell.Tab.2.left" timestamp="1599102661367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
-    <state width="1177" height="228" key="GridCell.Tab.2.right" timestamp="1599102181116">
+    <state width="1177" height="228" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599102661367" />
+    <state width="1177" height="228" key="GridCell.Tab.2.right" timestamp="1599102661367">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="228" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
+    <state width="1177" height="228" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599102661367" />
     <state width="1024" height="298" key="GridCell.Tab.3.bottom" timestamp="1596889884597">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -596,14 +579,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="196" y="74" width="996" height="707" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598667899158" />
+    <state x="536" y="128" key="VCS.ChangeListViewerDialog" timestamp="1599102332167">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="536" y="128" key="VCS.ChangeListViewerDialog/0.0.1536.824@0.0.1536.824" timestamp="1599102332167" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1598489708703">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598489708703" />
-    <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599101954696">
+    <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599102337319">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1599101954696" />
+    <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1599102337319" />
     <state x="861" y="108" width="632" height="716" key="find.popup" timestamp="1596885067266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
