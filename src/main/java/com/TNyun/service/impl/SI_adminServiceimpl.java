@@ -91,4 +91,14 @@ public class SI_adminServiceimpl implements SI_adminService{
         SI_adminMapper.SetAgree3(c_id,s_id);
         return null;
     }
+
+    @Override
+    public void Delete_customer_by_id(int id) {
+        SI_adminMapper.Delete_customer_by_id(id);
+    }
+
+    @Override
+    public void update_customer(customer cst){
+        SI_adminMapper.update_customer(cst);
+    }
 }

@@ -29,6 +29,10 @@ public interface SI_adminMapper {
     void SetAgree2(@Param("c_id")int c_id, @Param("s_id")int s_id);//将状态置2——购买
 
     void SetAgree3(@Param("c_id")int c_id, @Param("s_id")int s_id);//将状态置3——过期
+
+    void Delete_customer_by_id(int id);
+
+    void update_customer(customer cst);
     
 
 }

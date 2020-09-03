@@ -58,7 +58,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="Customerlist">用户列表</a>
+                        <a href="${pageContext.request.contextPath}/Customerlist/customerlist">用户列表</a>
                     </li>
                     <li>
                     <a href="Customerlist">用户购买</a>

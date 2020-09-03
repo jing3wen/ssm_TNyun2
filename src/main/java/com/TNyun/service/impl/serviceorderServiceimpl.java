@@ -10,7 +10,7 @@ import java.util.Calendar;
 
 
 @Service
-public class serviceorderServiceImpl implements serviceorderService{
+class serviceorderServiceImpl implements serviceorderService{
 
     @Autowired
     private com.TNyun.dao.serviceorderMapper serviceorderMapper;
