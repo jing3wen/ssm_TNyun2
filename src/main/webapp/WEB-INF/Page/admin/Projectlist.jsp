@@ -11,13 +11,13 @@
     <meta name="author" content="">
     <title>TN云</title>
     <!-- Bootstrap core CSS-->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Page level plugin SS-->
-    <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="../css/后台css/sb-admin.css" rel="stylesheet">
+    <link href="../../css/后台css/sb-admin.css" rel="stylesheet">
 
     <!--icon图标库css-->
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
@@ -34,19 +34,31 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="../back">
+                <a class="nav-link" href="back">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">所有功能</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="../charts">
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseStatistics" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-area-chart"></i>
                     <span class="nav-link-text">用户使用统计</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="collapseStatistics">
+                    <li>
+                        <a href="${pageContext.request.contextPath}/charts">用户统计</a>
+                    </li>
+                    <li>
+                        <a href="Chart">用户购买</a>
+                    </li>
+                    <li>
+                        <a href="charts">入驻申请</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="../tables">
+                <a class="nav-link" href="tables">
                     <i class="fa fa-fw fa-table"></i>
                     <span class="nav-link-text">已购系统</span>
                 </a>
@@ -58,13 +70,13 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="../Customerlist">用户列表</a>
+                        <a href="${pageContext.request.contextPath}/Customerlist/customerlist">用户列表</a>
                     </li>
                     <li>
-                    <a href="../serverorderlist">用户购买</a>
+                    <a href="Customerlist">用户购买</a>
                     </li>
                     <li>
-                    <a href="../customerpurchase">入驻申请</a>
+                    <a href="customerpurchase">入驻申请</a>
                     </li>
                 </ul>
             </li>
@@ -182,12 +194,7 @@
 
                             <!-- 模态框主体 -->
                             <div class="modal-body">
-                                <div class="input-group mb-3 input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">服 务 ID</span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="服务ID" id="s_id" name="s_id">
-                                </div>
+
                                 <div class="input-group mb-3 input-group-sm">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">服务名称</span>
@@ -266,7 +273,9 @@
                             <td>03</td>
                             <td>超市子系统</td>
                             <td>云超市，是一种社区电子商务的交易形式，即网上预定和下单、线下快速到货的一种超市形式</td>
-                            <td>32</td>
+                            <td>
+                            销售云解决方案可以为客户提供情境化且个性化的全渠道购物体验。给用户带来真实的体验
+                            32</td>
                             <td><button type="button" class="icon icon ion-gear-b btn btn-outline-dark">编辑</button>
                                 <button type="button" class="icon ion-trash-a btn btn-outline-dark">删除</button>
                             </td>
@@ -286,19 +295,69 @@
                                     <c:if test="${subsystem.s_status==0}">不可用</c:if>
                                 </td>
                                 <td>
-                                    <a title="编辑" href="javascript:;"
-                                       onclick="bianjifuwu(this,${subsystem.s_id},${subsystem.s_website1})"
-                                       class="ml-5" style="text-decoration:none">
-                                        <span class="label label-success radius">编辑</span>
-                                    </a>
+                                    <!--<a title="编辑" href="javascript:;"
+                                       onclick="bianjifuwu(this,${subsystem.s_id},${subsystem.s_website1})">
+                                       class="ml-5" style="text-decoration:underline ">
+                                        <span style="font-min-size:6px " class="label label-primary radius">编辑</span>
+                                    </a>-->
+                                    <button type="button"
+                                            class="btn btn-primary radius"
+                                            data-toggle="modal"
+                                            data-target="#modifyModal"
+                                            onclick="showDialog(this)"
+                                            id="modifysubsystem">编辑
+                                    </button>
+
                                     <a deleteLink="true" href="/Projectlist/del_subsystem?s_id=${subsystem.s_id}"
-                                       class="ml-5" style="...">
-                                        <span class="label label-success radius">删除</span>
+                                       class="my-lg-5" style="text-decoration:underline">
+                                        <button type="button" class="btn btn-danger radius" id="">删除</button>
+                                        <!--span style="font-min-size:6px " class="label label-danger radius">删除</span-->
                                     </a>
 
                                 </td>
                             </tr>
                         </c:forEach>
+                        <div class="modal fade" id="modifyModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <!-- 模态框头部 -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">请输入修改信息</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- 模态框主体 -->
+                                    <div class="modal-body">
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_id" name="modify_id">
+                                            <button type="button" class="btn btn-primary" >服务ID</button>
+                                        </div>
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_introduction" name="modify_intorduction">
+                                            <button type="button" class="btn btn-primary" id="update_s_introduction">修改 介绍</button>
+                                        </div>
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_price" name="modify_price">
+                                            <button type="button" class="btn btn-primary" id="update_s_price">修改 价格</button>
+                                        </div>
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_website1" name="modify_website1">
+                                            <button type="button" class="btn btn-primary" id="update_s_website1">修改站点1</button>
+                                        </div>
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_website2" name="modify_website2">
+                                            <button type="button" class="btn btn-primary" id="update_s_website2">修改站点2</button>
+                                        </div>
+                                    </div>
+                                    <!-- 模态框底部 -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                         </tbody>
                     </table>
                 </div>
@@ -344,19 +403,25 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="../vendor/chart.js/Chart.min.js"></script>
-    <script src="../endor/datatables/jquery.dataTables.js"></script>
-    <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../../vendor/chart.js/Chart.min.js"></script>
+
+    <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+
+    <script src="../../vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <script type="text/javascript" src="../../vendor/datatables/jquery.dataTables.js"></script>
+
+
     <!-- Custom scripts for all pages-->
-    <script src="../js/后台js/sb-admin.min.js"></script>
+    <script src="../../js/后台js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="../js/后台js/sb-admin-datatables.min.js"></script>
-    <script src="../js/后台js/sb-admin-charts.min.js"></script>
+    <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
+    <script src="../../js/后台js/sb-admin-charts.min.js"></script>
 </div>
 <script type="text/javascript">
     $(function () {
@@ -369,10 +434,228 @@
                     return true;
                 return false;
             }
-
+            windows.location.reload();
         })
 
-    })
+    });
+
+    $("#submit_insert_subsystem").click(function () {
+        const subsystem = {
+
+            "s_name": $("#s_name").val(),
+            "si_id": $("#si_id").val(),
+            "s_introduction": $("#s_introduction").val(),
+            "s_price": $("#s_price").val(),
+            "s_website1": $("#s_website1").val(),
+            "s_website2": $("#s_website2").val(),
+            "s_status": $("#s_status").val()
+        };
+
+        var confirmInsert=confirm("确定添加")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/submit_insert_subsystem",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#myModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+                /*error: function (result) {
+                    result=JSON.parse(result);
+                    alert(result);
+                    alert("失败");
+                    console.log("404 服务器请求失败");
+                }*/
+            });
+            $('#myModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+
+    function showDialog(obj){
+        //点击更新按钮后展示模态框
+        $('#modifyModal').modal('show');
+        //获取当前行的所有列
+        var tds= $(obj).parent().parent().find('td');
+        //(".id"):通过class属性获取当前需要填写数据的输入框
+        //$(tds.eq(0)).text():通过下标取得对应列中的值
+        $("#modify_id").val($(tds.eq(0)).text());
+        $("#modify_introduction").val($(tds.eq(3)).text());
+        $("#modify_price").val($(tds.eq(4)).text());
+        $("#modify_website1").val($(tds.eq(5)).text());
+        $("#modify_website2").val($(tds.eq(6)).text());
+
+    }
+
+    $("#update_s_introduction").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_introduction": $("#modify_introduction").val(),
+        };
+
+        var confirmInsert=confirm("确定修改介绍？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/update_s_introduction",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+    $("#update_s_price").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_price": $("#modify_price").val(),
+        };
+
+        var confirmInsert=confirm("确定修改价格？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/update_s_price",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+
+    $("#update_s_website1").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_website1": $("#modify_website1").val(),
+        };
+
+        var confirmInsert=confirm("确定修改前端站点？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/update_s_website1",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+    $("#update_s_website2").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_website2": $("#modify_website2").val(),
+
+        };
+
+        var confirmInsert=confirm("确定修改后端站点？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/update_s_website2",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+
+
 </script>
 
 </body>

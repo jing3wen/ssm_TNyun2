@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.TNyun.dao.SI_adminMapper">
+
+    <select id="findSI_applyByphone"
+            parameterType="java.lang.String"
+            resultType="com.TNyun.entity.siapply">
+        select * from SI_apply where si_phone like concat('%',#{phone},'%')
+    </select>
+
+    <select id="findMaxId"
+            resultType="com.TNyun.entity.siapply">
+        select * from SI_apply order by id desc limit 0,1;
+    </select>
+
+    <insert id="addsiapply"
+            parameterType="com.TNyun.entity.siapply">
+        insert into SI_apply(si_id,si_phone,si_name,si_password,si_email,si_status)
+        values(#{id},#{phone},#{name},#{password},#{email},#{status})
+    </insert>
+
+    <select id="findSI_AdminByphone"
+            parameterType="java.lang.String"
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin where si_phone like concat('%',#{si_phone},'%')
+    </select>
+
+    <update id="set_SI_status1" parameterType="String">
+        update SI_admin set si_status=1 where si_phone like concat('%',#{si_phone},'%')
+    </update>
+
+    <update id="set_SI_status0" parameterType="String">
+        update SI_admin set si_status=0 where si_phone like concat('%',#{si_phone},'%')
+    </update>
+
+    <select id="Select_all_customer"  resultType="com.TNyun.entity.customer">
+        select * from customer
+    </select>
+
+    <update id="SetAgree1" parameterType="java.lang.Integer">
+        update serviceorder set agree=1 where s_id= #{s_id} and c_id=#{c_id}
+    </update>
+
+    <update id="SetAgree2" parameterType="java.lang.Integer">
+        update serviceorder set agree=2 where s_id= #{s_id} and c_id=#{c_id}
+    </update>
+
+    <update id="SetAgree3" parameterType="java.lang.Integer">
+        update serviceorder set agree=3 where s_id= #{s_id} and c_id=#{c_id}
+    </update>
+
+    <delete id="Delete_customer_by_id"
+            parameterType="java.lang.Integer">
+        delete from customer where id like concat('%',#{id},'%')
+    </delete>
+
+    <update id="Update_customer" parameterType="com.TNyun.entity.customer">
+        update customer set name=#{name},phone=#{phone},email=#{email} where id = #{id}
+    </update>
+
+
+</mapper>

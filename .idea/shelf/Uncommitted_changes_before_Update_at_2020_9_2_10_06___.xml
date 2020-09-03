@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_2020_9_2_10_06_[默认更改列表]" date="1599012406088" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_9_2_10_06_[默认更改列表]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2020/9/2 10:06 [默认更改列表]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/ssm_TNyun2/WEB-INF/classes/com/TNyun/entity/customer.class" />
+    <option name="AFTER_PATH" value="target/ssm_TNyun2/WEB-INF/classes/com/TNyun/entity/customer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_9_2_10_06_[默认更改列表]/customer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/ssm_TNyun2.war" />
+    <option name="AFTER_PATH" value="target/ssm_TNyun2.war" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_9_2_10_06_[默认更改列表]/ssm_TNyun2.war" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/customerServiceimpl.class" />
+    <option name="AFTER_PATH" value="target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/customerServiceimpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2020_9_2_10_06_[默认更改列表]/customerServiceimpl.class" />
+  </binary>
+</changelist>

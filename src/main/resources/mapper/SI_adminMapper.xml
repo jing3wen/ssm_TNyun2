@@ -51,5 +51,14 @@
         update serviceorder set agree=3 where s_id= #{s_id} and c_id=#{c_id}
     </update>
 
+    <delete id="Delete_customer_by_id"
+            parameterType="java.lang.Integer">
+        delete from customer where id like concat('%',#{id},'%')
+    </delete>
+
+    <update id="Update_customer" parameterType="com.TNyun.entity.customer">
+        update customer set name=#{name},phone=#{phone},email=#{email} where id = #{id}
+    </update>
+
 
 </mapper>

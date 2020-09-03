@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
     <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <!-- Page level plugin CSS-->
+    <!-- Page level plugin SS-->
     <link href="../../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="../../css/后台css/sb-admin.css" rel="stylesheet">
@@ -57,10 +58,10 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="Customerlist">用户列表</a>
+                        <a href="${pageContext.request.contextPath}/Customerlist/customerlist">用户列表</a>
                     </li>
                     <li>
-                        <a href="customerpurchase">用户购买</a>
+                        <a href="Customerlist">用户购买</a>
                     </li>
                     <li>
                         <a href="customerpurchase">入驻申请</a>
@@ -154,30 +155,104 @@
             <li class="breadcrumb-item">
                 <a href="#">所有功能</a>
             </li>
-            <li class="breadcrumb-item active">用户管理</li>
-            <li class="breadcrumb-item active">用户列表</li>
+            <li class="breadcrumb-item active">服务项目管理</li>
+            <li class="breadcrumb-item active">项目列表</li>
         </ol>
 
-        <!-- 用户列表-->
+        <!-- 全部系统服务表格-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i>用户列表</div>
+                <i class="fa fa-table"></i>用户列表
+                <button type="button"
+                        style="float:right"
+                        class="icon icon ion-plus-round btn btn-outline-dark"
+                        data-toggle="modal"
+                        data-target="#myModal"
+                        id="insert_subsystem1">修改
+                </button>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- 模态框头部 -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">请输入用户信息</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- 模态框主体 -->
+                            <div class="modal-body">
+
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">用户ID</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="用户ID" id="id" name="id">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">用户姓名</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="用户姓名" id="name" name="name">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">电话</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="电话" id="phone" name="phone">
+                                </div>
+                                <div class="input-group mb-3 input-group-sm">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">邮箱</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="邮箱" id="email" name="email">
+                                </div>
+                            </div>
+
+                            <!-- 模态框底部 -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" id="submit_insert_customerlist">提交</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table id ="tab" class="table table-bordered">
+                    <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>账号ID</th>
-                            <th>姓名</th>
+                            <th>用户ID</th>
+                            <th>用户姓名</th>
                             <th>电话</th>
                             <th>邮箱</th>
                             <th>状态</th>
                         </tr>
                         </thead>
+                        <tbody>
+                        <c:forEach items="${customerlist}" var="cust">
+                            <tr class="text-c">
+                                <td>${cust.id}</td>
+                                <td>${cust.name}</td>
+                                <td>${cust.phone}</td>
+                                <td>${cust.email}</td>
+                                <td>
+                                    <c:if test="${cust.status==1}">可用</c:if>
+                                    <c:if test="${cust.status==0}">不可用</c:if>
+                                </td>
+                                <td>
+                                    <a deleteLink="true" href="/Customerlist/del_customer?id=${cust.id}"
+                                       class="ml-5" style="...">
+                                        <span class="label label-success radius">删除</span>
+                                    </a>
+
+                                </td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
                     </table>
-                    <div class="pagination pagination-centered">
-                       <button type="button" class="icon icon ion-gear-b btn btn-outline-dark" data-toggle="modal" id="list">list</button>
-                       </div>
                 </div>
 
             </div>
@@ -227,46 +302,62 @@
     <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
     <script src="../../vendor/chart.js/Chart.min.js"></script>
-    <script src="../../vendor/datatables/jquery.dataTables.js"></script>
+
+    <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+
     <script src="../../vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <script type="text/javascript" src="../../vendor/datatables/jquery.dataTables.js"></script>
+
+
     <!-- Custom scripts for all pages-->
     <script src="../../js/后台js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
     <script src="../../js/后台js/sb-admin-charts.min.js"></script>
-
 </div>
-</body>
+<script type="text/javascript">
+    $(function () {
+        $("a").click(function () {
+            var deleteLink = $(this).attr("deleteLink");
+            console.log(deleteLink);
+            if("true"==deleteLink){
+                var confirmDelete=confirm("确定要删除");
+                if(confirmDelete)
+                    return true;
+                return false;
+            }
 
-    <script>
-            $(function () {
-                $.ajax({
-                    type: "POST",
-                    url: "/customer/customerlist",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    async: "false",
-                    success: function (result) {
-                        console.log("服务器请求成功");
-                        console.log("there are " + result.length + " customers");
-                        if (result == "") alert("There are not customer !");
-                        console.log(result);
-                        var num = 5;
-                        var tr=null;
-                        if (result.length <= 5) num = result.length;
-                        for (i = 0; i <= num; i++) {
-                        tr = "<tr ><td>"+result[i].id+"</td><td>"+result[i].name+"</td><td>"
-                        					+result[i].phone+"</td><td>"+result[i].email+"</td><td>"
-                        					+result[i].status+"</td></tr>";
-                        $("#tab").append(tr);
-                        }
-                    },
-                    error: function () {
-                        console.log("404 服务器请求失败");
-                    }
-                })
+        })
+
+    });
+
+    $("#submit_insert_customerlist").click(function () {
+        const customer = {
+
+            "id": $("#id").val(),
+            "name": $("#name").val(),
+            "phone": $("#phone").val(),
+            "email": $("#email").val(),
+        };
+            $.ajax({
+                type: "POST",
+                url: "/Customerlist/submit_insert_subsystem",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(customer),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+                    console.log("请求成功")
+
+                },
             });
 
-    </script>
+    });
+
+
+</script>
+
+</body>
 
 </html>
