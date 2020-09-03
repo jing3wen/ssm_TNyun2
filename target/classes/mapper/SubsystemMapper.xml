@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.TNyun.dao.SubsystemMapper">
+    <!--添加新服务子系统-->
+    <insert id="Insert_subsystem" parameterType="com.TNyun.entity.Subsystem">
+        insert into subsystem(s_id,s_name,si_id,s_introduction,s_price,s_website1,s_website2,s_status)
+        values(#{s_id},#{s_name},#{si_id},#{s_introduction},#{s_price},#{s_website1},#{s_website2},#{s_status})
+    </insert>
+    <!--删除服务-->
+    <delete id="Delete_subsystem_by_s_id"
+            parameterType="java.lang.Integer">
+        delete from subsystem where s_id like concat('%',#{s_id},'%')
+    </delete>
+
+    <!--更新介绍-->
+    <update id="Update_s_introduction" parameterType="com.TNyun.entity.Subsystem">
+        update subsystem set s_introduction=#{s_introduction} where s_id = #{s_id}
+    </update>
+    <!--更新价格-->
+    <update id="Update_s_price" parameterType="com.TNyun.entity.Subsystem">
+        update subsystem set s_price=#{s_price} where s_id = #{s_id}
+    </update>
+    <!--更新website1-->
+    <update id="Update_s_website1" parameterType="com.TNyun.entity.Subsystem">
+        update subsystem set s_website1=#{s_website1} where s_id = #{s_id}
+    </update>
+    <!--更新website2-->
+    <update id="Update_s_website2" parameterType="com.TNyun.entity.Subsystem">
+        update subsystem set s_website2=#{s_website2} where s_id = #{s_id}
+    </update>
+
+    <!--查询全部服务 -->
+    <select id="Select_service_all"  resultType="com.TNyun.entity.Subsystem">
+        select * from subsystem;
+    </select>
+    <!--查重-->
+    <select id="Duplicate_check"
+            parameterType="com.TNyun.entity.Subsystem"
+            resultType="com.TNyun.entity.Subsystem">
+        select * from subsystem where s_name = #{s_name} and si_id=#{si_id}
+    </select>
+    <!--查找最大id-->
+    <select id="Find_max_s_id"
+            resultType="java.lang.Integer">
+        select s_id from subsystem order by s_id desc limit 0,1;
+    </select>
+    <!--通过id查找-->
+    <select id="Find_sub_by_id"
+            parameterType="java.lang.Integer"
+            resultType="com.TNyun.entity.Subsystem">
+        select * from subsystem where s_id like concat('%',#{s_id},'%')
+    </select>
+
+
+</mapper>
