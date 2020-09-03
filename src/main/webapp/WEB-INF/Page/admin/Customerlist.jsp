@@ -141,27 +141,131 @@
 
     });
 
-    $("#submit_insert_customerlist").click(function () {
-        const customer = {
+    function showDialog(obj){
+        //点击更新按钮后展示模态框
+        $('#modifyModal').modal('show');
+        //获取当前行的所有列
+        var tds= $(obj).parent().parent().find('td');
+        //(".id"):通过class属性获取当前需要填写数据的输入框
+        //$(tds.eq(0)).text():通过下标取得对应列中的值
+        $("#modify_id").val($(tds.eq(0)).text());
+        $("#modify_name").val($(tds.eq(3)).text());
+        $("#modify_phone").val($(tds.eq(4)).text());
+        $("#modify_email").val($(tds.eq(5)).text());
 
-            "id": $("#id").val(),
-            "name": $("#name").val(),
-            "phone": $("#phone").val(),
-            "email": $("#email").val(),
+    }
+
+    $("#update_s_name").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_introduction": $("#modify_name").val(),
         };
+
+        var confirmInsert=confirm("确定修改名字？")
+        if(confirmInsert)
+        {
             $.ajax({
                 type: "POST",
-                url: "/Customerlist/submit_insert_subsystem",
+                url: "/Customerlist/update_s_name",
                 contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(customer),
+                data: JSON.stringify(subsystem),
                 dataType:"json",
                 async: "false",
                 success: function (result) {
-                    console.log("请求成功")
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
 
                 },
             });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+    $("#update_s_phone").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_price": $("#modify_phone").val(),
+        };
 
+        var confirmInsert=confirm("确定修改价格？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Customerlist/update_s_phone",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+
+    $("#update_s_email").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_website1": $("#modify_email").val(),
+        };
+
+        var confirmInsert=confirm("确定修改前端站点？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Customerlist/update_s_email",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
     });
 
 
