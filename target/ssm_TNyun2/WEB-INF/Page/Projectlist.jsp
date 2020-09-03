@@ -319,6 +319,7 @@
                                     <div class="modal-body">
                                         <div class="input-group mb-3 input-group-sm">
                                             <input type="text" class="form-control"  id="modify_id" name="modify_id">
+                                            <button type="button" class="btn btn-primary" >服务ID</button>
                                         </div>
                                         <div class="input-group mb-3 input-group-sm">
                                             <input type="text" class="form-control"  id="modify_introduction" name="modify_intorduction">
@@ -483,7 +484,6 @@
         var tds= $(obj).parent().parent().find('td');
         //(".id"):通过class属性获取当前需要填写数据的输入框
         //$(tds.eq(0)).text():通过下标取得对应列中的值
-        alert($(tds.eq(3)).text());
         $("#modify_id").val($(tds.eq(0)).text());
         $("#modify_introduction").val($(tds.eq(3)).text());
         $("#modify_price").val($(tds.eq(4)).text());
@@ -491,22 +491,19 @@
         $("#modify_website2").val($(tds.eq(6)).text());
 
     }
+
     $("#update_s_introduction").click(function () {
         const subsystem = {
-            "s_id": $("#s_id").val(),
+            "s_id": $("#modify_id").val(),
             "s_introduction": $("#modify_introduction").val(),
-            /*"s_price": $("#s_price").val(),
-            "s_website1": $("#s_website1").val(),
-            "s_website2": $("#s_website2").val(),
-            "s_status": $("#s_status").val()*/
         };
 
-        var confirmInsert=confirm("确定添加")
+        var confirmInsert=confirm("确定修改介绍？")
         if(confirmInsert)
         {
             $.ajax({
                 type: "POST",
-                url: "/Projectlist/submit_insert_subsystem",
+                url: "/Projectlist/update_s_introduction",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(subsystem),
                 dataType:"json",
@@ -520,24 +517,132 @@
                         console.log(result.msg);
                         alert(result.msg);
                         loadMess(1);
-                        $('#myModal').modal('hide');
+                        $('#modifyModal').modal('hide');
                     }else {
                         alert("shibai");
                         alert(result.msg);
                     }
 
                 },
-                /*error: function (result) {
-                    result=JSON.parse(result);
-                    alert(result);
-                    alert("失败");
-                    console.log("404 服务器请求失败");
-                }*/
             });
-            $('#myModal').modal('hide');
+            $('#modifyModal').modal('hide');
             windows.location.reload();
         }
     });
+    $("#update_s_price").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_price": $("#modify_price").val(),
+        };
+
+        var confirmInsert=confirm("确定修改价格？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/update_s_price",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+
+    $("#update_s_website1").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_website1": $("#modify_website1").val(),
+        };
+
+        var confirmInsert=confirm("确定修改前端站点？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/update_s_website1",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+    $("#update_s_website2").click(function () {
+        const subsystem = {
+            "s_id": $("#modify_id").val(),
+            "s_website2": $("#modify_website2").val(),
+
+        };
+
+        var confirmInsert=confirm("确定修改后端站点？")
+        if(confirmInsert)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Projectlist/update_s_website2",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(subsystem),
+                dataType:"json",
+                async: "false",
+                success: function (result) {
+
+                    result=JSON.parse(result);
+                    alert(result);
+                    if(result.code==1){
+                        alert("chenggong");
+                        console.log(result.msg);
+                        alert(result.msg);
+                        loadMess(1);
+                        $('#modifyModal').modal('hide');
+                    }else {
+                        alert("shibai");
+                        alert(result.msg);
+                    }
+
+                },
+            });
+            $('#modifyModal').modal('hide');
+            windows.location.reload();
+        }
+    });
+
 
 </script>
 

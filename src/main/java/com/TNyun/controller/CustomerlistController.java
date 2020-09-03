@@ -29,7 +29,7 @@ public class CustomerlistController {
         int total=(int) new PageInfo<>(customerList).getTotal();
         page.setTotal(total);
 
-        model.addAttribute("subsystemlist",customerList);
+        model.addAttribute("customerlist",customerList);
         //model.addAttribute("totals",total);
         ModelAndView modelAndView=new ModelAndView("Customerlist");
         return modelAndView;

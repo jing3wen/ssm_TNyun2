@@ -42,8 +42,34 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="charts">
                     <i class="fa fa-fw fa-area-chart"></i>
+                    <span class="nav-link-text">用户使用统计TU</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapse">
+                    <li>
+                        <a href="${pageContext.request.contextPath}/charts">用户统计</a>
+                    </li>
+                    <li>
+                        <a href="Customerlist">用户购买</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                    <i class="fa fa-fw fa-wrench"></i>
                     <span class="nav-link-text">用户使用统计</span>
                 </a>
+                <ul class="sidenav-second-level collapse" id="collapseStatistics">
+                    <li>
+                        <a href="${pageContext.request.contextPath}/charts">用户统计</a>
+                    </li>
+                    <li>
+                        <a href="Chart">用户购买</a>
+                    </li>
+                    <li>
+                        <a href="charts">入驻申请</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
                 <a class="nav-link" href="tables">
@@ -58,7 +84,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="../Customerlist">用户列表</a>
+                        <a href="${pageContext.request.contextPath}/Customerlist/customerlist">用户列表</a>
                     </li>
                     <li>
                     <a href="Customerlist">用户购买</a>
