@@ -23,4 +23,8 @@ public interface SI_adminService {
 
     public serviceorder Overdue(int c_id,int s_id);
 
+    void Delete_customer_by_id(int id);
+
+    void update_customer(customer cst);
+
 }
