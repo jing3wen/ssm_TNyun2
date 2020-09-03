@@ -1,9 +1,6 @@
 package com.TNyun.dao;
 
-import com.TNyun.entity.SI_admin;
-import com.TNyun.entity.customer;
-import com.TNyun.entity.serviceorder;
-import com.TNyun.entity.siapply;
+import com.TNyun.entity.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -17,6 +14,8 @@ public interface SI_adminMapper {
     void addsiapply(siapply sa);//将申请成为si_admin的用户信息放入si_apply表
 
     SI_admin findSI_AdminByphone(String  si_phone);//名字查找SI用户密码
+
+    customer Find_cus_by_id(int id);
 
     void set_SI_status1(String  si_phone);//将状态置1（登录时使用）
 
@@ -33,6 +32,12 @@ public interface SI_adminMapper {
     void Delete_customer_by_id(int id);
 
     void update_customer(customer cst);
+
+    void Update_s_name(customer customer);
+
+    void Update_s_phone(customer customer);
+
+    void Update_s_email(customer customer);
     
 
 }

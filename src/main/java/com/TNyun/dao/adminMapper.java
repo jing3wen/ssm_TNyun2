@@ -35,4 +35,6 @@ public interface adminMapper {
 
     void deleteSI_adminByPhone(String si_phone);//根绝phone删除用户
 
+    int statistic_people_online();
+
 }
