@@ -1,6 +1,7 @@
 package com.TNyun.service;
 
 import com.TNyun.entity.SI_admin;
+import com.TNyun.entity.Subsystem;
 import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
 
@@ -26,5 +27,8 @@ public interface SI_adminService {
     void Delete_customer_by_id(int id);
 
     void update_customer(customer cst);
+    String Update_s_name(customer customer);
+    String Update_s_phone(customer customer);
+    String Update_s_email(customer customer);
 
 }

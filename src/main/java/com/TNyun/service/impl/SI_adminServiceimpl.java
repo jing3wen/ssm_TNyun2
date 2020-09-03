@@ -1,9 +1,6 @@
 package com.TNyun.service.impl;
 
-import com.TNyun.entity.SI_admin;
-import com.TNyun.entity.customer;
-import com.TNyun.entity.serviceorder;
-import com.TNyun.entity.siapply;
+import com.TNyun.entity.*;
 import com.TNyun.service.SI_adminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -99,6 +96,47 @@ public class SI_adminServiceimpl implements SI_adminService{
 
     @Override
     public void update_customer(customer cst){
+
         SI_adminMapper.update_customer(cst);
     }
+
+    @Override
+    public String Update_s_name(customer customer) {
+       SI_adminMapper.Update_s_name(customer);
+        customer subsystem1=new customer();
+        subsystem1=SI_adminMapper.Find_cus_by_id(customer.getId());
+        if(subsystem1.getName().equals(customer.getName())){
+            System.out.println(subsystem1.cus_print());
+            return "update name successfully";
+        }else {
+            return "update name error";
+        }
+    }
+
+    @Override
+    public String Update_s_phone(customer customer) {
+        SI_adminMapper.Update_s_phone(customer);
+        customer subsystem1=new customer();
+        subsystem1=SI_adminMapper.Find_cus_by_id(customer.getId());
+        if(subsystem1.getPhone().equals(customer.getPhone())){
+            System.out.println(subsystem1.cus_print());
+            return "update phone tsuccessfully";
+        }else {
+            return "update phone error";
+        }
+    }
+
+    @Override
+    public String Update_s_email(customer customer) {
+        SI_adminMapper.Update_s_email(customer);
+        customer subsystem1=new customer();
+        subsystem1=SI_adminMapper.Find_cus_by_id(customer.getId());
+        if(subsystem1.getEmail().equals(customer.getEmail())){
+            System.out.println(subsystem1.toString());
+            return "update email successfully";
+        }else {
+            return "update email error";
+        }
+    }
+
 }

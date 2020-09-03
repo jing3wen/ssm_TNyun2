@@ -60,5 +60,24 @@
         update customer set name=#{name},phone=#{phone},email=#{email} where id = #{id}
     </update>
 
+    <update id="Update_s_name" parameterType="com.TNyun.entity.customer">
+        update customer set name=#{name} where id = #{id}
+    </update>
+    <!--更新价格-->
+    <update id="Update_s_phone" parameterType="com.TNyun.entity.customer">
+        update customer set phone=#{phone} where id = #{id}
+    </update>
+    <!--更新website1-->
+    <update id="Update_s_email" parameterType="com.TNyun.entity.customer">
+        update customer set email=#{email} where id = #{id}
+    </update>
+
+    <select id="Find_cus_by_id"
+            parameterType="java.lang.Integer"
+            resultType="com.TNyun.entity.customer">
+        select * from customer where id like concat('%',#{id},'%')
+    </select>
+
+
 
 </mapper>
