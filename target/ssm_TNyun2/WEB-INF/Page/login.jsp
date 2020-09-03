@@ -156,6 +156,9 @@
                         alert("欢迎您顾客")
                         window.location.href="http://localhost:8082/";
                     }
+                    else if(result=="the customer don't be activated"){
+                        alert("该账户还未被激活，请查看邮箱" );
+                    }
                     else if(result=="the customer has logined"){
                         alert("该账号已登录不能重复登陆");
                     }

@@ -64,7 +64,6 @@ public class projectlistController {
             }else {
                 retureninfo.setCode(0);
                 retureninfo.setMsg(result);
-
                 //servletRequest.setAttribute("result",null);
             }
         } catch (Exception e) {
@@ -73,10 +72,107 @@ public class projectlistController {
         JSONObject jsonObject=new JSONObject();
         jsonObject=JSONObject.fromObject(retureninfo);
         return jsonObject.toString();
-
-        /*int t;*/
-        /**/
-
     }
 
+    @RequestMapping(value = "update_s_introduction",method = RequestMethod.POST)
+    public String update_s_introduction(@RequestBody Subsystem subsystem, HttpServletRequest servletRequest){
+
+        System.out.println("收到update_s_introduction"+subsystem.toString());
+        String result;
+        Retureninfo retureninfo=new Retureninfo();
+        try {
+            result=subsystemService.Update_s_introduction(subsystem);
+            System.out.println("返回："+result);
+            if(result.equals("update introduction successfully")) {
+                retureninfo.setCode(1);
+                retureninfo.setMsg(result);
+                //servletRequest.setAttribute("result","插入成功");
+            }else {
+                retureninfo.setCode(0);
+                retureninfo.setMsg(result);
+                //servletRequest.setAttribute("result",null);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject=new JSONObject();
+        jsonObject=JSONObject.fromObject(retureninfo);
+        return jsonObject.toString();
+    }
+
+    @RequestMapping(value = "update_s_price",method = RequestMethod.POST)
+    public String update_s_price(@RequestBody Subsystem subsystem, HttpServletRequest servletRequest){
+
+        System.out.println("收到update_s_price"+subsystem.toString());
+        String result;
+        Retureninfo retureninfo=new Retureninfo();
+        try {
+            result=subsystemService.Update_s_price(subsystem);
+            System.out.println("返回："+result);
+            if(result.equals("update price successfully")) {
+                retureninfo.setCode(1);
+                retureninfo.setMsg(result);
+                //servletRequest.setAttribute("result","插入成功");
+            }else {
+                retureninfo.setCode(0);
+                retureninfo.setMsg(result);
+                //servletRequest.setAttribute("result",null);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject=new JSONObject();
+        jsonObject=JSONObject.fromObject(retureninfo);
+        return jsonObject.toString();
+    }
+    @RequestMapping(value = "update_s_website1",method = RequestMethod.POST)
+    public String update_s_website1(@RequestBody Subsystem subsystem, HttpServletRequest servletRequest){
+
+        System.out.println("收到update_s_website1"+subsystem.toString());
+        String result;
+        Retureninfo retureninfo=new Retureninfo();
+        try {
+            result=subsystemService.Update_s_website1(subsystem);
+            System.out.println("返回："+result);
+            if(result.equals("update website1 successfully")) {
+                retureninfo.setCode(1);
+                retureninfo.setMsg(result);
+                //servletRequest.setAttribute("result","插入成功");
+            }else {
+                retureninfo.setCode(0);
+                retureninfo.setMsg(result);
+                //servletRequest.setAttribute("result",null);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject=new JSONObject();
+        jsonObject=JSONObject.fromObject(retureninfo);
+        return jsonObject.toString();
+    }
+    @RequestMapping(value = "update_s_website2",method = RequestMethod.POST)
+    public String update_s_website2(@RequestBody Subsystem subsystem, HttpServletRequest servletRequest){
+
+        System.out.println("收到update_s_website2"+subsystem.toString());
+        String result;
+        Retureninfo retureninfo=new Retureninfo();
+        try {
+            result=subsystemService.Update_s_website2(subsystem);
+            System.out.println("返回："+result);
+            if(result.equals("update website2 successfully")) {
+                retureninfo.setCode(1);
+                retureninfo.setMsg(result);
+                //servletRequest.setAttribute("result","插入成功");
+            }else {
+                retureninfo.setCode(0);
+                retureninfo.setMsg(result);
+                //servletRequest.setAttribute("result",null);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        JSONObject jsonObject=new JSONObject();
+        jsonObject=JSONObject.fromObject(retureninfo);
+        return jsonObject.toString();
+    }
 }
