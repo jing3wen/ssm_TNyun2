@@ -333,7 +333,16 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+
+    <!--邮箱验证-->
+    <dependency>
+      <groupId>com.sun.mail</groupId>
+      <artifactId>javax.mail</artifactId>
+      <version>1.6.1</version>
+    </dependency>
   </dependencies>
+
+
 
   <build>
     <finalName>ssm_TNyun2</finalName>

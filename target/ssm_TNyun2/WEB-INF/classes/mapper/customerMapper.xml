@@ -6,8 +6,8 @@
     <!-- 添加客户信息 -->
     <insert id="addcustomer"
             parameterType="com.TNyun.entity.customer">
-        insert into customer(id,phone,name,password,type,status)
-        values(#{id},#{phone},#{name},#{password},#{type},#{status})
+        insert into customer(id,phone,name,password,email,status)
+        values(#{id},#{phone},#{name},#{password},#{email},#{status})
     </insert>
 
     <delete id="deleteCustomerByPhone"
@@ -23,6 +23,10 @@
 
     <update id="set_status0" parameterType="java.lang.Integer">
         update customer set status=0 where id= #{id}
+    </update>
+
+    <update id="set_status1ByPhone" parameterType="java.lang.String">
+        update customer set status=1 where phone like concat('%',#{phone},'%')
     </update>
 
     <!--根据客户编号获取客户信息 -->

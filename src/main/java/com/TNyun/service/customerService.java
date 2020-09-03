@@ -14,6 +14,8 @@ public interface customerService {
     //顾客注册
     public String register(customer cus);
 
+    public String activateCustomerByPhone(String phone);
+
     public String deletecustomer(customer cus);
 
     //顾客登陆,以session形式

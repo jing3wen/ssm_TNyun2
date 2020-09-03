@@ -253,6 +253,9 @@
 								<input class="contactus" placeholder="确认密码" type="password" name="conpassword" id="conpassword"></input>
 							</div>
 							<div class="col-sm-12">
+								<input class="contactus" placeholder="邮箱" type="text" name="email" id="email"></input>
+							</div>
+							<div class="col-sm-12">
 								<button type="button" class="send" id="register">注册</button>
 							</div>
 						</div>
@@ -356,23 +359,28 @@
 			var customer={
 				"phone":$("#phone").val(),
 				"name":$("#name").val(),
-				"password":$("#password").val()
+				"password":$("#password").val(),
+				"email":$("#email").val()
 			}
+
+			var myReg=/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;//邮箱格式
+
 			if(customer.phone==""||customer.name==""||customer.password==""||$("#conpassword").val()=="") alert("输入的信息有缺失");
 			else if(!(/^1[3456789]\d{9}$/.test(customer.phone)))  alert("手机号码有误，请重填");
 			else if(customer.password!=$("#conpassword").val()) alert("两次输入的密码不同，请重新输入");
+			else if(!myReg.test(customer.email)) alert("输入正确的邮箱格式");
 			else {
 				$.ajax({
 					type: "POST",
 					url: "/customer/register_post",
 					contentType: "application/json; charset=utf-8",
 					data: JSON.stringify(customer),
-					dataType:"json",
+					dataType:"text",
 					async: "false",
 					success: function (result) {
 						console.log("服务器请求成功");
-						if(result=="the account has been registered") alert("该账号已被注册😢");
-						else alert("👀注册成功!👀")
+						if(result=="register is ok") alert("👀验证邮件已发送到您的邮箱，请注意激活👀");
+						else if(result=="the account has been registered") alert("该账号已被注册😢")
 
 					},
 					error: function () {
@@ -381,6 +389,7 @@
 				})
 			}
 		})
+
 
 
 		$("#login").click(function () {
@@ -460,7 +469,7 @@
 				url: "/customer/current_customer_post",
 				contentType: "application/json; charset=utf-8",
 				dataType:"json",
-				async: "false",
+				async: false,
 				success: function (result) {
 					console.log("服务器请求成功");
 					console.log("当前登录的用户"+result);

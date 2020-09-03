@@ -9,7 +9,7 @@ public class admin {
     private String a_name;
     private String a_phone;
     private String a_password;
-    private String a_type;
+    private String a_email;
     private String a_status;
 
     public void setA_id(int a_id) {
@@ -28,7 +28,7 @@ public class admin {
         this.a_password = a_password;
     }
 
-    public void setA_type(String a_type) { this.a_type = a_type; }
+    public void setA_email(String a_email) { this.a_email = a_email; }
 
     public void setA_status(String a_status) {
         this.a_status = a_status;
@@ -50,7 +50,7 @@ public class admin {
         return a_password;
     }
 
-    public String getA_type() { return a_type; }
+    public String getA_email() { return a_email; }
 
     public String getA_status() {
         return a_status;
@@ -63,7 +63,7 @@ public class admin {
                 ", a_name='" + a_name + '\'' +
                 ", a_phone='" + a_phone + '\'' +
                 ", a_password='" + a_password + '\'' +
-                ", a_type='" + a_type + '\'' +
+                ", a_email='" + a_email + '\'' +
                 ", a_status='" + a_status + '\'' +
                 '}';
     }

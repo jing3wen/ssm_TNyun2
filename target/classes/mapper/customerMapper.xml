@@ -25,6 +25,10 @@
         update customer set status=0 where id= #{id}
     </update>
 
+    <update id="set_status1ByPhone" parameterType="java.lang.String">
+        update customer set status=1 where phone like concat('%',#{phone},'%')
+    </update>
+
     <!--根据客户编号获取客户信息 -->
     <select id="findCustomerById"
             parameterType="java.lang.Integer"

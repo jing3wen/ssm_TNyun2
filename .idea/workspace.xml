@@ -6,11 +6,36 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="8/27提交版本：任务以分配完毕，项目开始阶段，注意：用户登陆模块有问题，为了测试只用了一个静态变量，应用session来登陆">
+    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="9月3号，靖文提交：完成用户注册的邮箱验证，">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/utils/SendMail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mail.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/adminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/customerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/customerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/customerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/customerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/entity/admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/entity/admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/customerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/customerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/customerServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/customerServiceimpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/customerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/com.TNyun.dao/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/com.TNyun.dao/test1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/customerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/customerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/entity/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/customerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/customerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/customerServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/customerServiceimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/customerMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/customerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/customerMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/entity/customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/entity/customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/customerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/customerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/customerServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/customerServiceimpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/customerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/test1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/test1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +69,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="mybatis-mapper" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="properties文件" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -123,10 +149,10 @@
     <treeState>
       <expand>
         <path>
-          <item name="Found 14 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 15 services " type="fcff1e1b:RestServiceStructure$RootNode" />
         </path>
         <path>
-          <item name="Found 14 services " type="fcff1e1b:RestServiceStructure$RootNode" />
+          <item name="Found 15 services " type="fcff1e1b:RestServiceStructure$RootNode" />
           <item name="ssm_TNyun2" type="c588b436:RestServiceStructure$ProjectNode" />
         </path>
       </expand>
@@ -166,7 +192,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test1.findCustomerByPhone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="test1.testActivate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ssm_TNyun2" />
       <extension name="coverage">
         <pattern>
@@ -176,13 +202,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.TNyun.dao" />
       <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.test1" />
-      <option name="METHOD_NAME" value="findCustomerByPhone" />
+      <option name="METHOD_NAME" value="testActivate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test1.testbuyservice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="test1.testMail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ssm_TNyun2" />
       <extension name="coverage">
         <pattern>
@@ -192,7 +218,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.TNyun.dao" />
       <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.test1" />
-      <option name="METHOD_NAME" value="testbuyservice" />
+      <option name="METHOD_NAME" value="testMail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -325,20 +351,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.test1.findCustomerByPhone" />
-      <item itemvalue="JUnit.test1.testbuyservice" />
       <item itemvalue="JUnit.test1.testfindallByC_id" />
       <item itemvalue="JUnit.test1.Simulation_login2" />
       <item itemvalue="JUnit.test1.Simulation_logout" />
+      <item itemvalue="JUnit.test1.testMail" />
+      <item itemvalue="JUnit.test1.testActivate" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.34" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.test1.testActivate" />
+        <item itemvalue="JUnit.test1.testMail" />
         <item itemvalue="JUnit.test1.Simulation_logout" />
         <item itemvalue="JUnit.test1.Simulation_login2" />
         <item itemvalue="JUnit.test1.testfindallByC_id" />
-        <item itemvalue="JUnit.test1.testbuyservice" />
-        <item itemvalue="JUnit.test1.findCustomerByPhone" />
       </list>
     </recent_temporary>
   </component>
@@ -352,6 +378,11 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="完成" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -393,6 +424,11 @@
       <workItem from="1598785478433" duration="3802000" />
       <workItem from="1598870280842" duration="2823000" />
       <workItem from="1598879352251" duration="1995000" />
+      <workItem from="1598925627594" duration="881000" />
+      <workItem from="1598930102678" duration="379000" />
+      <workItem from="1598958071516" duration="644000" />
+      <workItem from="1598961160607" duration="13713000" />
+      <workItem from="1599094465961" duration="7443000" />
     </task>
     <task id="LOCAL-00001" summary="干死黄旭东">
       <created>1596877276130</created>
@@ -440,17 +476,18 @@
     <MESSAGE value="顾客注册功能实现" />
     <MESSAGE value="顾客登陆功能实现" />
     <MESSAGE value="8/27提交版本：任务以分配完毕，项目开始阶段，注意：用户登陆模块有问题，为了测试只用了一个静态变量，应用session来登陆" />
-    <option name="LAST_COMMIT_MESSAGE" value="8/27提交版本：任务以分配完毕，项目开始阶段，注意：用户登陆模块有问题，为了测试只用了一个静态变量，应用session来登陆" />
+    <MESSAGE value="9月3号，靖文提交：完成用户注册的邮箱验证，" />
+    <option name="LAST_COMMIT_MESSAGE" value="9月3号，靖文提交：完成用户注册的邮箱验证，" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="361" y="71" key="#Notifications" timestamp="1597054769386">
+    <state x="361" y="71" key="#Notifications" timestamp="1599094490611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1597054769386" />
-    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598785736699">
+    <state x="361" y="71" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1599094490611" />
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599095184040">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598785736699" />
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599095184040" />
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1596960297349">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -467,10 +504,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598487774722" />
-    <state x="337" y="8" key="CommitChangelistDialog2" timestamp="1598489690232">
+    <state x="337" y="8" key="CommitChangelistDialog2" timestamp="1599102180965">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="337" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598489690232" />
+    <state x="337" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599102180965" />
     <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1596876660388">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -479,54 +516,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="630" y="303" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1596877300486" />
-    <state width="1177" height="210" key="GridCell.Tab.0.bottom" timestamp="1598793536982">
+    <state width="1177" height="228" key="GridCell.Tab.0.bottom" timestamp="1599102181115">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598793536982" />
-    <state width="1177" height="210" key="GridCell.Tab.0.center" timestamp="1598793536982">
+    <state width="1177" height="228" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
+    <state width="1177" height="228" key="GridCell.Tab.0.center" timestamp="1599102181115">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1598793536982" />
-    <state width="1177" height="210" key="GridCell.Tab.0.left" timestamp="1598793536982">
+    <state width="1177" height="228" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
+    <state width="1177" height="228" key="GridCell.Tab.0.left" timestamp="1599102181115">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1598793536982" />
-    <state width="1177" height="210" key="GridCell.Tab.0.right" timestamp="1598793536982">
+    <state width="1177" height="228" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
+    <state width="1177" height="228" key="GridCell.Tab.0.right" timestamp="1599102181115">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598793536982" />
-    <state width="1177" height="210" key="GridCell.Tab.1.bottom" timestamp="1598793536982">
+    <state width="1177" height="228" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
+    <state width="1177" height="228" key="GridCell.Tab.1.bottom" timestamp="1599102181116">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598793536982" />
-    <state width="1177" height="210" key="GridCell.Tab.1.center" timestamp="1598793536982">
+    <state width="1177" height="228" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
+    <state width="1177" height="228" key="GridCell.Tab.1.center" timestamp="1599102181115">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1598793536982" />
-    <state width="1177" height="210" key="GridCell.Tab.1.left" timestamp="1598793536982">
+    <state width="1177" height="228" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
+    <state width="1177" height="228" key="GridCell.Tab.1.left" timestamp="1599102181115">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1598793536982" />
-    <state width="1177" height="210" key="GridCell.Tab.1.right" timestamp="1598793536982">
+    <state width="1177" height="228" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
+    <state width="1177" height="228" key="GridCell.Tab.1.right" timestamp="1599102181115">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1598793536982" />
-    <state width="1177" height="210" key="GridCell.Tab.2.bottom" timestamp="1598793536983">
+    <state width="1177" height="228" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599102181115" />
+    <state width="1177" height="228" key="GridCell.Tab.2.bottom" timestamp="1599102181116">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1598793536983" />
-    <state width="1177" height="210" key="GridCell.Tab.2.center" timestamp="1598793536983">
+    <state width="1177" height="228" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
+    <state width="1177" height="228" key="GridCell.Tab.2.center" timestamp="1599102181116">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1598793536983" />
-    <state width="1177" height="210" key="GridCell.Tab.2.left" timestamp="1598793536983">
+    <state width="1177" height="228" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
+    <state width="1177" height="228" key="GridCell.Tab.2.left" timestamp="1599102181116">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1598793536983" />
-    <state width="1177" height="210" key="GridCell.Tab.2.right" timestamp="1598793536983">
+    <state width="1177" height="228" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
+    <state width="1177" height="228" key="GridCell.Tab.2.right" timestamp="1599102181116">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1177" height="210" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1598793536983" />
+    <state width="1177" height="228" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599102181116" />
     <state width="1024" height="298" key="GridCell.Tab.3.bottom" timestamp="1596889884597">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -543,14 +580,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1024" height="298" key="GridCell.Tab.3.right/0.0.1536.824@0.0.1536.824" timestamp="1596889884597" />
-    <state x="147" y="71" key="MergeDialog" timestamp="1598785686279">
+    <state x="147" y="71" key="MergeDialog" timestamp="1598925811173">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="147" y="71" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1598785686279" />
-    <state x="479" y="128" key="MultipleFileMergeDialog" timestamp="1598785686291">
+    <state x="147" y="71" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1598925811173" />
+    <state x="479" y="128" key="MultipleFileMergeDialog" timestamp="1598926098588">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="479" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1598785686291" />
+    <state x="479" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1598926098588" />
     <state x="349" y="75" key="Registry" timestamp="1597052746128">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -563,26 +600,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598489708703" />
-    <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598925638242">
+    <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1599101954696">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1598925638242" />
+    <state x="562" y="330" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1599101954696" />
     <state x="861" y="108" width="632" height="716" key="find.popup" timestamp="1596885067266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="861" y="108" width="632" height="716" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1596885067266" />
-    <state x="466" y="204" key="git4idea.merge.GitPullDialog" timestamp="1596983037379">
+    <state x="466" y="204" key="git4idea.merge.GitPullDialog" timestamp="1598926108332">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="466" y="204" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1596983037379" />
+    <state x="466" y="204" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1598926108332" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1596965033917">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1596965033917" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1597052634289">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598962066599">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1597052634289" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1598962066599" />
     <state x="449" y="96" key="spring file set editor" timestamp="1596875882925">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
