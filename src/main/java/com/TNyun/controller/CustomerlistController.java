@@ -31,7 +31,7 @@ public class CustomerlistController {
 
         model.addAttribute("customerlist",customerList);
         //model.addAttribute("totals",total);
-        ModelAndView modelAndView=new ModelAndView("Customerlist");
+        ModelAndView modelAndView=new ModelAndView("admin/Customerlist");
         return modelAndView;
     }
     @RequestMapping("/del_customer")

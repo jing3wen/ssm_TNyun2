@@ -37,7 +37,7 @@ public class projectlistController {
 
         model.addAttribute("subsystemlist",subsystemList);
         //model.addAttribute("totals",total);
-        ModelAndView modelAndView=new ModelAndView("Projectlist");
+        ModelAndView modelAndView=new ModelAndView("admin/Projectlist");
         return modelAndView;
     }
     @RequestMapping("/del_subsystem")

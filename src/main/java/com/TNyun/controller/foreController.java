@@ -32,16 +32,16 @@ public class foreController {
         return "admin/charts";
     }
 
+    /*
     @RequestMapping("Customerlist")
     public String fore3(){
         return "admin/Customerlist";
     }
 
-    @RequestMapping("Projectlist")
-    public String fore4(){
-        return "admin/Projectlist";
-    }
 
+    @RequestMapping("Projectlist")
+    public String fore4(){ return "admin/Projectlist"; }
+    */
     @RequestMapping("tables")
     public String fore5(){
         return "admin/tables";
