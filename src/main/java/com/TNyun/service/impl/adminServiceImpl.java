@@ -99,4 +99,9 @@ public class adminServiceImpl implements adminService {
         System.out.println("delete SI_Apply");
 
     }
+
+    @Override
+    public int statistic_people_online() {
+        return adminMapper.statistic_people_online();
+    }
 }

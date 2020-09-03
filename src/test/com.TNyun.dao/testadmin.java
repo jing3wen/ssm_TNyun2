@@ -19,6 +19,13 @@ public class testadmin {
     @Autowired
     private com.TNyun.service.adminService adminService;
     @Test
+    public void statistics(){
+        int total=adminService.statistic_people_online();
+        System.out.println(total);
+
+    }
+
+    @Test
     /*
     * 测试构建
     * */

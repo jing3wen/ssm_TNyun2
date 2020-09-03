@@ -21,4 +21,6 @@ public interface adminService {
 
     public void SetSI_Apply0(String si_phone, String si_email);//将状态置2——拒绝
 
+    int statistic_people_online();
+
 }
