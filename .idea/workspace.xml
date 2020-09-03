@@ -24,20 +24,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="用户列表显示问题修正">
+    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="每个也面用户统计导航部分的添加">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/Customerlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/Customerlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/Projectlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/Projectlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/back.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/back.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/charts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/charts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/tables.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/tables.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/Page/Customerlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/Page/Customerlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/projectlistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/projectlistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/SI_adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/SI_adminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/SI_adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/SI_adminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/serviceorderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/serviceorderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/SI_adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/SI_adminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/adminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/adminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/adminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/adminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/adminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/adminServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,8 +141,8 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.13">
-    <configuration name="testsubsystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.testadmin.statistics">
+    <configuration name="testadmin.statistics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ssm_TNyun2" />
       <extension name="coverage">
         <pattern>
@@ -160,8 +151,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.TNyun.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.testsubsystem" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.testadmin" />
+      <option name="METHOD_NAME" value="statistics" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -341,20 +333,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.testsubsystem" />
       <item itemvalue="JUnit.testsubsystem.Simulation_insert_newsub" />
       <item itemvalue="JUnit.testsubsystem.Simulation_modify" />
       <item itemvalue="JUnit.testsubsystem.Simulaton_select_all" />
       <item itemvalue="JUnit.testsubsystem.test" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.13" />
+      <item itemvalue="JUnit.testadmin.statistics" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testadmin.statistics" />
         <item itemvalue="JUnit.testsubsystem.Simulation_modify" />
         <item itemvalue="JUnit.testsubsystem.Simulation_insert_newsub" />
         <item itemvalue="JUnit.testsubsystem.test" />
         <item itemvalue="JUnit.testsubsystem.Simulaton_select_all" />
-        <item itemvalue="JUnit.testsubsystem" />
       </list>
     </recent_temporary>
   </component>
@@ -401,7 +393,7 @@
       <workItem from="1599103468241" duration="667000" />
       <workItem from="1599111915610" duration="156000" />
       <workItem from="1599118710330" duration="8787000" />
-      <workItem from="1599129766833" duration="3473000" />
+      <workItem from="1599129766833" duration="5165000" />
     </task>
     <task id="LOCAL-00001" summary="干死黄旭东">
       <created>1596877276130</created>
@@ -487,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599132716379</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="每个也面用户统计导航部分的添加">
+      <created>1599133296603</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1599133296604</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +536,8 @@
     <MESSAGE value="查询前端success" />
     <MESSAGE value="服务修改完成" />
     <MESSAGE value="用户列表显示问题修正" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户列表显示问题修正" />
+    <MESSAGE value="每个也面用户统计导航部分的添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="每个也面用户统计导航部分的添加" />
   </component>
   <component name="WindowStateProjectService">
     <state x="301" y="59" key="#Notifications" timestamp="1599025628403">
@@ -558,10 +558,10 @@
     </state>
     <state x="186" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599017534452" />
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1597997546632" />
-    <state x="478" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1599019905171">
+    <state x="478" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1599133521888">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="478" y="82" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1599019905171" />
+    <state x="478" y="82" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1599133521888" />
     <state x="478" y="87" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1598877991706" />
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1596960297349" />
     <state x="603" y="271" width="329" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1596958997319">
@@ -576,10 +576,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598487774722" />
-    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1599132709299">
+    <state x="281" y="0" key="CommitChangelistDialog2" timestamp="1599133290037">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1599132709299" />
+    <state x="281" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1599133290037" />
     <state x="337" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599104300298" />
     <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1599131453652">
       <screen x="0" y="0" width="1280" height="680" />
@@ -702,10 +702,10 @@
     </state>
     <state x="336" y="0" width="914" height="680" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1599112021933" />
     <state x="206" y="59" width="996" height="707" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599103616529" />
-    <state x="301" y="120" key="Vcs.Push.Dialog.v2" timestamp="1599132720315">
+    <state x="301" y="120" key="Vcs.Push.Dialog.v2" timestamp="1599133300266">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599132720315" />
+    <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599133300266" />
     <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1596983626816" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1598888326647">
       <screen x="0" y="0" width="1280" height="680" />

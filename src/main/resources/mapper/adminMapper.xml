@@ -46,6 +46,12 @@
         select * from SI_admin where si_phone like concat('%',#{si_phone},'%')
     </select>
 
+    <select id="statistic_people_online"
+            resultType="java.lang.Integer">
+        select count(*) from customer where status='1';
+    </select>
+
+
     <delete id="deleteSI_adminByPhone"
             parameterType="String">
         delete from SI_apply where si_phone like concat('%',#{si_phone},'%')
