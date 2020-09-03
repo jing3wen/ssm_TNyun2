@@ -11,13 +11,13 @@
     <meta name="author" content="">
     <title>TN云</title>
     <!-- Bootstrap core CSS-->
-    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
-    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Page level plugin SS-->
-    <link href="../../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="../../css/后台css/sb-admin.css" rel="stylesheet">
+    <link href="../css/后台css/sb-admin.css" rel="stylesheet">
 
     <!--icon图标库css-->
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
@@ -34,19 +34,19 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="back">
+                <a class="nav-link" href="../back">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">所有功能</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="charts">
+                <a class="nav-link" href="../charts">
                     <i class="fa fa-fw fa-area-chart"></i>
                     <span class="nav-link-text">用户使用统计</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="tables">
+                <a class="nav-link" href="../tables">
                     <i class="fa fa-fw fa-table"></i>
                     <span class="nav-link-text">已购系统</span>
                 </a>
@@ -58,13 +58,13 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="Customerlist">用户列表</a>
+                        <a href="../Customerlist">用户列表</a>
                     </li>
                     <li>
-                    <a href="Customerlist">用户购买</a>
+                    <a href="../serverorderlist">用户购买</a>
                     </li>
                     <li>
-                    <a href="customerpurchase">入驻申请</a>
+                    <a href="../customerpurchase">入驻申请</a>
                     </li>
                 </ul>
             </li>
@@ -344,19 +344,19 @@
 
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="../../vendor/chart.js/Chart.min.js"></script>
-    <script src="../../vendor/datatables/jquery.dataTables.js"></script>
-    <script src="../../vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="../vendor/chart.js/Chart.min.js"></script>
+    <script src="../endor/datatables/jquery.dataTables.js"></script>
+    <script src="../vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="../../js/后台js/sb-admin.min.js"></script>
+    <script src="../js/后台js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
-    <script src="../../js/后台js/sb-admin-charts.min.js"></script>
+    <script src="../js/后台js/sb-admin-datatables.min.js"></script>
+    <script src="../js/后台js/sb-admin-charts.min.js"></script>
 </div>
 <script type="text/javascript">
     $(function () {

@@ -75,7 +75,7 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="Projectlist">项目列表</a>
+              <a href="${pageContext.request.contextPath}/Projectlist/subsystemlist">项目列表</a>
             </li>
             <li>
               <a href="#">未分配</a>
@@ -262,17 +262,17 @@
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
     <script src="vendor/datatables/jquery.dataTables.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
-    <script src="../../js/后台js/sb-admin.min.js"></script>
+    <script src="../../../js/后台js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="../../js/后台js/sb-admin-datatables.min.js"></script>
+    <script src="../../../js/后台js/sb-admin-datatables.min.js"></script>
   </div>
 
 

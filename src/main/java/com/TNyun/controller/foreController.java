@@ -24,27 +24,27 @@ public class foreController {
 
     @RequestMapping("back")
     public String fore1(){
-        return "back";
+        return "admin/back";
     }
 
     @RequestMapping("charts")
     public String fore2(){
-        return "charts";
+        return "admin/charts";
     }
 
     @RequestMapping("Customerlist")
     public String fore3(){
-        return "Customerlist";
+        return "admin/Customerlist";
     }
 
     @RequestMapping("Projectlist")
     public String fore4(){
-        return "Projectlist";
+        return "admin/Projectlist";
     }
 
     @RequestMapping("tables")
     public String fore5(){
-        return "tables";
+        return "admin/tables";
     }
 
 }

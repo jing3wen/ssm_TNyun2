@@ -119,20 +119,7 @@ public class test1 {
         }
     }
 
-    @Test
-    public void testbuyservice(){
-        serviceorder ser=new serviceorder();
-        SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");//设置日期格式
-        String time=df.format(new Date());// new Date()为获取当前系统时间
-        ser.setTime(time);
-        ser.setC_id(123458);
-        ser.setC_name("诺娃");
-        ser.setS_id(4);
-        ser.setS_name("SI管理系统");
-        ser.setRent_time("3days");
-        ser.setAgree("1");
-        serviceOrderService.addService(ser);
-    }
+
 
     @Test
     public void testfindallByC_id(){
