@@ -25,8 +25,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/Customerlist.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/backPublic/test.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/Customerlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/Customerlist.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/backPublic/backFooter.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/backPublic/backFooter.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/backPublic/backHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/backPublic/backHeader.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/SI_adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/SI_adminMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/adminMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/SI_adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/SI_adminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/adminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/adminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/adminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SI_adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/SI_adminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/adminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/foreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/foreController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/projectlistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/projectlistController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/SI_adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/SI_adminMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/adminMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/SI_adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/SI_adminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/adminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/adminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/adminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/SI_adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/SI_adminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/adminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/testAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/testAdmin.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +125,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Github-orderonline-本地测试" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Github-orderonline-本地测试/XIDIANweb_本地测试" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -112,10 +135,6 @@
     <selection>jr</selection>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\WEB-INF\Page\admin" />
-      <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\WEB-INF\Page" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.TNyun.dao" />
     </key>
@@ -125,6 +144,10 @@
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src" />
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\resources" />
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\WEB-INF\Page\admin" />
+      <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\WEB-INF\Page" />
     </key>
   </component>
   <component name="RestServicesNavigator">
@@ -362,7 +385,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="完成" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="运行" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -413,6 +436,7 @@
       <workItem from="1599035678906" duration="10253000" />
       <workItem from="1599103468241" duration="2237000" />
       <workItem from="1599129486620" duration="3571000" />
+      <workItem from="1599177624477" duration="8611000" />
     </task>
     <task id="LOCAL-00001" summary="干死黄旭东">
       <created>1596877276130</created>
@@ -505,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599141270549</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="9月3号,靖文第4次提交：解决后台路由请求问题，优化所有页面">
+      <created>1599141512355</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1599141512355</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,84 +625,84 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599141472748" />
-    <state x="274" y="8" key="CommitChangelistDialog2" timestamp="1599141265803">
+    <state x="274" y="8" key="CommitChangelistDialog2" timestamp="1599187467994">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="281" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1599037201995" />
-    <state x="274" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599141265803" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1599137979176">
+    <state x="274" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599187467994" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1599183074080">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="458" y="139" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1599026088584" />
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599137979176" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599183074080" />
     <state x="630" y="303" key="Github.ShareDialog" timestamp="1596877300486">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="630" y="303" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1596877300486" />
-    <state width="947" height="315" key="GridCell.Tab.0.bottom" timestamp="1599141459021">
+    <state width="944" height="207" key="GridCell.Tab.0.bottom" timestamp="1599187397098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
     <state width="1237" height="174" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
-    <state width="947" height="315" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599141459021" />
-    <state width="947" height="315" key="GridCell.Tab.0.center" timestamp="1599141459021">
+    <state width="944" height="207" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599187397098" />
+    <state width="944" height="207" key="GridCell.Tab.0.center" timestamp="1599187397098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
     <state width="1237" height="174" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
-    <state width="947" height="315" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599141459021" />
-    <state width="947" height="315" key="GridCell.Tab.0.left" timestamp="1599141459021">
+    <state width="944" height="207" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599187397098" />
+    <state width="944" height="207" key="GridCell.Tab.0.left" timestamp="1599187397098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
     <state width="1237" height="174" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
-    <state width="947" height="315" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599141459021" />
-    <state width="947" height="315" key="GridCell.Tab.0.right" timestamp="1599141459021">
+    <state width="944" height="207" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599187397098" />
+    <state width="944" height="207" key="GridCell.Tab.0.right" timestamp="1599187397098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
     <state width="1237" height="174" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
-    <state width="947" height="315" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599141459021" />
-    <state width="947" height="315" key="GridCell.Tab.1.bottom" timestamp="1599141459022">
+    <state width="944" height="207" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599187397098" />
+    <state width="944" height="207" key="GridCell.Tab.1.bottom" timestamp="1599187397099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
-    <state width="947" height="315" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599141459022" />
-    <state width="947" height="315" key="GridCell.Tab.1.center" timestamp="1599141459022">
+    <state width="944" height="207" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599187397099" />
+    <state width="944" height="207" key="GridCell.Tab.1.center" timestamp="1599187397098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
-    <state width="947" height="315" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599141459022" />
-    <state width="947" height="315" key="GridCell.Tab.1.left" timestamp="1599141459022">
+    <state width="944" height="207" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599187397098" />
+    <state width="944" height="207" key="GridCell.Tab.1.left" timestamp="1599187397098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
-    <state width="947" height="315" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599141459022" />
-    <state width="947" height="315" key="GridCell.Tab.1.right" timestamp="1599141459022">
+    <state width="944" height="207" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599187397098" />
+    <state width="944" height="207" key="GridCell.Tab.1.right" timestamp="1599187397099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
-    <state width="947" height="315" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599141459022" />
-    <state width="947" height="315" key="GridCell.Tab.2.bottom" timestamp="1599141459022">
+    <state width="944" height="207" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599187397099" />
+    <state width="944" height="207" key="GridCell.Tab.2.bottom" timestamp="1599187397100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
-    <state width="947" height="315" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599141459022" />
-    <state width="947" height="315" key="GridCell.Tab.2.center" timestamp="1599141459022">
+    <state width="944" height="207" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599187397099" />
+    <state width="944" height="207" key="GridCell.Tab.2.center" timestamp="1599187397099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
-    <state width="947" height="315" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599141459022" />
-    <state width="947" height="315" key="GridCell.Tab.2.left" timestamp="1599141459022">
+    <state width="944" height="207" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599187397099" />
+    <state width="944" height="207" key="GridCell.Tab.2.left" timestamp="1599187397099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
-    <state width="947" height="315" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599141459022" />
-    <state width="947" height="315" key="GridCell.Tab.2.right" timestamp="1599141459022">
+    <state width="944" height="207" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599187397099" />
+    <state width="944" height="207" key="GridCell.Tab.2.right" timestamp="1599187397099">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="443" height="208" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
-    <state width="947" height="315" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599141459022" />
+    <state width="944" height="207" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599187397099" />
     <state width="1024" height="298" key="GridCell.Tab.3.bottom" timestamp="1596889884597">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -710,20 +741,20 @@
     </state>
     <state x="449" y="76" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1598886582951" />
     <state x="449" y="80" key="RollbackChangesDialog/0.0.1280.720@0.0.1280.720" timestamp="1598885954320" />
-    <state x="206" y="59" width="914" height="680" key="SettingsEditor" timestamp="1599103616529">
+    <state x="206" y="59" width="914" height="680" key="SettingsEditor" timestamp="1599187391317">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="336" y="0" width="914" height="680" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1599025341626" />
-    <state x="206" y="59" width="996" height="707" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599103616529" />
+    <state x="206" y="59" width="996" height="707" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599187391317" />
     <state x="623" y="328" key="VCS.ChangelistChooser" timestamp="1599135976320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="623" y="328" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1599135976320" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1599104335208">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1599141520997">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599037209487" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599104335208" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599141520997" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1598888326647">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -746,10 +777,10 @@
     </state>
     <state x="-7" y="0" width="653" height="687" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1599043775799" />
     <state x="-7" y="0" width="802" height="727" key="dock-window-1/0.0.1280.720@0.0.1280.720" timestamp="1598875617351" />
-    <state x="861" y="108" width="632" height="716" key="find.popup" timestamp="1596885067266">
+    <state x="861" y="108" width="632" height="716" key="find.popup" timestamp="1599182663717">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="861" y="108" width="632" height="716" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1596885067266" />
+    <state x="861" y="108" width="632" height="716" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599182663717" />
     <state x="466" y="204" key="git4idea.merge.GitPullDialog" timestamp="1599141282226">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -5,7 +5,7 @@
   Time: 20:37
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>  
 
 <head>
     <meta charset="utf-8">
@@ -15,16 +15,19 @@
     <meta name="author" content="">
     <title>TN云</title>
     <!-- Bootstrap core CSS-->
-    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!-- Custom fonts for this template-->
-    <link href="../../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="${pageContext.request.contextPath}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <!-- Page level plugin SS-->
-    <link href="../../vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="../../css/后台css/sb-admin.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/后台css/sb-admin.css" rel="stylesheet">
 
     <!--icon图标库css-->
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.staticfile.org/ionicons/2.0.1/css/ionicons.min.css">
+
+
+
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -77,10 +80,10 @@
                         <a href="${pageContext.request.contextPath}/Customerlist/customerlist">用户列表</a>
                     </li>
                     <li>
-                        <a href="Customerlist">用户购买</a>
+                        <a href="Customerlist">开发商列表</a>
                     </li>
                     <li>
-                        <a href="customerpurchase">入驻申请</a>
+                        <a href="customerpurchase">管理员列表</a>
                     </li>
                 </ul>
             </li>
@@ -162,17 +165,6 @@
     </div>
 </nav>
 
-<!-- Bootstrap core JavaScript-->
-<script src="../../../vendor/jquery/jquery.min.js"></script>
-<script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- Core plugin JavaScript-->
-<script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
-<!-- Page level plugin JavaScript-->
-<script src="../../../vendor/chart.js/Chart.min.js"></script>
-<script src="vendor/datatables/jquery.dataTables.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.js"></script>
-<!-- Custom scripts for all pages-->
-<script src="js/sb-admin.min.js"></script>
-<!-- Custom scripts for this page-->
-<script src="../../../js/后台js/sb-admin-datatables.min.js"></script>
-<script src="../../../js/后台js/sb-admin-charts.min.js"></script>
+
+
+

@@ -86,6 +86,7 @@
                             <th>电话</th>
                             <th>邮箱</th>
                             <th>状态</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -123,8 +124,10 @@
     <%@include file="backPublic/backFooter.jsp"%>
 
 
-
 </div>
+
+
+
 <script type="text/javascript">
     $(function () {
         $("a").click(function () {
