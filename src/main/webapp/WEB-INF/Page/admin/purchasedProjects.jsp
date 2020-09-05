@@ -36,19 +36,36 @@
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>
-                 <a deleteLink="true" href=""
-                                       class="ml-5" style="...">
-                                        <span class="label label-success radius">删除</span>
-                                    </a>
-                </td>
-              </tr>
+              <c:forEach items="${purchasedlist}" var="plist">
+                  <tr class="text-c">
+                      <td>${plist.c_id}</td>
+                      <td>${plist.c_name}</td>
+                      <td>${plist.s_name}</td>
+                      <td>${plist.s_id}</td>
+                      <td>${plist.time}</td>
+                      <td>
+                          <c:if test="${plist.agree==1}">使用</c:if>
+                          <c:if test="${plist.agree==2}">已购买</c:if>
+                          <c:if test="${plist.agree==3}">过期</c:if>
+                      </td>
+                      <td>
+
+                          <a deleteLink="true" href="/purchasedProjects/setagree1?c_id=${plist.id}&s_id=${plist.s_id}"
+                             class="ml-5" style="...">
+                              <button type="button" class="btn btn-danger radius" id="">试用</button>
+                          </a>
+                          <a deleteLink="true" href="/purchasedProjects/setagree2?c_id=${plist.id}&s_id=${plist.s_id}"
+                             class="ml-5" style="...">
+                              <button type="button" class="btn btn-danger radius" id="">ma</button>
+                          </a>
+                          <a deleteLink="true" href="/purchasedProjects/setagree3?c_id=${plist.id}&s_id=${plist.s_id}"
+                             class="ml-5" style="...">
+                              <button type="button" class="btn btn-danger radius" id="">试用</button>
+                          </a>
+
+                      </td>
+                  </tr>
+              </c:forEach>
               </tbody>
                     </table>
                     <input type="button" value="另存为 Excel" onClick="javascript:method1('customerlist')">

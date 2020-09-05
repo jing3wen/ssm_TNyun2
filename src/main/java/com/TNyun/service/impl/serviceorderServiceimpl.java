@@ -10,6 +10,7 @@ import java.util.Calendar;
 
 
 @Service
+abstract
 class serviceorderServiceImpl implements serviceorderService{
 
     @Autowired
@@ -45,7 +46,7 @@ class serviceorderServiceImpl implements serviceorderService{
     }
     //查询相关顾客所有购买的子系统服务
     @Override
-    public List<serviceorder> findallByC_id(int c_id){
-        return serviceorderMapper.findallByC_id(c_id);
+    public List<serviceorder> findall(){
+        return serviceorderMapper.findall();
     }
 }

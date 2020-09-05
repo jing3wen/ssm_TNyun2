@@ -31,7 +31,6 @@ public interface SI_adminMapper {
 
     void Delete_customer_by_id(int id);
 
-    void update_customer(customer cst);
 
     void Update_s_name(customer customer);
 

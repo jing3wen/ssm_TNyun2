@@ -14,10 +14,9 @@
         delete * from  serviceorder where c_id=#{c_id} and s_id=#{s_id}
     </delete>
 
-    <select id="findallByC_id"
-            parameterType="java.lang.Integer"
+    <select id="findall"
             resultType="com.TNyun.entity.serviceorder">
-        select * from serviceorder where c_id=#{c_id}
+        select * from serviceorder
     </select>
 
 

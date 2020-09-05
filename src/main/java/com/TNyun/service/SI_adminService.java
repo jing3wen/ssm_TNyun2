@@ -26,7 +26,6 @@ public interface SI_adminService {
 
     void Delete_customer_by_id(int id);
 
-    void update_customer(customer cst);
     String Update_s_name(customer customer);
     String Update_s_phone(customer customer);
     String Update_s_email(customer customer);

@@ -20,61 +20,6 @@
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-table"></i>用户列表
-                <button type="button"
-                        style="float:right"
-                        class="icon icon ion-plus-round btn btn-outline-dark"
-                        data-toggle="modal"
-                        data-target="#myModal"
-                        id="insert_subsystem1">修改
-                </button>
-                <div class="modal fade" id="myModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-
-                            <!-- 模态框头部 -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">请输入用户信息</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <!-- 模态框主体 -->
-                            <div class="modal-body">
-
-                                <div class="input-group mb-3 input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">用户ID</span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="用户ID" id="id" name="id">
-                                </div>
-                                <div class="input-group mb-3 input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">用户姓名</span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="用户姓名" id="name" name="name">
-                                </div>
-                                <div class="input-group mb-3 input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">电话</span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="电话" id="phone" name="phone">
-                                </div>
-                                <div class="input-group mb-3 input-group-sm">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">邮箱</span>
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="邮箱" id="email" name="email">
-                                </div>
-                            </div>
-
-                            <!-- 模态框底部 -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                                <button type="button" class="btn btn-primary" id="submit_insert_customerlist">提交</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -101,14 +46,59 @@
                                     <c:if test="${cust.status==0}">不可用</c:if>
                                 </td>
                                 <td>
+                                    <button type="button"
+                                            class="btn btn-primary radius"
+                                            data-toggle="modal"
+                                            data-target="#modifyModal"
+                                            onclick="showDialog(this)"
+                                            id="modifysubsystem">修改
+                                    </button>
+
                                     <a deleteLink="true" href="/Customerlist/del_customer?id=${cust.id}"
                                        class="ml-5" style="...">
-                                        <span class="label label-success radius">删除</span>
+                                        <button type="button" class="btn btn-danger radius" id="">删除</button>
                                     </a>
 
                                 </td>
                             </tr>
                         </c:forEach>
+                        <div class="modal fade" id="modifyModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <!-- 模态框头部 -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">请输入修改信息</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <!-- 模态框主体 -->
+                                    <div class="modal-body">
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_id" name="modify_id">
+                                            <button type="button" class="btn btn-primary" >用户ID</button>
+                                        </div>
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_name" name="modify_name">
+                                            <button type="button" class="btn btn-primary" id="update_s_name">修改用户名称</button>
+                                        </div>
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_phone" name="modify_phone">
+                                            <button type="button" class="btn btn-primary" id="update_s_phone">修改电话</button>
+                                        </div>
+                                        <div class="input-group mb-3 input-group-sm">
+                                            <input type="text" class="form-control"  id="modify_email" name="modify_email">
+                                            <button type="button" class="btn btn-primary" id="update_s_email">修改邮箱</button>
+                                        </div>
+                                    </div>
+                                    <!-- 模态框底部 -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                         </tbody>
                     </table>
                     <input type="button" value="另存为 Excel" onClick="javascript:method1('customerlist')">
@@ -153,9 +143,9 @@
         //(".id"):通过class属性获取当前需要填写数据的输入框
         //$(tds.eq(0)).text():通过下标取得对应列中的值
         $("#modify_id").val($(tds.eq(0)).text());
-        $("#modify_name").val($(tds.eq(3)).text());
-        $("#modify_phone").val($(tds.eq(4)).text());
-        $("#modify_email").val($(tds.eq(5)).text());
+        $("#modify_name").val($(tds.eq(1)).text());
+        $("#modify_phone").val($(tds.eq(2)).text());
+        $("#modify_email").val($(tds.eq(3)).text());
 
     }
 
@@ -202,7 +192,7 @@
             "s_price": $("#modify_phone").val(),
         };
 
-        var confirmInsert=confirm("确定修改价格？")
+        var confirmInsert=confirm("确定修改电话？")
         if(confirmInsert)
         {
             $.ajax({
@@ -240,7 +230,7 @@
             "s_website1": $("#modify_email").val(),
         };
 
-        var confirmInsert=confirm("确定修改前端站点？")
+        var confirmInsert=confirm("确定修改邮箱？")
         if(confirmInsert)
         {
             $.ajax({

@@ -17,7 +17,6 @@ public interface serviceorderService {
     //顾客删除子系统服务
     public String deleteService(int c_id,int s_id);
     //查询相关顾客所有购买的子系统服务
-    List<serviceorder> findallByC_id(int c_id);
-
+    List<serviceorder> findall();
     //查询服务
 }

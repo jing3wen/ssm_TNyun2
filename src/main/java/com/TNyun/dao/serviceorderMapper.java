@@ -15,6 +15,6 @@ public interface serviceorderMapper {
 
     void deleteOneByC_idAndS_id(int c_id,int s_id);
 
-    List<serviceorder> findallByC_id(int c_id);
+    List<serviceorder> findall();
 
 }

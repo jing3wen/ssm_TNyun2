@@ -95,12 +95,6 @@ public class SI_adminServiceimpl implements SI_adminService{
     }
 
     @Override
-    public void update_customer(customer cst){
-
-        SI_adminMapper.update_customer(cst);
-    }
-
-    @Override
     public String Update_s_name(customer customer) {
        SI_adminMapper.Update_s_name(customer);
         customer subsystem1=new customer();
