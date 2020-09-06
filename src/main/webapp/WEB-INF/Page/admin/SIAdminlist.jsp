@@ -12,21 +12,21 @@
             <li class="breadcrumb-item">
                 <a href="#">用户管理</a>
             </li>
-            <li class="breadcrumb-item active">管理员列表</li>
+            <li class="breadcrumb-item active">开发商列表</li>
         </ol>
 
         <!-- 全部系统服务表格-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i>管理员列表
+                <i class="fa fa-table"></i>开发商列表
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id=:"adminlist">
+                    <table class="table table-bordered" id=:"siadminlist">
                         <thead>
                         <tr>
-                            <th>管理员ID</th>
-                            <th>管理员姓名</th>
+                            <th>开发商ID</th>
+                            <th>开发商姓名</th>
                             <th>电话</th>
                             <th>邮箱</th>
                             <th>状态</th>
@@ -34,15 +34,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${adminlist}" var="admin">
+                        <c:forEach items="${siadminlist}" var="si_admin">
                             <tr class="text-c">
-                                <td>${admin.id}</td>
-                                <td>${admin.name}</td>
-                                <td>${admin.phone}</td>
-                                <td>${admin.email}</td>
+                                <td>${si_admin.id}</td>
+                                <td>${si_admin.name}</td>
+                                <td>${si_admin.phone}</td>
+                                <td>${si_admin.email}</td>
                                 <td>
-                                    <c:if test="${admin.status==1}">可用</c:if>
-                                    <c:if test="${admin.status==0}">不可用</c:if>
+                                    <c:if test="${si_admin.status==1}">可用</c:if>
+                                    <c:if test="${si_admin.status==0}">不可用</c:if>
                                 </td>
                                 <td>
                                     <button type="button"
@@ -75,11 +75,11 @@
                                     <div class="modal-body">
                                         <div class="input-group mb-3 input-group-sm">
                                             <input type="text" class="form-control"  id="modify_id" name="modify_id">
-                                            <button type="button" class="btn btn-primary" >管理员ID</button>
+                                            <button type="button" class="btn btn-primary" >开发商ID</button>
                                         </div>
                                         <div class="input-group mb-3 input-group-sm">
                                             <input type="text" class="form-control"  id="modify_name" name="modify_name">
-                                            <button type="button" class="btn btn-primary" id="update_s_name">管理员名称</button>
+                                            <button type="button" class="btn btn-primary" id="update_s_name">修改开发商名称</button>
                                         </div>
                                         <div class="input-group mb-3 input-group-sm">
                                             <input type="text" class="form-control"  id="modify_phone" name="modify_phone">
@@ -100,7 +100,7 @@
                         </div>
                         </tbody>
                     </table>
-                    <input type="button" value="另存为 Excel" onClick="javascript:method1('adminlist')">
+                    <input type="button" value="另存为 Excel" onClick="javascript:method1('siadminlist')">
                 </div>
 
             </div>
@@ -357,4 +357,3 @@
 </body>
 
 </html>
-
