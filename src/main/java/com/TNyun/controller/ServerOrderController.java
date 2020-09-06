@@ -1,6 +1,8 @@
 package com.TNyun.controller;
 
+import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
+import com.TNyun.service.serviceorderService;
 import com.TNyun.service.SI_adminService;
 import com.TNyun.util.Page;
 import com.github.pagehelper.PageHelper;
@@ -51,5 +53,29 @@ public class ServerOrderController {
         SI_adminService.Overdue(c_id, s_id);
         ModelAndView modelAndView = new ModelAndView("redirect:ServerOrderlist");
         return modelAndView;
+    }
+
+    @Autowired
+    private serviceorderService serviceorderService;
+
+    @RequestMapping("/addService")
+    public ModelAndView addService(customer cus, int S_id, String S_name) {
+        serviceorderService.addService(cus,S_id,S_name);
+        ModelAndView mv = new ModelAndView("redirect:ServiceOrderlist");
+        return mv;
+    }
+
+    @RequestMapping("/deleteService")
+    public ModelAndView deleteService(int c_id,int s_id) {
+        serviceorderService.deleteService(c_id,s_id);
+        ModelAndView mv = new ModelAndView("redirect:ServiceOrderlist");
+        return mv;
+    }
+
+    @RequestMapping("/diaplayAllService")
+    public ModelAndView diaplayAllService() {
+        List<serviceorder> so=serviceorderService.findall();
+        ModelAndView mv = new ModelAndView("redirect:ServiceOrderlist");
+        return mv;
     }
 }
