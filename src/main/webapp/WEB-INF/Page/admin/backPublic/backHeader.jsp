@@ -50,14 +50,14 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseStatistics" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-area-chart"></i>
-                    <span class="nav-link-text">用户使用统计</span>
+                    <span class="nav-link-text">用户统计及相关请求</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseStatistics">
                     <li>
-                        <a href="${pageContext.request.contextPath}/charts">用户统计</a>
+                        <a href="${pageContext.request.contextPath}/charts">用户使用统计</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/ServerOrder/ServerOrderlist">用户购买</a>
+                        <a href="${pageContext.request.contextPath}/ServerOrder/ServerOrderlist">购买服务订单</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/SIApplylist">入驻申请</a>

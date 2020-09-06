@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class ServerOrderController {
     @Autowired
     private SI_adminService SI_adminService;
 
-    @RequestMapping("/ServerOrderlist")
+    @RequestMapping(value = "/ServerOrderlist")
     public ModelAndView list(Model model, Page page) {
         PageHelper.offsetPage(page.getStart(), page.getCount());
         List<serviceorder> purchaselist = SI_adminService.findalls();
