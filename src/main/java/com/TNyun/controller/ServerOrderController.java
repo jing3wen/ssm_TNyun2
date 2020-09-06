@@ -60,14 +60,14 @@ public class ServerOrderController {
     @RequestMapping("/addService")
     public ModelAndView addService(customer cus, int S_id, String S_name) {
         serviceorderService.addService(cus,S_id,S_name);
-        ModelAndView mv = new ModelAndView("redirect:erviceoOrderlist");
+        ModelAndView mv = new ModelAndView("redirect:ServiceOrderlist");
         return mv;
     }
 
     @RequestMapping("/deleteService")
     public ModelAndView deleteService(int c_id,int s_id) {
         serviceorderService.deleteService(c_id,s_id);
-        ModelAndView mv = new ModelAndView("redirect:erviceoOrderlist");
+        ModelAndView mv = new ModelAndView("redirect:ServiceOrderlist");
         return mv;
     }
 
