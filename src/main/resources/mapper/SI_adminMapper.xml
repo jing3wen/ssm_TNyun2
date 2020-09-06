@@ -56,6 +56,11 @@
         delete from customer where id like concat('%',#{id},'%')
     </delete>
 
+    <select id="findalls"
+            resultType="com.TNyun.entity.serviceorder">
+        select * from serviceorder
+    </select>
+
 
     <update id="Update_s_name" parameterType="com.TNyun.entity.customer">
         update customer set name=#{name} where id = #{id}

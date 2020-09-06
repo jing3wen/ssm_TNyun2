@@ -133,4 +133,9 @@ public class SI_adminServiceimpl implements SI_adminService{
         }
     }
 
+    @Override
+    public List<serviceorder> findalls(){
+        return SI_adminMapper.findalls();
+    }
+
 }

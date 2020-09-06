@@ -16,6 +16,7 @@ public interface SI_adminMapper {
     SI_admin findSI_AdminByphone(String  si_phone);//名字查找SI用户密码
 
     customer Find_cus_by_id(int id);
+    List<serviceorder> findalls();
 
     void set_SI_status1(String  si_phone);//将状态置1（登录时使用）
 

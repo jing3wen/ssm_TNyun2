@@ -30,4 +30,6 @@ public interface SI_adminService {
     String Update_s_phone(customer customer);
     String Update_s_email(customer customer);
 
+    List<serviceorder> findalls();
+
 }

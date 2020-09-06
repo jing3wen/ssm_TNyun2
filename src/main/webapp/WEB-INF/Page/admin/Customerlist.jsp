@@ -151,8 +151,8 @@
 
     $("#update_s_name").click(function () {
         const subsystem = {
-            "s_id": $("#modify_id").val(),
-            "s_introduction": $("#modify_name").val(),
+            "id": $("#modify_id").val(),
+            "name": $("#modify_name").val(),
         };
 
         var confirmInsert=confirm("确定修改名字？")
@@ -188,8 +188,8 @@
     });
     $("#update_s_phone").click(function () {
         const subsystem = {
-            "s_id": $("#modify_id").val(),
-            "s_price": $("#modify_phone").val(),
+            "id": $("#modify_id").val(),
+            "phone": $("#modify_phone").val(),
         };
 
         var confirmInsert=confirm("确定修改电话？")
@@ -226,8 +226,8 @@
 
     $("#update_s_email").click(function () {
         const subsystem = {
-            "s_id": $("#modify_id").val(),
-            "s_website1": $("#modify_email").val(),
+            "id": $("#modify_id").val(),
+            "email": $("#modify_email").val(),
         };
 
         var confirmInsert=confirm("确定修改邮箱？")
