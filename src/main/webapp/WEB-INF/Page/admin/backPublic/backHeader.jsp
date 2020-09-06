@@ -57,10 +57,10 @@
                         <a href="${pageContext.request.contextPath}/charts">用户统计</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/purchasedProjects/purchaselist">用户购买</a>
+                        <a href="${pageContext.request.contextPath}/ServerOrder/ServerOrderlist">用户购买</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/applyforSIAdminList">入驻申请</a>
+                        <a href="${pageContext.request.contextPath}/SIApplylist">入驻申请</a>
                     </li>
                 </ul>
             </li>
@@ -80,10 +80,10 @@
                         <a href="${pageContext.request.contextPath}/Customerlist/customerlist">用户列表</a>
                     </li>
                     <li>
-                        <a href="Customerlist">开发商列表</a>
+                        <a href="${pageContext.request.contextPath}/SIAdminlist">开发商列表</a>
                     </li>
                     <li>
-                        <a href="customerpurchase">管理员列表</a>
+                        <a href="${pageContext.request.contextPath}/adminlist">管理员列表</a>
                     </li>
                 </ul>
             </li>
@@ -94,7 +94,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePages">
                     <li>
-                        <a href="/Projectlist/subsystemlist">项目列表</a>
+                        <a href="${pageContext.request.contextPath}/Projectlist/subsystemlist">项目列表</a>
                     </li>
                     <li>
                         <a href="#">未分配</a>

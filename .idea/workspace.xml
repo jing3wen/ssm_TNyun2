@@ -24,60 +24,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="9月6号,靖文第1次提交：完成用户购买服务的页面,修复购买服务页面bug">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/applyforSIAdminList.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/customer/Pay.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/customer/buySubsystem.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/万能收款码.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/注册页面js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/注册页面js/scrollable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/step-lay/step.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/step-lay/step.js" afterDir="false" />
+    <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="9月6号,靖文第2次提交：对一些页面进行重命名，loginController类里面写所有用户的登陆登出操作,普通用户申请成为开发商，写入">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/SIAdminController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/loginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/SIAdminlist.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/adminlist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/PurchasedProiectsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/ServerOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/foreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/foreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/serviceorderServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/serviceorderServiceimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/Projectlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/Projectlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/applyForSIAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/applyForSIAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/applyForSIAdmin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/customer/applyForSIAdmin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/applyforSIAdminList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/SIApplylist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/backPublic/backHeader.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/backPublic/backHeader.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/charts.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/charts.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/purchasedProjects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/purchasedProjects.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/customer/activateSuccess.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/customer/activateSuccess.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/frontPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/frontPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vendor/chart.js/Chart.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vendor/chart.js/Chart.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vendor/chart.js/Chart.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vendor/chart.js/Chart.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vendor/chart.js/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vendor/chart.js/Chart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com.TNyun.dao/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/com.TNyun.dao/test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/controller/SI_adminController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/purchasedProjects.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/ServerOrderlist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/controller/foreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/controller/foreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/SI_adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/SI_adminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/serviceorderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/serviceorderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/SI_adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/SI_adminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/serviceorderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/impl/serviceorderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/serviceorderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/serviceorderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SI_adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/SI_adminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/serviceorderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/serviceorderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/Page/customer/activateSuccess.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/Page/customer/activateSuccess.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/SI_adminController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/foreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/foreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/SI_adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/SI_adminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/serviceorderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/serviceorderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/SI_adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/SI_adminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/serviceorderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/serviceorderServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/serviceorderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/serviceorderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/SI_adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/SI_adminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/serviceorderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/serviceorderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/spring/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/spring/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/frontPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/frontPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/vendor/chart.js/Chart.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/vendor/chart.js/Chart.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/vendor/chart.js/Chart.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/vendor/chart.js/Chart.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/vendor/chart.js/Chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/vendor/chart.js/Chart.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/test1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/test1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/testAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/testAdmin.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,8 +68,8 @@
       <list>
         <option value="mybatis-mapper" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -177,6 +136,7 @@
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\js\前台js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\WEB-INF\Page\customer" />
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\js\注册页面js" />
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\css" />
       <recent name="D:\IDEA2019.3\ssm_TNyun2\src\main\webapp\WEB-INF\Page\admin" />
@@ -471,7 +431,7 @@
       <workItem from="1599129486620" duration="3571000" />
       <workItem from="1599177624477" duration="18967000" />
       <workItem from="1599304931294" duration="13137000" />
-      <workItem from="1599355645687" duration="6728000" />
+      <workItem from="1599355645687" duration="10662000" />
     </task>
     <task id="LOCAL-00001" summary="干死黄旭东">
       <created>1596877276130</created>
@@ -578,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599187474062</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="9月6号,靖文第1次提交：完成用户购买服务的页面,修复购买服务页面bug,修复申请成为开发商页面bug页面，申请成为开发商页面和购买服务页面已经整合到前台页面(frontPage.jsp)">
+      <created>1599368822759</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1599368822759</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -630,7 +597,8 @@
     <MESSAGE value="9月3号,靖文第4次提交：解决后台路由请求问题，优化所有页面" />
     <MESSAGE value="9月35号,靖文第1次提交：jQuery的包好像出了问题，我改成了在线导入" />
     <MESSAGE value="9月6号,靖文第1次提交：完成用户购买服务的页面,修复购买服务页面bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="9月6号,靖文第1次提交：完成用户购买服务的页面,修复购买服务页面bug" />
+    <MESSAGE value="9月6号,靖文第1次提交：完成用户购买服务的页面,修复购买服务页面bug,修复申请成为开发商页面bug页面，申请成为开发商页面和购买服务页面已经整合到前台页面(frontPage.jsp)" />
+    <option name="LAST_COMMIT_MESSAGE" value="9月6号,靖文第1次提交：完成用户购买服务的页面,修复购买服务页面bug,修复申请成为开发商页面bug页面，申请成为开发商页面和购买服务页面已经整合到前台页面(frontPage.jsp)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="301" y="59" key="#Notifications" timestamp="1599025628403">
@@ -669,11 +637,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599141472748" />
-    <state x="641" y="13" key="CommitChangelistDialog2" timestamp="1599367453106">
+    <state x="90" y="0" key="CommitChangelistDialog2" timestamp="1599380651557">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="281" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1599037201995" />
-    <state x="641" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599367453106" />
+    <state x="90" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599380651557" />
     <state x="147" y="71" key="DiffContextDialog" timestamp="1599366206865">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -798,11 +766,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="623" y="328" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1599135976320" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1599187619323">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1599368835352">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="301" y="120" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1599037209487" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599187619323" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599368835352" />
     <state x="594" y="195" key="chooseDestDirectoryDialog" timestamp="1599316231255">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -38,13 +38,17 @@ public class foreController {
     }
 
     @RequestMapping("applyForSIAdmin")
-    public String admin3(){ return "admin/applyForSIAdmin"; }
+    public String admin3(){ return "customer/applyForSIAdmin"; }
 
 
-    @RequestMapping("applyforSIAdminList")
-    public String admin4(){ return "admin/applyforSIAdminList"; }
+    @RequestMapping("SIApplylist")
+    public String admin4(){ return "admin/SIApplylist"; }
 
+    @RequestMapping("SIAdminlist")
+    public String admin5(){ return "admin/SIAdminlist"; }
 
+    @RequestMapping("adminlist")
+    public String admin6(){ return "admin/adminlist"; }
 
 
     //用户注册成功界面

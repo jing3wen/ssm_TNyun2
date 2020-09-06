@@ -150,7 +150,7 @@
 
 
     function returnfore() {
-        window.location.href="${pageContext.request.contextPath}/";
+        window.location.href="../../..";
     }
 </script>
 </body>
