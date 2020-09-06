@@ -27,9 +27,20 @@ public interface SI_adminService {
     void Delete_customer_by_id(int id);
 
     String Update_s_name(customer customer);
+
     String Update_s_phone(customer customer);
+
     String Update_s_email(customer customer);
 
     List<serviceorder> findalls();
+
+    List<SI_admin> findallSI();
+    void Delete_SI_by_id(int si_id);
+
+    String Update_name(SI_admin SI_admin);
+
+    String Update_phone(SI_admin SI_admin);
+
+    String Update_email(SI_admin SI_admin);
 
 }

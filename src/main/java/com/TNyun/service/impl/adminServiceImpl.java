@@ -104,4 +104,13 @@ public class adminServiceImpl implements adminService {
     public int statistic_people_online() {
         return adminMapper.statistic_people_online();
     }
+
+    @Override
+    public void deleteadminByid(int a_id) {
+        adminMapper.deleteadminByid(a_id);
+    }
+     @Override
+    public List<admin> Select_all_admin(){
+        return  adminMapper.Select_all_admin();
+     }
 }

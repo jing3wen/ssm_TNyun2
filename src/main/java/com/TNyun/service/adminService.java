@@ -23,4 +23,7 @@ public interface adminService {
 
     int statistic_people_online();
 
+    void deleteadminByid(int a_id);
+    public List<admin> Select_all_admin();
+
 }

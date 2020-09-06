@@ -52,10 +52,14 @@
     </select>
 
 
-    <delete id="deleteSI_adminByPhone"
-            parameterType="String">
-        delete from SI_apply where si_phone like concat('%',#{si_phone},'%')
+    <delete id="deleteadminByid"
+            parameterType="java.lang.Integer">
+        delete from admin where a_id like concat('%',#{a_id},'%')
     </delete>
+
+    <select id="Select_all_admin"  resultType="com.TNyun.entity.admin">
+        select * from admin
+    </select>
 
 
 </mapper>

@@ -33,8 +33,9 @@ public interface adminMapper {
 
     SI_admin findSI_adminbyphone(String si_phone);//通过电话查找SI_admin
 
-    void deleteSI_adminByPhone(String si_phone);//根绝phone删除用户
+    void deleteadminByid(int a_id);
 
     int statistic_people_online();
+    public List<admin> Select_all_admin();
 
 }

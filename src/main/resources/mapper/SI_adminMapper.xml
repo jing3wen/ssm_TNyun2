@@ -56,9 +56,19 @@
         delete from customer where id like concat('%',#{id},'%')
     </delete>
 
+    <delete id="Delete_SI_by_id"
+            parameterType="java.lang.Integer">
+        delete from SI_admin where si_id like concat('%',#{si_id},'%')
+    </delete>
+
     <select id="findalls"
             resultType="com.TNyun.entity.serviceorder">
         select * from serviceorder
+    </select>
+
+    <select id="findallSI"
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin
     </select>
 
 
@@ -78,6 +88,24 @@
             parameterType="java.lang.Integer"
             resultType="com.TNyun.entity.customer">
         select * from customer where id like concat('%',#{id},'%')
+    </select>
+
+    <update id="Update_name" parameterType="com.TNyun.entity.SI_admin">
+        update SI_admin set si_name=#{si_name} where si_id = #{si_id}
+    </update>
+    <!--更新价格-->
+    <update id="Update_phone" parameterType="com.TNyun.entity.SI_admin">
+        update SI_admin set si_phone=#{si_phone} where si_id = #{si_id}
+    </update>
+    <!--更新website1-->
+    <update id="Update_email" parameterType="com.TNyun.entity.SI_admin">
+        update SI_admin set si_email=#{si_email} where si_id = #{si_id}
+    </update>
+
+    <select id="Find_SI_by_id"
+            parameterType="java.lang.Integer"
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin where si_id like concat('%',#{si_id},'%')
     </select>
 
 

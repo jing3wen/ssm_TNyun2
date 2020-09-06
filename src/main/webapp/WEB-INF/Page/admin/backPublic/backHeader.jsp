@@ -80,10 +80,10 @@
                         <a href="${pageContext.request.contextPath}/Customerlist/customerlist">用户列表</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/SIAdminlist">开发商列表</a>
+                        <a href="${pageContext.request.contextPath}/SIAdminlist/siadminlist">开发商列表</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/adminlist">管理员列表</a>
+                        <a href="${pageContext.request.contextPath}/adminlist/adminlist">管理员列表</a>
                     </li>
                 </ul>
             </li>

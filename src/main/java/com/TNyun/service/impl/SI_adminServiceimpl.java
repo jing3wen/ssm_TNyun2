@@ -138,4 +138,50 @@ public class SI_adminServiceimpl implements SI_adminService{
         return SI_adminMapper.findalls();
     }
 
+    @Override
+    public List<SI_admin> findallSI(){
+        return SI_adminMapper.findallSI();
+    }
+
+    @Override
+    public void Delete_SI_by_id(int si_id) {
+        SI_adminMapper.Delete_SI_by_id(si_id);
+    }
+    @Override
+    public String Update_name(SI_admin SI_admin) {
+        SI_adminMapper.Update_name(SI_admin);
+        SI_admin subsystem1=new SI_admin();
+        subsystem1=SI_adminMapper.Find_SI_by_id(SI_admin.getSI_id());
+        if(subsystem1.getSI_name().equals(SI_admin.getSI_name())){
+            System.out.println(subsystem1.toString());
+            return "update name successfully";
+        }else {
+            return "update name error";
+        }
+    }
+
+    @Override
+    public String Update_phone(SI_admin SI_admin) {
+        SI_adminMapper.Update_phone(SI_admin);
+        SI_admin subsystem1=new SI_admin();
+        subsystem1=SI_adminMapper.Find_SI_by_id(SI_admin.getSI_id());
+        if(subsystem1.getSI_phone().equals(SI_admin.getSI_phone())){
+            System.out.println(subsystem1.toString());
+            return "update phone successfully";
+        }else {
+            return "update phone error";
+        }
+    }
+    @Override
+    public String Update_email(SI_admin SI_admin) {
+        SI_adminMapper.Update_email(SI_admin);
+        SI_admin subsystem1=new SI_admin();
+        subsystem1=SI_adminMapper.Find_SI_by_id(SI_admin.getSI_id());
+        if(subsystem1.getSI_email().equals(SI_admin.getSI_email())){
+            System.out.println(subsystem1.toString());
+            return "update email successfully";
+        }else {
+            return "update email error";
+        }
+    }
 }

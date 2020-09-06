@@ -36,24 +36,17 @@
                         <tbody>
                         <c:forEach items="${adminlist}" var="admin">
                             <tr class="text-c">
-                                <td>${admin.id}</td>
-                                <td>${admin.name}</td>
-                                <td>${admin.phone}</td>
-                                <td>${admin.email}</td>
+                                <td>${admin.a_id}</td>
+                                <td>${admin.a_name}</td>
+                                <td>${admin.a_phone}</td>
+                                <td>${admin.a_email}</td>
                                 <td>
-                                    <c:if test="${admin.status==1}">可用</c:if>
-                                    <c:if test="${admin.status==0}">不可用</c:if>
+                                    <c:if test="${admin.a_status==1}">可用</c:if>
+                                    <c:if test="${admin.a_status==0}">不可用</c:if>
                                 </td>
                                 <td>
-                                    <button type="button"
-                                            class="btn btn-primary radius"
-                                            data-toggle="modal"
-                                            data-target="#modifyModal"
-                                            onclick="showDialog(this)"
-                                            id="modifysubsystem">修改
-                                    </button>
 
-                                    <a deleteLink="true" href=""
+                                    <a deleteLink="true" href="/adminlist/del_admin?a_id=${admin.a_id}"
                                        class="ml-5" style="...">
                                         <button type="button" class="btn btn-danger radius" id="">删除</button>
                                     </a>
@@ -61,43 +54,6 @@
                                 </td>
                             </tr>
                         </c:forEach>
-                        <div class="modal fade" id="modifyModal">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-
-                                    <!-- 模态框头部 -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">请输入修改信息</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-
-                                    <!-- 模态框主体 -->
-                                    <div class="modal-body">
-                                        <div class="input-group mb-3 input-group-sm">
-                                            <input type="text" class="form-control"  id="modify_id" name="modify_id">
-                                            <button type="button" class="btn btn-primary" >管理员ID</button>
-                                        </div>
-                                        <div class="input-group mb-3 input-group-sm">
-                                            <input type="text" class="form-control"  id="modify_name" name="modify_name">
-                                            <button type="button" class="btn btn-primary" id="update_s_name">管理员名称</button>
-                                        </div>
-                                        <div class="input-group mb-3 input-group-sm">
-                                            <input type="text" class="form-control"  id="modify_phone" name="modify_phone">
-                                            <button type="button" class="btn btn-primary" id="update_s_phone">修改电话</button>
-                                        </div>
-                                        <div class="input-group mb-3 input-group-sm">
-                                            <input type="text" class="form-control"  id="modify_email" name="modify_email">
-                                            <button type="button" class="btn btn-primary" id="update_s_email">修改邮箱</button>
-                                        </div>
-                                    </div>
-                                    <!-- 模态框底部 -->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
                         </tbody>
                     </table>
                     <input type="button" value="另存为 Excel" onClick="javascript:method1('adminlist')">
@@ -133,134 +89,6 @@
         })
 
     });
-
-    function showDialog(obj){
-        //点击更新按钮后展示模态框
-        $('#modifyModal').modal('show');
-        //获取当前行的所有列
-        var tds= $(obj).parent().parent().find('td');
-        //(".id"):通过class属性获取当前需要填写数据的输入框
-        //$(tds.eq(0)).text():通过下标取得对应列中的值
-        $("#modify_id").val($(tds.eq(0)).text());
-        $("#modify_name").val($(tds.eq(1)).text());
-        $("#modify_phone").val($(tds.eq(2)).text());
-        $("#modify_email").val($(tds.eq(3)).text());
-
-    }
-
-    $("#update_s_name").click(function () {
-        const subsystem = {
-            "id": $("#modify_id").val(),
-            "name": $("#modify_name").val(),
-        };
-
-        var confirmInsert=confirm("确定修改名字？")
-        if(confirmInsert)
-        {
-            $.ajax({
-                type: "POST",
-                url: "/Customerlist/update_s_name",
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(subsystem),
-                dataType:"json",
-                async: "false",
-                success: function (result) {
-
-                    result=JSON.parse(result);
-                    alert(result);
-                    if(result.code==1){
-                        alert("chenggong");
-                        console.log(result.msg);
-                        alert(result.msg);
-                        loadMess(1);
-                        $('#modifyModal').modal('hide');
-                    }else {
-                        alert("shibai");
-                        alert(result.msg);
-                    }
-
-                },
-            });
-            $('#modifyModal').modal('hide');
-            windows.location.reload();
-        }
-    });
-    $("#update_s_phone").click(function () {
-        const subsystem = {
-            "id": $("#modify_id").val(),
-            "phone": $("#modify_phone").val(),
-        };
-
-        var confirmInsert=confirm("确定修改电话？")
-        if(confirmInsert)
-        {
-            $.ajax({
-                type: "POST",
-                url: "/Customerlist/update_s_phone",
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(subsystem),
-                dataType:"json",
-                async: "false",
-                success: function (result) {
-
-                    result=JSON.parse(result);
-                    alert(result);
-                    if(result.code==1){
-                        alert("chenggong");
-                        console.log(result.msg);
-                        alert(result.msg);
-                        loadMess(1);
-                        $('#modifyModal').modal('hide');
-                    }else {
-                        alert("shibai");
-                        alert(result.msg);
-                    }
-
-                },
-            });
-            $('#modifyModal').modal('hide');
-            windows.location.reload();
-        }
-    });
-
-    $("#update_s_email").click(function () {
-        const subsystem = {
-            "id": $("#modify_id").val(),
-            "email": $("#modify_email").val(),
-        };
-
-        var confirmInsert=confirm("确定修改邮箱？")
-        if(confirmInsert)
-        {
-            $.ajax({
-                type: "POST",
-                url: "/Customerlist/update_s_email",
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(subsystem),
-                dataType:"json",
-                async: "false",
-                success: function (result) {
-
-                    result=JSON.parse(result);
-                    alert(result);
-                    if(result.code==1){
-                        alert("chenggong");
-                        console.log(result.msg);
-                        alert(result.msg);
-                        loadMess(1);
-                        $('#modifyModal').modal('hide');
-                    }else {
-                        alert("shibai");
-                        alert(result.msg);
-                    }
-
-                },
-            });
-            $('#modifyModal').modal('hide');
-            windows.location.reload();
-        }
-    });
-
 
 </script>
 

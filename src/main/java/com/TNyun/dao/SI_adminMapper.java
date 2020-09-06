@@ -16,7 +16,10 @@ public interface SI_adminMapper {
     SI_admin findSI_AdminByphone(String  si_phone);//名字查找SI用户密码
 
     customer Find_cus_by_id(int id);
+
     List<serviceorder> findalls();
+
+    List<SI_admin> findallSI();
 
     void set_SI_status1(String  si_phone);//将状态置1（登录时使用）
 
@@ -32,12 +35,21 @@ public interface SI_adminMapper {
 
     void Delete_customer_by_id(int id);
 
+    void Delete_SI_by_id(int si_id);
 
     void Update_s_name(customer customer);
 
     void Update_s_phone(customer customer);
 
     void Update_s_email(customer customer);
+
+    void Update_name(SI_admin SI_admin);
+
+    void Update_phone(SI_admin SI_admin);
+
+    void Update_email(SI_admin SI_admin);
+
+    SI_admin Find_SI_by_id(int si_id);
     
 
 }

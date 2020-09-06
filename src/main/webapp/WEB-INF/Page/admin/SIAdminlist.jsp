@@ -36,13 +36,13 @@
                         <tbody>
                         <c:forEach items="${siadminlist}" var="si_admin">
                             <tr class="text-c">
-                                <td>${si_admin.id}</td>
-                                <td>${si_admin.name}</td>
-                                <td>${si_admin.phone}</td>
-                                <td>${si_admin.email}</td>
+                                <td>${si_admin.SI_id}</td>
+                                <td>${si_admin.SI_name}</td>
+                                <td>${si_admin.SI_phone}</td>
+                                <td>${si_admin.SI_email}</td>
                                 <td>
-                                    <c:if test="${si_admin.status==1}">可用</c:if>
-                                    <c:if test="${si_admin.status==0}">不可用</c:if>
+                                    <c:if test="${si_admin.SI_status==1}">可用</c:if>
+                                    <c:if test="${si_admin.SI_status==0}">不可用</c:if>
                                 </td>
                                 <td>
                                     <button type="button"
@@ -53,7 +53,7 @@
                                             id="modifysubsystem">修改
                                     </button>
 
-                                    <a deleteLink="true" href=""
+                                    <a deleteLink="true" href="/SIAdminlist/del_SIadmin?si_id=${si_admin.SI_id}"
                                        class="ml-5" style="...">
                                         <button type="button" class="btn btn-danger radius" id="">删除</button>
                                     </a>
@@ -79,15 +79,15 @@
                                         </div>
                                         <div class="input-group mb-3 input-group-sm">
                                             <input type="text" class="form-control"  id="modify_name" name="modify_name">
-                                            <button type="button" class="btn btn-primary" id="update_s_name">修改开发商名称</button>
+                                            <button type="button" class="btn btn-primary" id="update_name">修改开发商名称</button>
                                         </div>
                                         <div class="input-group mb-3 input-group-sm">
                                             <input type="text" class="form-control"  id="modify_phone" name="modify_phone">
-                                            <button type="button" class="btn btn-primary" id="update_s_phone">修改电话</button>
+                                            <button type="button" class="btn btn-primary" id="update_phone">修改电话</button>
                                         </div>
                                         <div class="input-group mb-3 input-group-sm">
                                             <input type="text" class="form-control"  id="modify_email" name="modify_email">
-                                            <button type="button" class="btn btn-primary" id="update_s_email">修改邮箱</button>
+                                            <button type="button" class="btn btn-primary" id="update_email">修改邮箱</button>
                                         </div>
                                     </div>
                                     <!-- 模态框底部 -->
@@ -148,10 +148,10 @@
 
     }
 
-    $("#update_s_name").click(function () {
+    $("#update_name").click(function () {
         const subsystem = {
-            "id": $("#modify_id").val(),
-            "name": $("#modify_name").val(),
+            "si_id": $("#modify_id").val(),
+            "si_name": $("#modify_name").val(),
         };
 
         var confirmInsert=confirm("确定修改名字？")
@@ -159,7 +159,7 @@
         {
             $.ajax({
                 type: "POST",
-                url: "/Customerlist/update_s_name",
+                url: "/SIAdminlist/update_name",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(subsystem),
                 dataType:"json",
@@ -185,10 +185,10 @@
             windows.location.reload();
         }
     });
-    $("#update_s_phone").click(function () {
+    $("#update_phone").click(function () {
         const subsystem = {
-            "id": $("#modify_id").val(),
-            "phone": $("#modify_phone").val(),
+            "si_id": $("#modify_id").val(),
+            "si_phone": $("#modify_phone").val(),
         };
 
         var confirmInsert=confirm("确定修改电话？")
@@ -196,7 +196,7 @@
         {
             $.ajax({
                 type: "POST",
-                url: "/Customerlist/update_s_phone",
+                url: "/SIAdminlist/update_phone",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(subsystem),
                 dataType:"json",
@@ -223,10 +223,10 @@
         }
     });
 
-    $("#update_s_email").click(function () {
+    $("#update_email").click(function () {
         const subsystem = {
-            "id": $("#modify_id").val(),
-            "email": $("#modify_email").val(),
+            "si_id": $("#modify_id").val(),
+            "si_email": $("#modify_email").val(),
         };
 
         var confirmInsert=confirm("确定修改邮箱？")
@@ -234,7 +234,7 @@
         {
             $.ajax({
                 type: "POST",
-                url: "/Customerlist/update_s_email",
+                url: "/SIAdminlist/update_email",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(subsystem),
                 dataType:"json",
