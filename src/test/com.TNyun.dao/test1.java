@@ -146,7 +146,7 @@ public class test1 {
         ser.setS_name("云体验销售中心");
         ser.setAgree("1");
 
-        List<serviceorder> serviceList= serviceOrderService.findallByC_id(123458);
+        List<serviceorder> serviceList= serviceOrderService.findall();
         for(int i=0;i<serviceList.size();i++)
             System.out.println(serviceList.get(i).ser_print());
     }

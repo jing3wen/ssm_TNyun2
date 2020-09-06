@@ -28,23 +28,34 @@ public class foreController {
     }
 
     @RequestMapping("charts")
-    public String fore2(){
+    public String admin1(){
         return "admin/charts";
     }
 
-    /*
-    @RequestMapping("Customerlist")
-    public String fore3(){
-        return "admin/Customerlist";
-    }
-
-
-    @RequestMapping("Projectlist")
-    public String fore4(){ return "admin/Projectlist"; }
-    */
     @RequestMapping("tables")
-    public String fore5(){
+    public String admin2(){
         return "admin/tables";
     }
+
+    @RequestMapping("applyForSIAdmin")
+    public String admin3(){ return "admin/applyForSIAdmin"; }
+
+
+    @RequestMapping("applyforSIAdminList")
+    public String admin4(){ return "admin/applyforSIAdminList"; }
+
+
+
+
+    //用户注册成功界面
+    @RequestMapping("activateSuccess")
+    public String customer1(){ return "customer/activateSuccess"; }
+
+    @RequestMapping("Pay")
+    public String customer2(){ return "customer/Pay"; }
+
+    //用户购买服务的界面
+    @RequestMapping("buySubsystem")
+    public String customer3(){ return "customer/buySubsystem"; }
 
 }

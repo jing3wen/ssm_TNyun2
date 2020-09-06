@@ -28,6 +28,7 @@
     <mvc:resources location="/fonts/" mapping="/fonts/**"/>
     <mvc:resources location="/pug/" mapping="/pug/**"/>
     <mvc:resources location="/vendor/" mapping="/vendor/**"/>
+    <mvc:resources location="/step-lay/" mapping="/step-lay/**"/>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/Page/" />

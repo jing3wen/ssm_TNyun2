@@ -57,10 +57,10 @@
                         <a href="${pageContext.request.contextPath}/charts">用户统计</a>
                     </li>
                     <li>
-                        <a href="Chart">用户购买</a>
+                        <a href="${pageContext.request.contextPath}/purchasedProjects/purchaselist">用户购买</a>
                     </li>
                     <li>
-                        <a href="charts">入驻申请</a>
+                        <a href="${pageContext.request.contextPath}/applyforSIAdminList">入驻申请</a>
                     </li>
                 </ul>
             </li>

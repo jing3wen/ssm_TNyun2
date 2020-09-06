@@ -56,6 +56,9 @@
 							<div class="collapse navbar-collapse" id="navbarsExample04">
 								<ul class="navbar-nav mr-auto">
 									<li class="nav-item active">
+										<a class="nav-link" href="/applyForSIAdmin">开发商入驻</a>
+									</li>
+									<li class="nav-item active">
 										<a class="nav-link" href="#">首页</a>
 									</li>
 									<li class="nav-item">
@@ -300,21 +303,21 @@
 		<div class="modal-dialog">
 			<div class="modal-content" style="background-color: white">
 				<div class="modal-header">
+					<h1 >选择您的用户身份</h1>
 					<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">×
 					</button>
 				</div>
 				<div class="modal-body">
-					<h1 id="mod_system_name">1234</h1>
-					<h2 id="mod_system_pay">还未购买</h2>
-					<p id="mod_system_price">价格0元</p>
+					<h2 id="mod_system_pay">购买该服务即可成为企业用户</h2>
+					<a href="/buySubsystem" id="mod_system" style="color: blue;text-decoration:underline">点击购买此系统</a>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="icon ion-close-circled btn btn-outline-secondary" data-dismiss="modal" style="color: #6c757d">
-						我再想想
+						普通用户
 					</button>
 					<button type="button" class="icon ion-checkmark-circled btn btn-outline-dark" style="color: #1e7e34">
-						确定购买
+						企业用户
 					</button>
 				</div>
 			</div><!-- /.modal-content -->
@@ -456,9 +459,7 @@
 			}
 			//else if()
 			else {
-				myModalshow($("#open_h3_"+number.toString()).val(),
-						"还未购买",
-						"0元")
+				myModalshow();
 			}
 
 		}
@@ -487,11 +488,8 @@
 			})
 		}
 
-		function myModalshow(system_name,system_pay,system_price) {
+		function myModalshow() {
 			console.log("模态框事件触发");
-			$("#mod_system_name").text(system_name);
-			$("#mod_system_pay").text(system_pay);
-			$("#mod_system_pay").text(system_price);
 			$("#myModal").modal('show');
 		}
 
