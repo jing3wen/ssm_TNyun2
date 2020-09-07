@@ -42,5 +42,33 @@
         select * from SI_admin where si_phone like concat('%',#{si_phone},'%')
     </select>
 
+    <delete id="Delete_SI_by_id"
+            parameterType="java.lang.Integer">
+        delete from SI_admin where si_id like concat('%',#{si_id},'%')
+    </delete>
+
+    <update id="Update_name" parameterType="com.TNyun.entity.SI_admin">
+        update SI_admin set si_name=#{si_name} where si_id = #{si_id}
+    </update>
+
+    <update id="Update_phone" parameterType="com.TNyun.entity.SI_admin">
+        update SI_admin set si_phone=#{si_phone} where si_id = #{si_id}
+    </update>
+
+    <update id="Update_email" parameterType="com.TNyun.entity.SI_admin">
+        update SI_admin set si_email=#{si_email} where si_id = #{si_id}
+    </update>
+
+    <select id="Find_SI_by_id"
+            parameterType="java.lang.Integer"
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin where si_id like concat('%',#{si_id},'%')
+    </select>
+
+    <select id="findallSI"
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin
+    </select>
+
 
 </mapper>

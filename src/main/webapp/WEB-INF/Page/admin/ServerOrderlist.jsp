@@ -29,7 +29,7 @@
                             <th>时间</th>
                             <th>用户姓名</th>
                             <th>子系统名称</th>
-                            <th>租借时间</th>
+                            <th>到期时间</th>
                             <th>状态</th>
                             <th>操作</th>
                         </tr>
@@ -40,7 +40,7 @@
                                 <td>${plist.time}</td>
                                 <td>${plist.c_name}</td>
                                 <td>${plist.s_name}</td>
-                                <td>${plist.rent_time}个月</td>
+                                <td>${plist.rent_time}</td>
 
                                 <td>
                                     <c:if test="${plist.agree=='1'}">未激活</c:if>

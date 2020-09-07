@@ -35,5 +35,9 @@
         select * from serviceorder
     </select>
 
+    <select id="findAgreeServiceByDoubleId"  resultType="com.TNyun.entity.serviceorder">
+        select * from serviceorder where c_id=#{c_id} and s_id=#{s_id} and agree='1'
+    </select>
+
 
 </mapper>

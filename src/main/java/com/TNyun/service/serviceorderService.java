@@ -1,5 +1,6 @@
 package com.TNyun.service;
 
+import com.TNyun.entity.Subsystem;
 import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
 
@@ -13,7 +14,7 @@ import java.util.List;
 
 public interface serviceorderService {
     //顾客购买子系统服务
-    public String addService(customer cus, int S_id, String S_name);
+    public String addService(customer cus, Subsystem sys, String time, String rent_time);
     //顾客删除子系统服务
     public String deleteService(int c_id,int s_id);
     //查询相关顾客所有购买的子系统服务

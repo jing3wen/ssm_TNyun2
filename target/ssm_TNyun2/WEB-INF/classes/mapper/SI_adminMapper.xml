@@ -4,22 +4,10 @@
 
 <mapper namespace="com.TNyun.dao.SI_adminMapper">
 
-    <select id="findSI_applyByphone"
-            parameterType="java.lang.String"
-            resultType="com.TNyun.entity.siapply">
-        select * from SI_apply where si_phone like concat('%',#{phone},'%')
-    </select>
-
     <select id="findMaxId"
             resultType="com.TNyun.entity.SI_admin">
-        select * from SI_admin order by id desc limit 0,1;
+        select * from SI_admin order by si_id desc limit 0,1;
     </select>
-
-    <insert id="addsiapply"
-            parameterType="com.TNyun.entity.siapply">
-        insert into SI_apply(time ,si_name,si_password,si_phone,si_email,si_type,si_introduction,si_agree)
-        values(#{time},#{si_name},#{si_password},#{si_phone},#{si_email},#{si_type},#{si_introduction},#{si_agree})
-    </insert>
 
     <select id="findSI_AdminByphone"
             parameterType="java.lang.String"
@@ -35,53 +23,24 @@
         update SI_admin set si_status=0 where si_phone like concat('%',#{si_phone},'%')
     </update>
 
-    <select id="Select_all_customer"  resultType="com.TNyun.entity.customer">
-        select * from customer
-    </select>
-
-    <update id="SetAgree1" parameterType="java.lang.Integer">
-        update serviceorder set agree=1 where s_id= #{s_id} and c_id=#{c_id}
-    </update>
-
-    <update id="SetAgree2" parameterType="java.lang.Integer">
-        update serviceorder set agree=2 where s_id= #{s_id} and c_id=#{c_id}
-    </update>
-
-    <update id="SetAgree3" parameterType="java.lang.Integer">
-        update serviceorder set agree=3 where s_id= #{s_id} and c_id=#{c_id}
-    </update>
-
-    <delete id="Delete_customer_by_id"
-            parameterType="java.lang.Integer">
-        delete from customer where id like concat('%',#{id},'%')
+    <delete id="deleteSI_adminByPhone"
+            parameterType="String">
+        delete from SI_admin where si_phone like concat('%',#{si_phone},'%')
     </delete>
 
-    <select id="findalls"
-            resultType="com.TNyun.entity.serviceorder">
-        select * from serviceorder
+
+
+    <insert id="addSI_admin"
+            parameterType="com.TNyun.entity.SI_admin">
+        insert into SI_admin(si_id,si_name,si_password,si_phone,si_email,si_status)
+        values(#{si_id},#{si_name},#{si_password},#{si_phone},#{si_email},#{si_status})
+    </insert>
+
+    <select id="findSI_adminbyphone"
+            parameterType="java.lang.String"
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin where si_phone like concat('%',#{si_phone},'%')
     </select>
-
-
-    <update id="Update_s_name" parameterType="com.TNyun.entity.customer">
-        update customer set name=#{name} where id = #{id}
-    </update>
-    <!--更新价格-->
-    <update id="Update_s_phone" parameterType="com.TNyun.entity.customer">
-        update customer set phone=#{phone} where id = #{id}
-    </update>
-    <!--更新website1-->
-    <update id="Update_s_email" parameterType="com.TNyun.entity.customer">
-        update customer set email=#{email} where id = #{id}
-    </update>
-
-    <select id="Find_cus_by_id"
-            parameterType="java.lang.Integer"
-            resultType="com.TNyun.entity.customer">
-        select * from customer where id like concat('%',#{id},'%')
-    </select>
-
-
-
 
 
 </mapper>

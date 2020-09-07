@@ -62,28 +62,6 @@ public class customerController {
 
 
 
-    @RequestMapping(value = "/customerlogin_post",method = RequestMethod.POST)
-    @ResponseBody
-    public String customerlogin(@RequestBody customer cus){
-        System.out.println("收到customerlogin_post: "+cus.cus_print());
-        String result=customerService.login2(cus.getPhone(),cus.getPassword());
-        if(result=="customer login is ok") cur_customer=customerService.findCustomerByPhone(cus.getPhone());
-        System.out.println("result: "+result);
-        return result;
-    }
-
-
-
-    @RequestMapping(value = "/customerloginout_post",method = RequestMethod.POST)
-    @ResponseBody
-    public String customerloginout(@RequestBody customer cus){
-        System.out.println("收到customerloginout_post: "+cus.cus_print());
-        int result=customerService.logout(cus.getId());
-        cur_customer=new customer();
-        return cus.cus_print()+" login out is ok";
-    }
-
-
     @RequestMapping(value = "/current_customer_post",method = RequestMethod.POST)
     @ResponseBody
     public customer send_cur_customer(){
