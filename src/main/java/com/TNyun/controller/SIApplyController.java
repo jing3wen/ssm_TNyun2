@@ -1,19 +1,24 @@
 package com.TNyun.controller;
 
 import com.TNyun.dao.customerMapper;
+import com.TNyun.entity.Subsystem;
 import com.TNyun.entity.customer;
 import com.TNyun.entity.siapply;
 import com.TNyun.service.SI_adminService;
+import com.TNyun.service.SI_applyService;
+import com.TNyun.util.Page;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,13 +27,15 @@ import java.util.Map;
  * (ﾉꐦ ๑´Д`๑)ﾉ彡┻━┻  I have to type the code again   (▼皿▼#)
  **/
 @Controller
-@RequestMapping("/SIApply")
+@RequestMapping("/SIApplylist")
 public class SIApplyController {
 
     @Autowired
     customerMapper customerMapper;
     @Autowired
     SI_adminService SI_adminService;
+    @Autowired
+    SI_applyService si_applyService;
 
     //普通用户注册申请为起企业用户，由于登录功能还未完成，暂时写成这样
     /*
@@ -57,5 +64,24 @@ public class SIApplyController {
         String result=SI_adminService.applyForSiadmin(sa);
         System.out.println(result);
         return result;
+    }
+    @RequestMapping("/siapplylist")
+    public ModelAndView list(Model model, Page page){
+        PageHelper.offsetPage(page.getStart(),page.getCount());
+        List<siapply> siapplies=si_applyService.Select_siapply_all();
+        int total=(int) new PageInfo<>(siapplies).getTotal();
+        page.setTotal(total);
+
+        model.addAttribute("siapplylist",siapplies);
+        //model.addAttribute("totals",total);
+        ModelAndView modelAndView=new ModelAndView("admin/SIApplylist");
+        return modelAndView;
+    }
+    @RequestMapping("/agree")
+    public ModelAndView agree(String si_phone){
+        si_applyService.SI_appply_agree(si_phone);
+        ModelAndView modelAndView=new ModelAndView("redirect:siapplylist")   ;
+        return modelAndView;
+
     }
 }

@@ -41,9 +41,9 @@ public class foreController {
     public String admin3(){ return "customer/applyForSIAdmin"; }
 
 
-    @RequestMapping("SIApplylist")
+    /*@RequestMapping("SIApplylist")
     public String admin4(){ return "admin/SIApplylist"; }
-
+*/
     @RequestMapping("SIAdminlist")
     public String admin5(){ return "admin/SIAdminlist"; }
 

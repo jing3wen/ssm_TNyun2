@@ -60,7 +60,7 @@
                         <a href="${pageContext.request.contextPath}/ServerOrder/ServerOrderlist">购买服务订单</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/SIApplylist">入驻申请</a>
+                        <a href="${pageContext.request.contextPath}/SIApplylist/siapplylist">入驻申请</a>
                     </li>
                 </ul>
             </li>
