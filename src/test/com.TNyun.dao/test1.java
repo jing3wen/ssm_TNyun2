@@ -155,7 +155,7 @@ public class test1 {
     @Test
     public void testMail() throws IOException, MessagingException {
 
-        System.out.println( SendMail.sendmail("1584591284@qq.com","jing文"));
+        System.out.println( SendMail.sendmail("1965935476@qq.com","就像这样"));
     }
 
     @Test

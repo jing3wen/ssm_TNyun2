@@ -145,7 +145,7 @@
                                         <span style="font-min-size:6px " class="label label-primary radius">编辑</span>
                                     </a>-->
                                     <button type="button"
-                                            class="btn btn-primary radius"
+                                            class="btn icon ion-edit btn-outline-success"
                                             data-toggle="modal"
                                             data-target="#modifyModal"
                                             onclick="showDialog(this)"
@@ -154,9 +154,13 @@
 
                                     <a deleteLink="true" href="/Projectlist/del_subsystem?s_id=${subsystem.s_id}"
                                        class="my-lg-5" style="text-decoration:underline">
-                                        <button type="button" class="btn btn-danger radius" id="">删除</button>
+                                        <button type="button" class="btn icon ion-trash-a btn-outline-warning" id="">删除</button>
                                         <!--span style="font-min-size:6px " class="label label-danger radius">删除</span-->
                                     </a>
+                                    <a  href="">测试状态
+
+                                    </a>
+
 
                                 </td>
                             </tr>
