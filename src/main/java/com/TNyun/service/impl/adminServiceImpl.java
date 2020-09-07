@@ -1,6 +1,6 @@
 package com.TNyun.service.impl;
 
-import com.TNyun.dao.adminMapper;
+import com.TNyun.dao.*;
 import com.TNyun.entity.SI_admin;
 import com.TNyun.entity.admin;
 import com.TNyun.entity.customer;
@@ -21,6 +21,18 @@ public class adminServiceImpl implements adminService {
 
     @Autowired
     private adminMapper adminMapper;
+
+    @Autowired
+    private serviceorderMapper serviceorderMapper;
+
+    @Autowired
+    private SI_applyMapper SI_applyMapper;
+
+    @Autowired
+    private SI_adminMapper SI_adminMapper;
+
+    @Autowired
+    private customerMapper customerMapper;
 
     @Override
     public admin login(int id, String psword) {
@@ -64,19 +76,19 @@ public class adminServiceImpl implements adminService {
 
     @Override
     public List<serviceorder> Select_all_service() {
-        return adminMapper.Select_all_service();
+        return serviceorderMapper.Select_all_service();
     }
 
     @Override
     public String SetSI_Apply1( String si_phone, String si_email,  String si_name, String si_password) {
 
-        adminMapper.SetSI_Apply1(si_phone,si_email,si_name,si_password);
+        SI_applyMapper.SetSI_Apply1(si_phone,si_email,si_name,si_password);
 
-        if (adminMapper.findSI_adminbyphone(si_phone)!=null){
+        if (SI_adminMapper.findSI_adminbyphone(si_phone)!=null){
             return "the SI_admin has been exit";
         } else {
             SI_admin  sia=new SI_admin();
-            SI_admin sid=adminMapper.findMaxId();
+            SI_admin sid=SI_adminMapper.findMaxId();
             sia.setSI_id(sid.getSI_id() + 1);
             sia.setSI_name(si_name);
             sia.setSI_email(si_email);
@@ -84,7 +96,7 @@ public class adminServiceImpl implements adminService {
             sia.setSI_phone(si_phone);
             if (sia.getSI_status() == null) sia.setSI_status("0");
             System.out.println("新添加的SI开发商是: " + sia.toString());
-            adminMapper.addSI_admin(sia);
+            SI_adminMapper.addSI_admin(sia);
             return "register is ok";
         }
 
@@ -95,13 +107,13 @@ public class adminServiceImpl implements adminService {
     @Override
     public void SetSI_Apply0(String si_phone, String si_email) {
 
-        adminMapper.SetSI_Apply0(si_phone,si_email);
+        SI_applyMapper.SetSI_Apply0(si_phone,si_email);
         System.out.println("delete SI_Apply");
 
     }
 
     @Override
     public int statistic_people_online() {
-        return adminMapper.statistic_people_online();
+        return customerMapper.statistic_people_online();
     }
 }

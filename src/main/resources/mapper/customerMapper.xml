@@ -47,11 +47,44 @@
         select * from customer
     </select>
 
+
     <!--根据用户电话来查询用户-->
     <select id="findCustomerByPhone"
             parameterType="java.lang.String"
             resultType="com.TNyun.entity.customer">
         select * from customer where phone like concat('%',#{phone},'%')
+    </select>
+
+    <select id="Select_all_customer"  resultType="com.TNyun.entity.customer">
+        select * from customer
+    </select>
+
+    <delete id="Delete_customer_by_id"
+            parameterType="java.lang.Integer">
+        delete from customer where id like concat('%',#{id},'%')
+    </delete>
+
+    <update id="Update_s_name" parameterType="com.TNyun.entity.customer">
+        update customer set name=#{name} where id = #{id}
+    </update>
+    <!--更新-->
+    <update id="Update_s_phone" parameterType="com.TNyun.entity.customer">
+        update customer set phone=#{phone} where id = #{id}
+    </update>
+    <!--更新-->
+    <update id="Update_s_email" parameterType="com.TNyun.entity.customer">
+        update customer set email=#{email} where id = #{id}
+    </update>
+
+    <select id="Find_cus_by_id"
+            parameterType="java.lang.Integer"
+            resultType="com.TNyun.entity.customer">
+        select * from customer where id like concat('%',#{id},'%')
+    </select>
+
+    <select id="statistic_people_online"
+            resultType="java.lang.Integer">
+        select count(*) from customer where status='1';
     </select>
 
 

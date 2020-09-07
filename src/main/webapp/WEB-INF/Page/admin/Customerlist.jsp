@@ -12,8 +12,8 @@
             <li class="breadcrumb-item">
                 <a href="#">所有功能</a>
             </li>
-            <li class="breadcrumb-item active">服务项目管理</li>
-            <li class="breadcrumb-item active">项目列表</li>
+            <li class="breadcrumb-item active">用户管理</li>
+            <li class="breadcrumb-item active">用户列表</li>
         </ol>
 
         <!-- 全部系统服务表格-->

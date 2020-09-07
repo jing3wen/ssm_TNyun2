@@ -56,6 +56,9 @@
 							<div class="collapse navbar-collapse" id="navbarsExample04">
 								<ul class="navbar-nav mr-auto">
 									<li class="nav-item active">
+										<a class="nav-link" href="/applyForSIAdmin">开发商入驻</a>
+									</li>
+									<li class="nav-item active">
 										<a class="nav-link" href="#">首页</a>
 									</li>
 									<li class="nav-item">
