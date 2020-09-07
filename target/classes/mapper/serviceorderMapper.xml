@@ -19,7 +19,21 @@
         select * from serviceorder
     </select>
 
+    <update id="SetAgree1" parameterType="java.lang.Integer">
+        update serviceorder set agree=1 where s_id= #{s_id} and c_id=#{c_id}
+    </update>
 
+    <update id="SetAgree2" parameterType="java.lang.Integer">
+        update serviceorder set agree=2 where s_id= #{s_id} and c_id=#{c_id}
+    </update>
+
+    <update id="SetAgree3" parameterType="java.lang.Integer">
+        update serviceorder set agree=3 where s_id= #{s_id} and c_id=#{c_id}
+    </update>
+
+    <select id="Select_all_service"  resultType="com.TNyun.entity.serviceorder">
+        select * from serviceorder
+    </select>
 
 
 </mapper>

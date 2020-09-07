@@ -11,14 +11,14 @@
     </select>
 
     <select id="findMaxId"
-            resultType="com.TNyun.entity.siapply">
-        select * from SI_apply order by id desc limit 0,1;
+            resultType="com.TNyun.entity.SI_admin">
+        select * from SI_admin order by id desc limit 0,1;
     </select>
 
     <insert id="addsiapply"
             parameterType="com.TNyun.entity.siapply">
-        insert into SI_apply(si_id,si_phone,si_name,si_password,si_email,si_status)
-        values(#{id},#{phone},#{name},#{password},#{email},#{status})
+        insert into SI_apply(time ,si_name,si_password,si_phone,si_email,si_type,si_introduction,si_agree)
+        values(#{time},#{si_name},#{si_password},#{si_phone},#{si_email},#{si_type},#{si_introduction},#{si_agree})
     </insert>
 
     <select id="findSI_AdminByphone"
@@ -79,6 +79,8 @@
             resultType="com.TNyun.entity.customer">
         select * from customer where id like concat('%',#{id},'%')
     </select>
+
+
 
 
 

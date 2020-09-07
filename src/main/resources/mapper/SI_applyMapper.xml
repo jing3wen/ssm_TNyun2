@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.TNyun.dao.SI_applyMapper">
+
+
+
+    <select id="findSI_applyByphone"
+            parameterType="java.lang.String"
+            resultType="com.TNyun.entity.siapply">
+        select * from SI_apply where si_phone like concat('%',#{phone},'%')
+    </select>
+
+    <insert id="addsiapply"
+            parameterType="com.TNyun.entity.siapply">
+        insert into SI_apply(time ,si_name,si_password,si_phone,si_email,si_type,si_introduction,si_agree)
+        values(#{time},#{si_name},#{si_password},#{si_phone},#{si_email},#{si_type},#{si_introduction},#{si_agree})
+    </insert>
+
+    <update id="SetSI_Apply1" parameterType="String">
+        update SI_apply set si_agree=1 where si_email= #{si_email} and si_phone like concat('%',#{si_phone},'%')
+    </update>
+
+    <update id="SetSI_Apply0" parameterType="String">
+        update SI_apply set si_agree=0 where si_email= #{si_email} and si_phone like concat('%',#{si_phone},'%')
+    </update>
+
+</mapper>
