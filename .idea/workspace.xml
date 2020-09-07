@@ -25,47 +25,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f34b2dbb-b2f1-4338-9e2d-4e186753e681" name="默认更改列表" comment="9月7号,靖文第2次提交：购买服务路由/ServerOrder/addService_post,和申请成为开发商/SIApply/customerSIApply_post均已通过post测试，由于登录功能还未测试">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/SI_applyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/SI_applyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/com.TNyun.dao/testsi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/SIApplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/SIApplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/ServerOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/ServerOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/customerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/controller/customerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/serviceorderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/serviceorderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/serviceorderServiceimpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/impl/serviceorderServiceimpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/service/serviceorderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/service/serviceorderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/customerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/serviceorderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/serviceorderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/ServerOrderlist.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/Page/admin/ServerOrderlist.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/com.TNyun.dao/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/com.TNyun.dao/test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/SI_adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/SI_adminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/adminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/dao/serviceorderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/dao/serviceorderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/SI_adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/SI_adminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/serviceorderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/serviceorderService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/SI_adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/SI_adminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/adminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/customerMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/serviceorderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/serviceorderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/SI_applyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TNyun/dao/SI_applyMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SI_applyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SI_applyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ssm_TNyun2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/controller/customerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/controller/customerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/TNyun/service/adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/TNyun/service/adminService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/customerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/controller/customerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/SI_adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/SI_adminMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/adminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/adminMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/customerMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/customerMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/serviceorderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/dao/serviceorderMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/entity/siapply.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/entity/siapply.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/SI_adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/SI_adminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/adminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/adminService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/SI_adminServiceimpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/adminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/adminServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/serviceorderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/impl/serviceorderServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/serviceorderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/com/TNyun/service/serviceorderService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/SI_adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/SI_adminMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/adminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/adminMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/customerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/customerMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/serviceorderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/classes/mapper/serviceorderMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/lib/apiguardian-api-1.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/lib/junit-jupiter-5.7.0-M1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/lib/junit-jupiter-api-5.7.0-M1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/lib/junit-jupiter-engine-5.7.0-M1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/lib/junit-jupiter-params-5.7.0-M1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/lib/junit-platform-commons-1.7.0-M1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/lib/junit-platform-engine-1.7.0-M1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/ssm_TNyun2/WEB-INF/lib/opentest4j-1.2.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/test1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/TNyun/dao/test1.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,9 +81,9 @@
       <list>
         <option value="CSS File" />
         <option value="Jsp File" />
-        <option value="Class" />
         <option value="mybatis-mapper" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -126,7 +110,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/Maven/apache-maven-3.6.3" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../ideamaven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="G:\ideamaven\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -142,7 +127,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/standard.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -186,7 +171,7 @@
       <select />
     </treeState>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.34">
+  <component name="RunManager" selected="JUnit.testsi.agree">
     <configuration name="test1.Simulation_select_all" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ssm_TNyun2" />
       <extension name="coverage">
@@ -198,22 +183,6 @@
       <option name="PACKAGE_NAME" value="com.TNyun.dao" />
       <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.test1" />
       <option name="METHOD_NAME" value="Simulation_select_all" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test1.findCustomerByPhone" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ssm_TNyun2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.TNyun.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.TNyun.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.test1" />
-      <option name="METHOD_NAME" value="findCustomerByPhone" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -251,7 +220,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testSIApply.testSIApply" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testsi.agree" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ssm_TNyun2" />
       <extension name="coverage">
         <pattern>
@@ -260,14 +229,30 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.TNyun.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.testSIApply" />
-      <option name="METHOD_NAME" value="testSIApply" />
+      <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.testsi" />
+      <option name="METHOD_NAME" value="agree" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat 9.0.34" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.34" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+    <configuration name="testsi.select_all" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ssm_TNyun2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.TNyun.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.TNyun.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.TNyun.dao.testsi" />
+      <option name="METHOD_NAME" value="select_all" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.13" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="HOT_SWAP_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
@@ -377,45 +362,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.test1.findCustomerByPhone" />
       <item itemvalue="JUnit.test1.Simulation_select_all" />
-      <item itemvalue="JUnit.testSIApply.testSIApply" />
       <item itemvalue="JUnit.testSIApply.testAddSIApply" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.34" />
       <item itemvalue="JUnit.test1.testTime" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.13" />
+      <item itemvalue="JUnit.testsi.select_all" />
+      <item itemvalue="JUnit.testsi.agree" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.testsi.agree" />
+        <item itemvalue="JUnit.testsi.select_all" />
         <item itemvalue="JUnit.test1.testTime" />
         <item itemvalue="JUnit.testSIApply.testAddSIApply" />
         <item itemvalue="JUnit.test1.Simulation_select_all" />
-        <item itemvalue="JUnit.testSIApply.testSIApply" />
-        <item itemvalue="JUnit.test1.findCustomerByPhone" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <option name="contentProportion" value="0.100409836" />
-          <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="完成" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-            </expand>
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -465,6 +427,8 @@
       <workItem from="1599383330538" duration="2202000" />
       <workItem from="1599387224770" duration="20011000" />
       <workItem from="1599441055807" duration="9627000" />
+      <workItem from="1599466455601" duration="2421000" />
+      <workItem from="1599485988608" duration="3742000" />
     </task>
     <task id="LOCAL-00001" summary="干死黄旭东">
       <created>1596877276130</created>
@@ -603,7 +567,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -635,6 +599,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="干死黄旭东" />
@@ -675,15 +640,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="168" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1599396550143" />
-    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599383376212">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="186" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599466578875">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="186" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599017534452" />
+    <state x="186" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1599466578875" />
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1599383376212" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1599405516566">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="478" y="82" key="#com.intellij.ide.util.MemberChooser" timestamp="1599487709152">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="478" y="82" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1599019905171" />
+    <state x="478" y="82" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1599487709152" />
     <state x="478" y="87" key="#com.intellij.ide.util.MemberChooser/0.0.1280.720@0.0.1280.720" timestamp="1598877991706" />
     <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1599405516566" />
     <state x="603" y="271" width="386" height="291" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599316232618">
@@ -707,78 +672,78 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="71" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1599366206865" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1599383609889">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="458" y="139" key="FileChooserDialogImpl" timestamp="1599467214126">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="139" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1599026088584" />
+    <state x="458" y="139" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1599467214126" />
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599383609889" />
     <state x="630" y="303" key="Github.ShareDialog" timestamp="1596877300486">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="630" y="303" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1596877300486" />
-    <state width="1316" height="202" key="GridCell.Tab.0.bottom" timestamp="1599450247916">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom" timestamp="1599489500725">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="1237" height="166" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599489500725" />
     <state width="1237" height="174" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
     <state width="1316" height="202" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599450247916" />
-    <state width="1316" height="202" key="GridCell.Tab.0.center" timestamp="1599450247916">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1237" height="166" key="GridCell.Tab.0.center" timestamp="1599489500725">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="1237" height="166" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1599489500725" />
     <state width="1237" height="174" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
     <state width="1316" height="202" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599450247916" />
-    <state width="1316" height="202" key="GridCell.Tab.0.left" timestamp="1599450247915">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1237" height="166" key="GridCell.Tab.0.left" timestamp="1599489500725">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="1237" height="166" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1599489500725" />
     <state width="1237" height="174" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
     <state width="1316" height="202" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599450247915" />
-    <state width="1316" height="202" key="GridCell.Tab.0.right" timestamp="1599450247916">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1237" height="166" key="GridCell.Tab.0.right" timestamp="1599489500725">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="1237" height="166" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1599489500725" />
     <state width="1237" height="174" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1598885983813" />
     <state width="1316" height="202" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599450247916" />
-    <state width="1316" height="202" key="GridCell.Tab.1.bottom" timestamp="1599450247917">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="379" height="202" key="GridCell.Tab.1.bottom" timestamp="1599472458959">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="379" height="202" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599472458959" />
     <state width="1316" height="202" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599450247917" />
-    <state width="1316" height="202" key="GridCell.Tab.1.center" timestamp="1599450247916">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="379" height="202" key="GridCell.Tab.1.center" timestamp="1599472458958">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="379" height="202" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1599472458958" />
     <state width="1316" height="202" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1599450247916" />
-    <state width="1316" height="202" key="GridCell.Tab.1.left" timestamp="1599450247916">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="379" height="202" key="GridCell.Tab.1.left" timestamp="1599472458958">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="379" height="202" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1599472458958" />
     <state width="1316" height="202" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1599450247916" />
-    <state width="1316" height="202" key="GridCell.Tab.1.right" timestamp="1599450247916">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="379" height="202" key="GridCell.Tab.1.right" timestamp="1599472458959">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="379" height="202" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1599472458959" />
     <state width="1316" height="202" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1599450247916" />
-    <state width="1316" height="202" key="GridCell.Tab.2.bottom" timestamp="1599450247917">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="379" height="202" key="GridCell.Tab.2.bottom" timestamp="1599472458959">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="379" height="202" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1599472458959" />
     <state width="1316" height="202" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599450247917" />
-    <state width="1316" height="202" key="GridCell.Tab.2.center" timestamp="1599450247917">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="379" height="202" key="GridCell.Tab.2.center" timestamp="1599472458959">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="379" height="202" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1599472458959" />
     <state width="1316" height="202" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1599450247917" />
-    <state width="1316" height="202" key="GridCell.Tab.2.left" timestamp="1599450247917">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="379" height="202" key="GridCell.Tab.2.left" timestamp="1599472458959">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="379" height="202" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1599472458959" />
     <state width="1316" height="202" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1599450247917" />
-    <state width="1316" height="202" key="GridCell.Tab.2.right" timestamp="1599450247917">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="379" height="202" key="GridCell.Tab.2.right" timestamp="1599472458959">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="443" height="208" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1599041411988" />
+    <state width="379" height="202" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1599472458959" />
     <state width="1316" height="202" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1599450247917" />
     <state width="1323" height="213" key="GridCell.Tab.3.bottom" timestamp="1599358614525">
       <screen x="0" y="0" width="1536" height="824" />
@@ -819,10 +784,10 @@
     </state>
     <state x="449" y="76" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1598886582951" />
     <state x="449" y="80" key="RollbackChangesDialog/0.0.1280.720@0.0.1280.720" timestamp="1598885954320" />
-    <state x="206" y="59" width="914" height="680" key="SettingsEditor" timestamp="1599398069486">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="336" y="0" width="914" height="680" key="SettingsEditor" timestamp="1599466524097">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="336" y="0" width="914" height="680" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1599025341626" />
+    <state x="336" y="0" width="914" height="680" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1599466524097" />
     <state x="206" y="59" width="996" height="707" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1599398069486" />
     <state x="623" y="328" key="VCS.ChangelistChooser" timestamp="1599135976320">
       <screen x="0" y="0" width="1536" height="824" />

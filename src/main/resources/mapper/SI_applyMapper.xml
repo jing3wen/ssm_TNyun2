@@ -9,7 +9,11 @@
     <select id="findSI_applyByphone"
             parameterType="java.lang.String"
             resultType="com.TNyun.entity.siapply">
-        select * from SI_apply where si_phone like concat('%',#{phone},'%')
+        select * from SI_apply where si_phone like concat('%',#{si_phone},'%')
+    </select>
+
+    <select id="Select_all_siapply" resultType="com.TNyun.entity.siapply">
+        select * from SI_apply
     </select>
 
     <insert id="addsiapply"
@@ -24,6 +28,10 @@
 
     <update id="SetSI_Apply0" parameterType="String">
         update SI_apply set si_agree=0 where si_email= #{si_email} and si_phone like concat('%',#{si_phone},'%')
+    </update>
+
+    <update id="SetApply1" parameterType="java.lang.String">
+        update SI_apply set si_agree=1 where si_phone like concat('%',#{si_phone},'%')
     </update>
 
 </mapper>

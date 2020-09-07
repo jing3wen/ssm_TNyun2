@@ -17,6 +17,27 @@
         update customer set status=0 where id= #{id}
     </update>
 
+    <select id="Select_all_admin"  resultType="com.TNyun.entity.admin">
+        select * from admin
+    </select>
+
+    <delete id="deleteadminByid"
+            parameterType="java.lang.Integer">
+        delete from admin where a_id like concat('%',#{a_id},'%')
+    </delete>
+
+    <update id="Update_a_name" parameterType="com.TNyun.entity.admin">
+        update admin set a_name=#{a_name} where a_id = #{a_id}
+    </update>
+
+    <update id="Update_a_phone" parameterType="com.TNyun.entity.admin">
+        update admin set a_phone=#{a_phone} where a_id = #{a_id}
+    </update>
+
+    <update id="Update_a_email" parameterType="com.TNyun.entity.admin">
+        update admin set a_email=#{a_email} where a_id = #{a_id}
+    </update>
+
 
 
 
