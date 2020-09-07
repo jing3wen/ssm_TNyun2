@@ -28,4 +28,19 @@ public interface customerMapper {
     public List<customer> Select_all();
 
     customer findCustomerByPhone(String phone);
+
+
+    public List<customer> Select_all_customer();//找到所有用户
+
+    void Delete_customer_by_id(int id);
+
+    void Update_s_name(customer customer);
+
+    void Update_s_phone(customer customer);
+
+    void Update_s_email(customer customer);
+
+    customer Find_cus_by_id(int id);
+
+    int statistic_people_online();
 }

@@ -1,16 +1,13 @@
 package com.TNyun.service;
 
-import com.TNyun.entity.SI_admin;
-import com.TNyun.entity.Subsystem;
-import com.TNyun.entity.customer;
-import com.TNyun.entity.serviceorder;
+import com.TNyun.entity.*;
 
 import java.util.List;
 
 public interface SI_adminService {
 
-    //申请成为服务开发商
-    public String applyForSiadmin(customer cust);
+    //普通用户申请成为服务开发商
+    public String applyForSiadmin(siapply sa);
 
     public String  si_login(String  si_phone, String si_password);
 

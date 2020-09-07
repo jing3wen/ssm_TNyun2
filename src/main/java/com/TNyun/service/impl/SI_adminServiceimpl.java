@@ -1,5 +1,8 @@
 package com.TNyun.service.impl;
 
+import com.TNyun.dao.SI_applyMapper;
+import com.TNyun.dao.customerMapper;
+import com.TNyun.dao.serviceorderMapper;
 import com.TNyun.entity.*;
 import com.TNyun.service.SI_adminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,26 +16,26 @@ public class SI_adminServiceimpl implements SI_adminService{
     @Autowired
     private com.TNyun.dao.SI_adminMapper SI_adminMapper;
 
+    @Autowired
+    customerMapper customerMapper;
+
+    @Autowired
+    serviceorderMapper serverorderMapper;
+
+    @Autowired
+    SI_applyMapper SI_applyMapper;
+
     @Override
-    public String applyForSiadmin(customer cust){
-        if (SI_adminMapper.findSI_applybyphone(cust.getPhone())!=null){
+    public String applyForSiadmin(siapply sa){
+        if (SI_adminMapper.findSI_AdminByphone(sa.getSi_phone())!=null){
             return "you are already a SI_admin";
         } else {
-            siapply sa = new siapply();
-
-            siapply lastsa = SI_adminMapper.findMaxId();
-            sa.setSi_id(lastsa.getSi_id() + 1);
-            sa.setSi_phone(cust.getPhone());
-            sa.setSi_name(cust.getName());
-            sa.setSi_password(cust.getPassword());
-            sa.setSi_status(cust.getStatus());
-            sa.setSi_email(cust.getEmail());
             System.out.println("要申请成为服务提供商的用户是: " + sa.toString());
-            SI_adminMapper.addsiapply(sa);
-
+            SI_applyMapper.addsiapply(sa);
             return "apply for si_admin request is ok";
         }
     }
+
 
     @Override
     public String  si_login(String  si_phone, String si_password) {
@@ -68,37 +71,37 @@ public class SI_adminServiceimpl implements SI_adminService{
 
     @Override
     public List<customer> Select_all_customer() {
-        return SI_adminMapper.Select_all_customer();
+        return customerMapper.Select_all_customer();
     }
 
     @Override
     public serviceorder AgreeExperience(int c_id,int s_id) {
-        SI_adminMapper.SetAgree1(c_id,s_id);
+        serverorderMapper.SetAgree1(c_id,s_id);
         return null;
     }
 
     @Override
     public serviceorder AgreePurchase(int c_id,int s_id) {
-        SI_adminMapper.SetAgree2(c_id,s_id);
+        serverorderMapper.SetAgree2(c_id,s_id);
         return null;
     }
 
     @Override
     public serviceorder Overdue(int c_id,int s_id) {
-        SI_adminMapper.SetAgree3(c_id,s_id);
+        serverorderMapper.SetAgree3(c_id,s_id);
         return null;
     }
 
     @Override
     public void Delete_customer_by_id(int id) {
-        SI_adminMapper.Delete_customer_by_id(id);
+        customerMapper.Delete_customer_by_id(id);
     }
 
     @Override
     public String Update_s_name(customer customer) {
-       SI_adminMapper.Update_s_name(customer);
+       customerMapper.Update_s_name(customer);
         customer subsystem1=new customer();
-        subsystem1=SI_adminMapper.Find_cus_by_id(customer.getId());
+        subsystem1=customerMapper.Find_cus_by_id(customer.getId());
         if(subsystem1.getName().equals(customer.getName())){
             System.out.println(subsystem1.cus_print());
             return "update name successfully";
@@ -109,9 +112,9 @@ public class SI_adminServiceimpl implements SI_adminService{
 
     @Override
     public String Update_s_phone(customer customer) {
-        SI_adminMapper.Update_s_phone(customer);
+        customerMapper.Update_s_phone(customer);
         customer subsystem1=new customer();
-        subsystem1=SI_adminMapper.Find_cus_by_id(customer.getId());
+        subsystem1=customerMapper.Find_cus_by_id(customer.getId());
         if(subsystem1.getPhone().equals(customer.getPhone())){
             System.out.println(subsystem1.cus_print());
             return "update phone tsuccessfully";
@@ -122,9 +125,9 @@ public class SI_adminServiceimpl implements SI_adminService{
 
     @Override
     public String Update_s_email(customer customer) {
-        SI_adminMapper.Update_s_email(customer);
+        customerMapper.Update_s_email(customer);
         customer subsystem1=new customer();
-        subsystem1=SI_adminMapper.Find_cus_by_id(customer.getId());
+        subsystem1=customerMapper.Find_cus_by_id(customer.getId());
         if(subsystem1.getEmail().equals(customer.getEmail())){
             System.out.println(subsystem1.toString());
             return "update email successfully";
@@ -135,7 +138,7 @@ public class SI_adminServiceimpl implements SI_adminService{
 
     @Override
     public List<serviceorder> findalls(){
-        return SI_adminMapper.findalls();
+        return serverorderMapper.findall();
     }
 
     @Override
