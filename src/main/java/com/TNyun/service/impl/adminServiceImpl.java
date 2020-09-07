@@ -121,8 +121,47 @@ public class adminServiceImpl implements adminService {
     public void deleteadminByid(int a_id) {
         adminMapper.deleteadminByid(a_id);
     }
+
      @Override
     public List<admin> Select_all_admin(){
         return  adminMapper.Select_all_admin();
      }
+
+    @Override
+    public String Update_a_name(admin admin) {
+        adminMapper.Update_a_name(admin);
+        admin subsystem1=new admin();
+        subsystem1=adminMapper.findAdminById(admin.getA_id());
+        if(subsystem1.getA_name().equals(admin.getA_name())){
+            System.out.println(subsystem1.toString());
+            return "update name successfully";
+        }else {
+            return "update name error";
+        }
+    }
+
+    @Override
+    public String Update_a_phone(admin admin)  {
+        adminMapper.Update_a_phone(admin);
+        admin subsystem1=new admin();
+        subsystem1=adminMapper.findAdminById(admin.getA_id());
+        if(subsystem1.getA_phone().equals(admin.getA_phone())){
+            System.out.println(subsystem1.toString());
+            return "update phone successfully";
+        }else {
+            return "update phone error";
+        }
+    }
+    @Override
+    public String Update_a_email(admin admin) {
+        adminMapper.Update_a_email(admin);
+        admin subsystem1=new admin();
+        subsystem1=adminMapper.findAdminById(admin.getA_id());
+        if(subsystem1.getA_email().equals(admin.getA_email())){
+            System.out.println(subsystem1.toString());
+            return "update email successfully";
+        }else {
+            return "update email error";
+        }
+    }
 }

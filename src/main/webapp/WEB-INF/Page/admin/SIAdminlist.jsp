@@ -18,7 +18,7 @@
         <!-- 全部系统服务表格-->
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-table"></i>开发商列表
+                <i class="fa fa-table" ></i>开发商列表
             </div>
             <div class="card-body">
                 <div class="table-responsive">

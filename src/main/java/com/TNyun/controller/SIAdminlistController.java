@@ -102,7 +102,7 @@ public class SIAdminlistController {
         String result;
         Retureninfo retureninfo=new Retureninfo();
         try {
-            result=SI_adminService.Update_email(SI_admin);
+            result=SI_adminService.Update_email(SI_admin );
             System.out.println("返回："+result);
             if(result.equals("update email successfully")) {
                 retureninfo.setCode(1);

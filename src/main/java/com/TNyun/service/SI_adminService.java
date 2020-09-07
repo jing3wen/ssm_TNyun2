@@ -32,6 +32,7 @@ public interface SI_adminService {
     List<serviceorder> findalls();
 
     List<SI_admin> findallSI();
+
     void Delete_SI_by_id(int si_id);
 
     String Update_name(SI_admin SI_admin);
@@ -39,5 +40,6 @@ public interface SI_adminService {
     String Update_phone(SI_admin SI_admin);
 
     String Update_email(SI_admin SI_admin);
+
 
 }

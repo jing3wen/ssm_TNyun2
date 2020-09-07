@@ -1,6 +1,7 @@
 package com.TNyun.service;
 
 
+import com.TNyun.entity.SI_admin;
 import com.TNyun.entity.admin;
 import com.TNyun.entity.serviceorder;
 
@@ -24,6 +25,13 @@ public interface adminService {
     int statistic_people_online();
 
     void deleteadminByid(int a_id);
+
     public List<admin> Select_all_admin();
+
+    String Update_a_name(admin admin);
+
+    String Update_a_phone(admin admin);
+
+    String Update_a_email(admin admin);
 
 }

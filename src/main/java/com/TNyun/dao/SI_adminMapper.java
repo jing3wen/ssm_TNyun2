@@ -23,4 +23,16 @@ public interface SI_adminMapper {
 
     SI_admin findSI_adminbyphone(String si_phone);//通过电话查找SI_admin
 
+    void Update_name(SI_admin SI_admin);//更新SI_admin的name
+
+    void Update_phone(SI_admin SI_admin);//更新SI_admin的phone
+
+    void Update_email(SI_admin SI_admin);//更新SI_admin的email
+
+    SI_admin Find_SI_by_id(int si_id);//通过id查找SI_admin
+
+    List<SI_admin> findallSI();//查找所有的SI_admin
+
+    void Delete_SI_by_id(int si_id);
+
 }

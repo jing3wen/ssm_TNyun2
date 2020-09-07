@@ -77,7 +77,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="${pageContext.request.contextPath}/Customerlist/customerlist">用户列表</a>
+                        <a href="${pageContext.request.contextPath}/Customerlist/customerlist" >用户列表</a>
                     </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/SIAdminlist/siadminlist">开发商列表</a>

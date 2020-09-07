@@ -19,7 +19,14 @@ public interface adminMapper {
 
     void set_a_status0(int a_id);//将状态置0（登出时使用）
 
+    void deleteadminByid(int a_id);//通过id删除admin
 
+    public List<admin> Select_all_admin();//查找所有的admin
 
+    void Update_a_name(admin admin);//更新admin的name
+
+    void Update_a_phone(admin admin);//更新admin的phone
+
+    void Update_a_email(admin admin);//更新admin的email
 
 }
