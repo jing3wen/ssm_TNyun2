@@ -22,7 +22,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id=:"adminlist">
+                    <table class="table table-bordered" id="adminlist">
                         <thead>
                         <tr>
                             <th>管理员ID</th>
@@ -46,7 +46,7 @@
                                 </td>
                                 <td>
                                     <button type="button"
-                                            class="btn btn-primary radius"
+                                            class="btn icon ion-edit btn-outline-success"
                                             data-toggle="modal"
                                             data-target="#modifyModal"
                                             onclick="showDialog(this)"
@@ -55,7 +55,7 @@
 
                                     <a deleteLink="true" href="/adminlist/del_admin?a_id=${admin.a_id}"
                                        class="ml-5" style="...">
-                                        <button type="button" class="btn btn-danger radius" id="">删除</button>
+                                        <button type="button" class="btn icon ion-trash-a btn-outline-warning" id="">删除</button>
                                     </a>
 
                                 </td>
