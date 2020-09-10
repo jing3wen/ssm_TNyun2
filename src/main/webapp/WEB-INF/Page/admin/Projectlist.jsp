@@ -324,7 +324,7 @@
                     if(result.code==1){
                         alert("chenggong");
                         console.log(result.msg);
-                        alert(result.msg);
+                        alert(result.msg.toString());
                         loadMess(1);
                         $('#modifyModal').modal('hide');
                     }else {
