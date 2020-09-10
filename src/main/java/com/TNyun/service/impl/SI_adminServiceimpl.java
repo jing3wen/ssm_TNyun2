@@ -29,6 +29,8 @@ public class SI_adminServiceimpl implements SI_adminService{
     public String applyForSiadmin(siapply sa){
         if (SI_adminMapper.findSI_AdminByphone(sa.getSi_phone())!=null){
             return "you are already a SI_admin";
+        } else if (SI_applyMapper.findSI_applyByphone(sa.getSi_phone())!=null) {
+            return "you had add the si_apply";
         } else {
             System.out.println("要申请成为服务提供商的用户是: " + sa.toString());
             SI_applyMapper.addsiapply(sa);

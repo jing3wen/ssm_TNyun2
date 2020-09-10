@@ -171,6 +171,8 @@
             async: "false",
             success: function (result) {
                 console.log("服务器请求成功"+result);
+                if(result=="you had add the si_apply")
+                    alert("您已经发送申请，请不要重复发送");
             },
             error: function () {
                 console.log("404 服务器请求失败");

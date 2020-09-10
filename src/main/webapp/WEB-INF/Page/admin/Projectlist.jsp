@@ -154,12 +154,10 @@
 
                                     <a deleteLink="true" href="/Projectlist/del_subsystem?s_id=${subsystem.s_id}"
                                        class="my-lg-5" style="text-decoration:underline">
-                                        <button type="button" class="btn icon ion-trash-a btn-outline-warning" id="">删除</button>
+                                        <button type="button" class="btn icon ion-trash-a btn-outline-warning" >删除</button>
                                         <!--span style="font-min-size:6px " class="label label-danger radius">删除</span-->
                                     </a>
-                                    <a  href="">测试状态
-
-                                    </a>
+                                    <button type="button" class="btn icon icon ion-loop btn-outline-primary" onclick="ping_test()" >测试</button>
 
 
                                 </td>
@@ -451,6 +449,14 @@
             windows.location.reload();
         }
     });
+
+    function ping_test() {
+        url="http://pagespeed.webkaka.com/";
+        alert("即将前往"+url+"进行测试");
+        window.location.href=url;
+    }
+
+
 
 
 </script>

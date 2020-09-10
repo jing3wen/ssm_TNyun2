@@ -12,7 +12,7 @@ import java.util.List;
  **/
 public interface SI_applyMapper {
 
-    public siapply findSI_applyByphone(String phone);//手机号查找是否已经是si_admin
+    public siapply findSI_applyByphone(String phone);//手机号查找是否已经投了申请si_admin
 
     void addsiapply(siapply sa);//将申请成为si_admin的用户信息放入si_apply表
 
