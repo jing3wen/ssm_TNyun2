@@ -57,7 +57,7 @@
 						<div class="collapse navbar-collapse" id="navbarsExample04">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item active">
-									<a class="nav-link" href="/applyForSIAdmin">开发商入驻</a>
+									<a class="nav-link" href="#" id="SI_apply" >开发商入驻</a>
 								</li>
 								<li class="nav-item active">
 									<a class="nav-link" href="#">首页</a>
@@ -348,6 +348,7 @@
 <script>
 
 
+
 	var cus_service;
 
 	var subsystem={
@@ -360,7 +361,7 @@
 
 	$(function () {
 
-		get_cur_customer();
+
 	})
 
 
@@ -423,16 +424,23 @@
 		})
 	})
 
+	$("#SI_apply").click(function () {
+		if(checklogin()==0){
+			alert("请先登录")
+			window.location.href="login";
+		}
+		else {
+			window.location.href="/applyForSIAdmin";
+		}
+	})
 
 	//购买服务
 	function service(number){
-
 		console.log("购买子系统"+$("#open_h3_"+number.toString()).val());
-		if(cur_customer==null){
-			console.log(" 身份为: "+$("#customer_name").val()+"跳转到登陆界面")
+		if(checklogin()==0){
+			alert("请先登录")
 			window.location.href="login";
 		}
-		//else if()
 		else {
 			myModalshow();
 		}
@@ -472,8 +480,14 @@
 		console.log("模态框事件触发");
 		$("#myModal").modal('show');
 	}
-
-
+	//检查用户是否登录
+	function checklogin() {
+		var cur_customer="${customer}";
+		if(cur_customer==""){
+			return 0;
+		}
+		else return 1;
+	}
 
 </script>
 

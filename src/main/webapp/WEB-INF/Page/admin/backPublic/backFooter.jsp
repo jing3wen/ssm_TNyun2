@@ -44,7 +44,7 @@
     $(function () {
         var admin="${admin}";
         var si_admin="${SI_admin}";
-        if(admin==""||si_admin=="") {
+        if(admin==""&&si_admin=="") {
             console.log("当前登录用户为空")
             window.location.href="${pageContext.request.contextPath}/login";
         }
