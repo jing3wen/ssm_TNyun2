@@ -19,6 +19,11 @@
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-area-chart"></i> 最近一周用户使用（人/次）
+                <button type="button"
+                        style="float:right"
+                        class="icon icon ion-plus-round btn btn-outline-dark"
+                        id="selectAll">查询
+                </button>
             </div>
             <div class="card-body">
                 <canvas id="myAreaChart" width="100%" height="30"></canvas>
@@ -56,17 +61,22 @@
 </div>
 
 <script type="text/javascript">
-    $(function () {
-        $("a").click(function () {
-            var agreeLink = $(this).attr("agreeLink");
-            console.log(agreeLink);
-            if("true"==agreeLink){
-                var confirmDelete=confirm("确定同意");
-                if(confirmDelete)
-                    return true;
-                return false;
+    $("#selectAll").click(function () {
+        $.ajax({
+            type:"POST",
+            url:"/charts/selectAll",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: "false",
+            success: function (result) {
+                console.log("服务器请求成功");
+                console.log("there are" + result.length + "counts");
+                if (result == "") alert("There are not count !");
+                console.log(result);
+            },
+            error:function () {
+                console.log("failure")
             }
-            windows.location.reload();
         })
 
     });
