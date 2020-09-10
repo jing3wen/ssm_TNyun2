@@ -114,6 +114,7 @@
                             <div class="row">
                                 <button type="button" class="icon ion-person send2" id="customer_login" style="font-size: 20px;">顾客登陆</button>
                                 <button type="button" class="icon ion-person-add send2" id="admin_login" style="font-size: 20px;color: #34ce57">管理登陆</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -137,24 +138,25 @@
 <script src="js/前台js/jquery.fancybox.min.js"></script>
 
 <script>
+
     $("#customer_login").click(function () {
-        var customer={
+        var user={
             "phone":$("#phone").val(),
             "password":$("#password").val()
         }
         if(customer.phone!=null||customer.password!=null){
             $.ajax({
                 type: "POST",
-                url: "/customer/customerlogin_post",
+                url: "/login/customerlogin_post",
                 contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(customer),
+                data: JSON.stringify(user),
                 dataType:"text",
                 async: "false",
                 success: function (result) {
                     console.log("服务器请求成功");
                     if(result=="customer login is ok"){
                         alert("欢迎您顾客")
-                        window.location.href="http://localhost:8082/";
+                        window.location.href="frontPage";
                     }
                     else if(result=="the customer don't be activated"){
                         alert("该账户还未被激活，请查看邮箱" );
@@ -173,6 +175,41 @@
             })
         }
         else if(customer.phone==null){
+            alert("请输入账号");
+        }
+        else alert("请输入密码");
+
+    })
+
+
+
+    $("#admin_login").click(function () {
+        var user={
+            "phone":$("#phone").val(),
+            "password":$("#password").val()
+        }
+        if(user.phone!=null||user.password!=null){
+            $.ajax({
+                type: "POST",
+                url: "/login/adminlogin_post",
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(user),
+                dataType:"text",
+                async: "false",
+                success: function (result) {
+                    console.log("服务器请求成功");
+                    if(result=="user login is ok"){
+                        alert("欢迎您管理员")
+                        window.location.href="back";
+                    }
+                    else alert("验证失败")
+                },
+                error: function () {
+                    console.log("404 服务器请求失败");
+                }
+            })
+        }
+        else if(user.phone==null){
             alert("请输入账号");
         }
         else alert("请输入密码");

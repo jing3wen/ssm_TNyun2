@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface adminService {
 
-    public admin login(int id, String psword);
+    public String login(String phone, String psword);
 
     public int logout(int id);
 

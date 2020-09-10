@@ -40,20 +40,18 @@ public class SI_adminServiceimpl implements SI_adminService{
     @Override
     public String  si_login(String  si_phone, String si_password) {
         SI_admin sia=SI_adminMapper.findSI_AdminByphone(si_phone);
-        if (sia!=null&&sia.getSI_password().equals(si_password)&&sia.getSI_status().equals("0")){
-            System.out.println("the current SI_admin is: "+sia.toString()+ "login is ok");
-            sia.setSI_status("1");
-            SI_adminMapper.set_SI_status1(sia.getSI_phone());
-            return "SI_admin login is ok";
-        }
-        else if (sia!=null&&sia.getSI_password().equals(si_password)&&sia.getSI_status().equals("1")){
-            return "the SI_dmin has logined";
+        if (sia!=null&&sia.getSI_password().equals(si_password)){
+            if(sia.getSI_status().equals("1")){
+                System.out.println("the current user is: "+sia.toString()+ "login is ok");
+                return "user login is ok";
+            }
+            else return "the user don't be activated";
+
         }
         else if(sia!=null&& !(sia.getSI_password().equals(si_password)) ){
             return "the password is error";
         }
-        else return "the SI_admin is not here";
-
+        else return "the user is not here";
     }
 
     @Override

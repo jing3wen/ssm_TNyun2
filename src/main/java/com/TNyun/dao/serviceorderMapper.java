@@ -27,5 +27,6 @@ public interface serviceorderMapper {
     public List<serviceorder> Select_all_service();//查找所有服务
 
     serviceorder findAgreeServiceByDoubleId(@Param("c_id")int c_id,@Param("s_id")int s_id);//通过双id查找该用户是否购激活了该服务
-
+    serviceorder findAgree2ServiceByDoubleId(@Param("c_id")int c_id,@Param("s_id")int s_id);
+    serviceorder findAgree3ServiceByDoubleId(@Param("c_id")int c_id,@Param("s_id")int s_id);
 }

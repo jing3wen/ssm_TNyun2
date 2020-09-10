@@ -32,6 +32,7 @@
                             <th>类型</th>
                             <th>介绍</th>
                             <th>状态</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -45,20 +46,15 @@
                                 <td>${sia.si_type}</td>
                                 <td>${sia.si_introduction}</td>
                                 <td>
-                                    <c:if test="${sia.status==1}">已同意</c:if>
-                                    <c:if test="${sia.status==0}">未同意</c:if>
+                                    <c:if test="${sia.si_agree=='1'}">已同意</c:if>
+                                    <c:if test="${sia.si_agree=='0'}">未同意</c:if>
                                 </td>
                                 <td>
                                     <a agreeLink="true" href="/SIApplylist/agree?s_id=${sia.si_phone}"
                                        class="my-lg-5" style="text-decoration:underline">
-                                        <button type="button" class="btn icon ion-trash-a btn-outline-warning" id="">删除</button>
+                                        <button type="button" class="btn icon ion-checkmark-circled btn-outline-info" id="">同意</button>
                                         <!--span style="font-min-size:6px " class="label label-danger radius">删除</span-->
                                     </a>
-                                    <a  href="">测试状态
-
-                                    </a>
-
-
                                 </td>
                             </tr>
                         </c:forEach>

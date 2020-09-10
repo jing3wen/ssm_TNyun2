@@ -9,7 +9,7 @@ public interface SI_adminMapper {
 
     SI_admin findMaxId();//在SI_admin中找id的最大值
     
-    SI_admin findSI_AdminByphone(String  si_phone);//名字查找SI用户密码
+    SI_admin findSI_AdminByphone(@Param("si_phone") String  si_phone);//名字查找SI用户密码
 
 
     void set_SI_status1(String  si_phone);//将状态置1（登录时使用）

@@ -2,6 +2,7 @@ package com.TNyun.controller;
 
 import com.TNyun.dao.SubsystemMapper;
 import com.TNyun.dao.customerMapper;
+import com.TNyun.dao.serviceorderMapper;
 import com.TNyun.entity.Subsystem;
 import com.TNyun.entity.customer;
 import com.TNyun.entity.serviceorder;
@@ -74,11 +75,11 @@ public class ServerOrderController {
     private SubsystemMapper SubsystemMapper;
     //用户在前台页面申请购买该服务
     /*传过来的参数
-    *"customer_id"://此处也可以用customer_phone来替换
-    * "subsystem_id"
-    * "time_length"//收到是int类型,单位是月
-    * 注意表中的time表示的是起始日期,rent_time表示的截止日期,time_length=rent_time-time
-    * */
+     *"customer_id"://此处也可以用customer_phone来替换
+     * "subsystem_id"
+     * "time_length"//收到是int类型,单位是月
+     * 注意表中的time表示的是起始日期,rent_time表示的截止日期,time_length=rent_time-time
+     * */
     @RequestMapping(value = "/addService_post",method = RequestMethod.POST)
     @ResponseBody
     public String addService(@RequestBody Map<String,Object> map) {
@@ -110,5 +111,31 @@ public class ServerOrderController {
         List<serviceorder> so=serviceorderService.findall();
         ModelAndView mv = new ModelAndView("redirect:ServiceOrderlist");
         return mv;
+    }
+
+    @Autowired
+    private serviceorderMapper serviceorderMapper;
+
+    @RequestMapping(value="/findallService",method = RequestMethod.POST)
+    @ResponseBody
+    public String findallService(@RequestBody customer cus ,int s_id){
+        int id=cus.getId();
+        //int id;
+        //id=1111111;
+        //int s_id=5;
+        String result=null;
+
+        if(serviceorderMapper.findAgree2ServiceByDoubleId(id,s_id)!=null){
+            result= "not overdue";
+        }
+        else if(serviceorderMapper.findAgree3ServiceByDoubleId(id,s_id)!=null){
+            result= "overdue";
+        }
+
+        if(serviceorderMapper.findAgree2ServiceByDoubleId(id,s_id)==null) {
+            result= "have not purchased";
+        }
+        System.out.println(result);
+        return result;
     }
 }

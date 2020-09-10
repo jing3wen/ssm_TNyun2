@@ -40,20 +40,6 @@ public class testadmin {
         System.out.println(admin.toString());
     }
 
-    @Test
-    /*
-    * 测试登录
-    * */
-    public void simulation_ad_login(){
-        admin admin=new admin();
-        int id=1234;
-        String psword="1234";
-        admin=adminService.login(id,psword);
-        if(admin!=null){
-            System.out.println(admin.toString()+"登录成功");
-        }else {
-            System.out.println("try again");
-        }
-    }
+
 
 }

@@ -35,19 +35,20 @@ public class adminServiceImpl implements adminService {
     private customerMapper customerMapper;
 
     @Override
-    public admin login(int id, String psword) {
-        admin admin=new admin();
-        admin=adminMapper.findAdminById(id);
-        if(admin!=null && admin.getA_password().equals(psword)) {
-            adminMapper.set_a_status1(id);
-            admin.setA_status("1");
-            System.out.println(admin.toString());
-            System.out.println("find success");
-            return admin;
-        }else {
-            System.out.println("find fail");
-            return null;
+    public String login(String a_phone, String a_password) {
+        admin adm=adminMapper.findAdminByPhone(a_phone);
+        if (adm!=null&&adm.getA_password().equals(a_password)){
+            if(adm.getA_status().equals("1")){
+                System.out.println("the current user is: "+adm.toString()+ "login is ok");
+                return "user login is ok";
+            }
+            else return "the user don't be activated";
+
         }
+        else if(adm!=null&& !(adm.getA_password().equals(a_password)) ){
+            return "the password is error";
+        }
+        else return "the user is not here";
     }
 
     @Override
@@ -55,7 +56,7 @@ public class adminServiceImpl implements adminService {
         admin admin=adminMapper.findAdminById(id);
         System.out.println(admin.toString());
         if(admin!=null && admin.getA_status().equals("1")) {
-            adminMapper.set_a_status0(id);
+            //adminMapper.set_a_status0(id);
             System.out.println("可以登出");
         }else {
             System.out.println("未登录");
@@ -73,6 +74,8 @@ public class adminServiceImpl implements adminService {
             return 0;
         }
     }
+
+
 
     @Override
     public List<serviceorder> Select_all_service() {

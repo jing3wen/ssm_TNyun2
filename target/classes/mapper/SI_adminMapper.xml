@@ -12,7 +12,7 @@
     <select id="findSI_AdminByphone"
             parameterType="java.lang.String"
             resultType="com.TNyun.entity.SI_admin">
-        select * from SI_admin where si_phone like concat('%',#{si_phone},'%')
+        select * from SI_admin where si_phone=#{si_phone}
     </select>
 
     <update id="set_SI_status1" parameterType="String">

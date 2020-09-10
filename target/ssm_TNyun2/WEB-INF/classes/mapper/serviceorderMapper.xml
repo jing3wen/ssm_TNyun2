@@ -38,6 +38,13 @@
     <select id="findAgreeServiceByDoubleId"  resultType="com.TNyun.entity.serviceorder">
         select * from serviceorder where c_id=#{c_id} and s_id=#{s_id} and agree='1'
     </select>
+    <select id="findAgree2ServiceByDoubleId"  resultType="com.TNyun.entity.serviceorder">
+        select * from serviceorder where c_id=#{c_id} and s_id=#{s_id} and agree='2'
+    </select>
+    <select id="findAgree3ServiceByDoubleId"  resultType="com.TNyun.entity.serviceorder">
+        select * from serviceorder where c_id=#{c_id} and s_id=#{s_id} and agree='3'
+    </select>
+
 
 
 </mapper>

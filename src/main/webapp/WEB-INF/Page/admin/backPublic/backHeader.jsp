@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>  
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,16 +46,18 @@
                     <span class="nav-link-text">所有功能</span>
                 </a>
             </li>
-
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="${pageContext.request.contextPath}/charts">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">用户使用统计</span>
+                </a>
+            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseStatistics" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-area-chart"></i>
-                    <span class="nav-link-text">用户统计及相关请求</span>
+                    <span class="nav-link-text">用户申请</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseStatistics">
-                    <li>
-                        <a href="${pageContext.request.contextPath}/charts">用户使用统计</a>
-                    </li>
                     <li>
                         <a href="${pageContext.request.contextPath}/ServerOrder/ServerOrderlist">购买服务订单</a>
                     </li>
@@ -63,12 +65,6 @@
                         <a href="${pageContext.request.contextPath}/SIApplylist/siapplylist">入驻申请</a>
                     </li>
                 </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="${pageContext.request.contextPath}/tables">
-                    <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">已购系统</span>
-                </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
@@ -107,43 +103,6 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-sitemap"></i>
-                    <span class="nav-link-text">其他功能</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseMulti">
-                    <li>
-                        <a href="#">Second Level Item</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Item</a>
-                    </li>
-                    <li>
-                        <a href="#">Second Level Item</a>
-                    </li>
-                    <li>
-                        <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-                        <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level Item</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                <a class="nav-link" href="#">
-                    <i class="fa fa-fw fa-link"></i>
-                    <span class="nav-link-text">Link</span>
-                </a>
-            </li>
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
@@ -154,16 +113,47 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link">
-                    <i class="fa fa-fw"></i>欢迎用户</a>
+                <c:if test="${admin!=null}">
+                    <a class="nav-link">
+                        <i class="fa fa-fw"></i>欢迎运营商,${admin.a_name}
+                    </a>
+                </c:if>
+                <c:if test="${SI_admin!=null}">
+                    <a class="nav-link">
+                        <i class="fa fa-fw"></i>欢迎开发商,${SI_admin.SI_name}
+                    </a>
+                </c:if>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                    <i class="fa fa-fw fa-sign-out"></i>登出</a>
+                    <i class="fa fa-fw fa-sign-out" ></i>登出
+                </a>
             </li>
         </ul>
     </div>
 </nav>
+
+
+
+<!-- 退出系统模态框，点击登出时会弹出-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">确定要退出 TN云 吗?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">如果要退出当前系统，请点击下面的退出</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">我再想想</button>
+                <button class="btn btn-secondary" type="button" id="adminlogin_out">立马退出</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 

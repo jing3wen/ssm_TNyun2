@@ -1,10 +1,16 @@
 package com.TNyun.controller;
 
+import com.TNyun.dao.SI_adminMapper;
+import com.TNyun.dao.adminMapper;
+import com.TNyun.dao.customerMapper;
+import com.TNyun.entity.SI_admin;
 import com.TNyun.entity.admin;
 import com.TNyun.entity.customer;
+import com.TNyun.service.SI_adminService;
 import com.TNyun.service.adminService;
 import com.TNyun.service.customerService;
 import java.io.IOException;
+import java.util.Map;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,39 +24,26 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@RequestMapping("login")
 public class loginController
 {
     @Autowired
     private customerService customerService;
+    @Autowired
+    private customerMapper customerMapper;
 
     //用户退出操作。
-    @RequestMapping(value = "customer/customerloginout_post")
+    @RequestMapping(value = "/customerloginout")
     @ResponseBody
-    public void logout(HttpServletRequest request, HttpServletResponse response,@RequestBody customer cus) throws IOException {
-        response.setCharacterEncoding("UTF-8");
-        response.setHeader("Content-type", "text/html;charset=UTF-8");
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            System.out.println("session is null");
-            //没登录，重定向到首页
-            String url = response.encodeRedirectURL(request.getContextPath() + "/login.jsp");
-            response.sendRedirect(url);
-            System.out.println("系统重定向页面1："+url);
-            return;
-
-        }
-        // 从session中移除登录状态
+    public String customerlogout(HttpSession session){
         session.removeAttribute("customer");
-        //重定向到首页，URL重写方式
-        String url = response.encodeRedirectURL(request.getContextPath() + "/login.jsp");
-        response.sendRedirect(url);
-        System.out.println("系统重定向页面2："+url);
-
+        System.out.println("loginout is ok");
+        return "loginout is ok";
     }
 
 
     //用户登入接口。
-    @RequestMapping(value = "customer/customerlogin_post",method = RequestMethod.POST)
+    @RequestMapping(value = "/customerlogin_post",method = RequestMethod.POST)
     @ResponseBody
     public String customerlogin(HttpServletRequest request, HttpServletResponse response,@RequestBody customer cus){
 
@@ -64,7 +57,8 @@ public class loginController
             cookie.setMaxAge(60 * 30);
             cookie.setPath(request.getContextPath());
             response.addCookie(cookie);
-            session.setAttribute("customer", cus);//登录成功后存入用户的登录状态，key是用户对象的String形式,value是用户对象
+            customer cus2=customerMapper.findCustomerByPhone(cus.getPhone());
+            session.setAttribute("customer", cus2);//登录成功后存入用户的登录状态，key是用户对象的String形式,value是用户对象
 
             if(session.getAttribute("customer") != null){
                 System.out.println("session succeed");
@@ -74,61 +68,79 @@ public class loginController
 
         return result;
     }
+
+
+
     @Autowired
     private adminService adminService;
+    @Autowired
+    private adminMapper adminMapper;
 
+    @Autowired
+    private SI_adminService SI_adminService;
+
+    @Autowired
+    private SI_adminMapper SI_adminMapper;
+    //管理员退出操作。
+    @RequestMapping(value = "/adminloginout")
+    @ResponseBody
+    public String adminlogout(HttpSession session){
+        System.out.println("收到adminloginout:");
+        session.removeAttribute("SI_admin");
+        session.removeAttribute("admin");
+        return "adminloginout is ok";
+    }
 
     //管理员退出操作。
-    @RequestMapping(value ="/adminloginout_post")
-    public void adminlogout(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setCharacterEncoding("UTF-8");
-        response.setHeader("Content-type", "text/html;charset=UTF-8");
-        HttpSession session = request.getSession(false);
-        if (session == null) {
-            // 没登录，重定向到首页
-            String url = response.encodeRedirectURL(request.getContextPath() + "/login.jsp");
-            response.sendRedirect(url);
-            System.out.println("系统重定向页面1："+url);
-            return;
-        }
-
-        // 从session中移除登录状态
-        session.removeAttribute("admin");
-        // 重定向到首页，URL重写方式
-        String url = response.encodeRedirectURL(request.getContextPath() + "/login.jsp");
-        response.sendRedirect(url);
-        System.out.println("系统重定向页面2："+url);
-
+    @RequestMapping(value = "/si_adminloginout")
+    @ResponseBody
+    public String si_adminlogout(HttpSession session){
+        session.removeAttribute("SI_admin");
+        return "si_adminloginout is ok";
     }
 
-    @RequestMapping(value = "/adminlogin_post")
-    public ModelAndView adminlogin(HttpServletRequest request, HttpServletResponse response, @RequestBody admin ad)
+
+    @RequestMapping(value = "/adminlogin_post",method = RequestMethod.POST)
+    @ResponseBody
+    public String adminlogin(HttpSession session, @RequestBody Map<String,Object> map)
     {
-
-        ModelAndView modelAndView = new ModelAndView();
-        HttpSession session = request.getSession();
-
-        admin adm=adminService.login(ad.getA_id(),ad.getA_password());
-        if (adm!=null) {
-            // 设置session的有效期为30分钟
-            String sessionId = session.getId();
-            Cookie cookie = new Cookie("JSESSIONID", sessionId);
-            cookie.setMaxAge(60 * 30);
-            cookie.setPath(request.getContextPath());
-            response.addCookie(cookie);
-            session.setAttribute("admin", ad);//登录成功后存入用户的登录状态，key是用户对象的String形式,value是用户对象
-            if(session.getAttribute("admin") != null){
-                System.out.println("admin session succeed");
+        String phone=map.get("phone").toString();
+        String password=map.get("password").toString();
+        System.out.println("收到adminlogin_post,phone:"+phone+",password:"+password);
+        //首先判断该用户是否为SI_admin
+        String si_login_result=SI_adminService.si_login(phone,password);
+        if (si_login_result!="the user is not here"){
+            System.out.println("该用户为SI_admin,查询结果："+si_login_result);
+            if (si_login_result=="user login is ok"){
+                SI_admin si2=SI_adminMapper.findSI_AdminByphone(phone);
+                session.setAttribute("SI_admin",si2);
             }
-            //返回系统主页
-            modelAndView.setViewName("frontPage");
+            return si_login_result;
         }
         else {
-            modelAndView.addObject("error", "" + "管理员不存在");
-            modelAndView.setViewName("redirect:admin/adminlogin_post");
+            //不是SI_admin,再判断该用户是否为admin
+            String adm_login_result=adminService.login(phone,password);
+            if (adm_login_result!="the user is not here") {
+                System.out.println("该用户为admin,查询结果："+adm_login_result);
+                if(adm_login_result=="user login is ok"){
+                    admin adm2=adminMapper.findAdminByPhone(phone);
+                    session.setAttribute("admin", adm2);//登录成功后存入用户的登录状态，key是用户对象的String形式,value是用户对象
+                    if(session.getAttribute("admin") != null){
+                        System.out.println("admin session succeed");
+                    }
+                }
+                return adm_login_result;
+            }
+            else {
+                System.out.println("该用户不存在");
+                return adm_login_result;
+            }
+
         }
-        return modelAndView;
+
 
     }
+
+
 }
 

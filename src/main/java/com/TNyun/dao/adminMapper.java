@@ -15,6 +15,8 @@ public interface adminMapper {
 
     admin findAdminById(int a_id);//通过id查找
 
+    admin findAdminByPhone(@Param("a_phone") String a_phone);//通过电话查找
+
     void set_a_status1(int a_id);//将状态置1（登录时使用）
 
     void set_a_status0(int a_id);//将状态置0（登出时使用）

@@ -72,9 +72,6 @@ public class customerServiceimpl implements customerService {
             else return "the customer don't be activated";
 
         }
-        else if (cus!=null&&cus.getPassword().equals(password)&&cus.getStatus().equals("1")){
-            return "the customer has logined";
-        }
         else if(cus!=null&& !(cus.getPassword().equals(password)) ){
             return "the password is error";
         }
