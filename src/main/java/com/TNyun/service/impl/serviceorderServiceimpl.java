@@ -26,9 +26,9 @@ public class serviceorderServiceimpl implements serviceorderService{
         so.setS_id(sys.getS_id());
         so.setS_name(sys.getS_name());
         so.setRent_time(rent_time);
-        so.setAgree("1");
+        so.setAgree("2");
         System.out.println("要添加的serviceorder是："+so.ser_print());
-        if((serviceorderMapper.findAgreeServiceByDoubleId(so.getC_id(),so.getS_id()))!=null){
+        if((serviceorderMapper.findAgree2ServiceByDoubleId(so.getC_id(),so.getS_id()))!=null){
             return "you had bought the service";
         }
         else {

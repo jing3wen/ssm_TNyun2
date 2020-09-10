@@ -118,13 +118,11 @@ public class ServerOrderController {
 
     @RequestMapping(value="/findallService",method = RequestMethod.POST)
     @ResponseBody
-    public String findallService(@RequestBody customer cus ,int s_id){
-        int id=cus.getId();
-        //int id;
-        //id=1111111;
-        //int s_id=5;
-        String result=null;
+    public String findallService(@RequestBody Map<String,Object> map){
+        int id=Integer.parseInt(map.get("customer_id").toString());
+        int s_id=Integer.parseInt(map.get("subsystem_id").toString());
 
+        String result=null;
         if(serviceorderMapper.findAgree2ServiceByDoubleId(id,s_id)!=null){
             result= "not overdue";
         }

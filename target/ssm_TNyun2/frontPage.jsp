@@ -57,7 +57,7 @@
 						<div class="collapse navbar-collapse" id="navbarsExample04">
 							<ul class="navbar-nav mr-auto">
 								<li class="nav-item active">
-									<a class="nav-link" href="/applyForSIAdmin">开发商入驻</a>
+									<a class="nav-link" href="#" id="SI_apply" >开发商入驻</a>
 								</li>
 								<li class="nav-item active">
 									<a class="nav-link" href="#">首页</a>
@@ -157,22 +157,23 @@
 			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
 				<div class="Services-box">
 					<i><img src="images/service1.png" alt="#" id="open_img_1" onclick="service(1)"/></i>
-					<h3 id="open_h3_1" onclick="service(1)">云超市</h3>
-					<p id="open_p_1" onclick="service(1)" >云超市，是一种社区电子商务的交易形式，即网上预定和下单、线下快速到货的一种超市形式。</p>
+					<h3 id="subsystem_name1" onclick="service(1)">云超市</h3>
+					<p id="subsystem_introduction1" onclick="service(1)" >云超市，是一种社区电子商务的交易形式，即网上预定和下单、线下快速到货的一种超市形式。</p>
 				</div>
+			</div>
 			</div>
 			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
 				<div class="Services-box">
 					<i><img src="images/service2.png" alt="#" /></i>
-					<h3>云体验销售中心</h3>
-					<p>销售云解决方案可以为客户提供情境化且个性化的全渠道购物体验。给用户带来真实的体验</p>
+					<h3 id="subsystem_name2">云体验销售中心</h3>
+					<p id="subsystem_introduction2">销售云解决方案可以为客户提供情境化且个性化的全渠道购物体验。给用户带来真实的体验</p>
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
 				<div class="Services-box">
 					<i><img src="images/service3.png" alt="#" /></i>
-					<h3>企业工作台</h3>
-					<p>整合即时交易管理，提供品质卓越的云协作体验，成就组织和个人，使协作和管理更高效、更愉悦</p>
+					<h3 id="subsystem_name3">企业工作台</h3>
+					<p id="subsystem_introduction3">整合即时交易管理，提供品质卓越的云协作体验，成就组织和个人，使协作和管理更高效、更愉悦</p>
 				</div>
 			</div>
 			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
@@ -342,25 +343,20 @@
 <script src="js/前台js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script src="js/前台js/custom.js"></script>
 <script src="js/前台js/jquery.fancybox.min.js"></script>
+<script src="js/cookie_js/cookie.js"></script>
 
 </body>
 
 <script>
 
 
-	var cus_service;
 
-	var subsystem={
-		"s_id":3,
-		"s_name":"云超市",
-		"s_herf":"yunchaoshi.html",
-		"s_introduction":"云超市，是一种社区电子商务的交易形式，即网上预定和下单、线下快速到货的一种超市形式。"
-	};
+	var cus_service;
 
 
 	$(function () {
 
-		get_cur_customer();
+		findallSubSystem();
 	})
 
 
@@ -399,13 +395,11 @@
 		}
 	})
 
-
-
+	//登录
 	$("#login").click(function () {
 		window.location.href="login";
 	})
-
-
+	//登出
 	$("#login_out").click(function () {
 		$.ajax({
 			type: "GET",
@@ -422,44 +416,83 @@
 			}
 		})
 	})
+    //申请成为开发商
+	$("#SI_apply").click(function () {
+		if(checklogin()==0){
+			alert("请先登录")
+			window.location.href="login";
+		}
+		else {
+			window.location.href="/applyForSIAdmin";
+		}
+	})
 
 
 	//购买服务
 	function service(number){
-
 		console.log("购买子系统"+$("#open_h3_"+number.toString()).val());
-		if(cur_customer==null){
-			console.log(" 身份为: "+$("#customer_name").val()+"跳转到登陆界面")
+		if(checklogin()==0){
+			alert("请先登录")
 			window.location.href="login";
 		}
-		//else if()
 		else {
+			setCookie("subsystem",subsystem);
 			myModalshow();
 		}
 
 	}
 
-	function findallService() {
-		console.log("sad");
+	//根据系统id和顾客id查询改用户是否购买订单
+	function findallServiceOrder(customer_id,subsystem_id) {
+		console.log("查询改用户是否购买订单");
+		data={
+			"customer_id":customer_id,
+			"subsystem_id":subsystem_id
+		}
 		$.ajax({
 			type: "POST",
 			url: "/ServerOrder/findallService",
 			contentType: "application/json; charset=utf-8",
+			data:JSON.stringify(data),
 			dataType:"text",
 			async: false,
 			success: function (result) {
-				console.log("服务器请求成功");
-				/*console.log("当前登录的用户"+result);
-                cur_customer=result;
-                if(cur_customer.id!=0){
-                    $("#customer_name").html(cur_customer.name);
-                    $("#login").hide();
-                    $("#login_out").show();
-                }*/
-				if(result=="not over due") window.location.href="login";
-				if(result=="overdue") window.location.href="/buySubsystem";
-				if(result=="have not purchased") window.location.href="/buySubsystem";
+				console.log("所有订单加载完毕");
+				if(result=="not overdue") {
+					window.location.href=subsystem[subsystem_id].s_website2;
+				}
+				if(result=="overdue"){
+					alert("您的体验已到期，请重新购买");
+					window.location.href="/buySubsystem";
+				}
+				if(result=="have not purchased"){
+					alert("您还未购买")
+					window.location.href="/buySubsystem";
+				}
 
+
+			},
+			error: function () {
+				console.log("404 服务器请求失败");
+			}
+		})
+	}
+
+	//查询所有子系统存入cookie;(路由在porjectlistController)
+	function findallSubSystem() {
+		$.ajax({
+			type: "POST",
+			url: "/Projectlist/findallSubSystem_post",
+			contentType: "application/json; charset=utf-8",
+			dataType:"json",
+			async: false,
+			success: function (result) {
+				console.log("所有子系统数据加载成功");
+				console.log(result);
+				for(i=1;i<=result.length;i++){
+					$("#subsystem_name"+i).html(result[i-1].s_name);
+					$("#subsystem_introduction"+i).html(result[i-1].s_introduction);
+				}
 
 			},
 			error: function () {
@@ -471,6 +504,14 @@
 	function myModalshow() {
 		console.log("模态框事件触发");
 		$("#myModal").modal('show');
+	}
+	//检查用户是否登录
+	function checklogin() {
+		var cur_customer="${customer}";
+		if(cur_customer==""){
+			return 0;
+		}
+		else return 1;
 	}
 
 

@@ -19,7 +19,7 @@ public class foreController {
 
     @RequestMapping("frontPage")
     public String fore6(){
-        return "../../frontPage";
+        return "customer/frontPage";
     }
 
     @RequestMapping("back")
@@ -61,5 +61,8 @@ public class foreController {
     //用户购买服务的界面
     @RequestMapping("buySubsystem")
     public String customer3(){ return "customer/buySubsystem"; }
+
+
+
 
 }

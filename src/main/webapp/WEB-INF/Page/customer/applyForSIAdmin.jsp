@@ -9,7 +9,7 @@
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css"/>
-    <link href="step-lay/step.css" rel="stylesheet">
+    <link href="../../../step-lay/step.css" rel="stylesheet">
 </head>
 <body>
 <div class="layui-fluid">
@@ -69,7 +69,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">系统描述:</label>
                                     <div class="layui-input-block">
-                                        <textarea placeholder="描述" value="" class="layui-textarea"></textarea>
+                                        <textarea placeholder="描述" value="" class="layui-textarea"  id="si_introduction"></textarea>
                                     </div>
                                 </div>
 
@@ -77,7 +77,7 @@
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
                                         <button type="button" class="layui-btn layui-btn-primary pre">上一步</button>
-                                        <button class="layui-btn" lay-submit lay-filter="formStep2" style="float:right">
+                                        <button class="layui-btn" lay-submit lay-filter="formStep2" style="float:right" id="SI_apply_submit">
                                             &emsp;确认&emsp;
                                         </button>
                                     </div>
@@ -110,7 +110,9 @@
     </div>
 </div>
 <script src="https://www.layuicdn.com/layui/layui.js"></script>
-<script src="step-lay/step.js"></script>
+<script src="../../../step-lay/step.js"></script>
+<script src="../../../js/前台js/jquery.min.js"></script>
+<script src="../../../js/前台js/jquery-3.0.0.min.js"></script>
 <script>
     layui.config({
         base: 'step-lay/'
@@ -150,8 +152,31 @@
 
 
     function returnfore() {
-        window.location.href="../../..";
+        window.location.href="/frontPage";
     }
+
+</script>
+<script>
+    $("#SI_apply_submit").click(function () {
+        var data={
+            "si_phone":"${customer.phone}",
+            "si_introduction":$("#si_introduction").val()
+        }
+        $.ajax({
+            type: "POST",
+            url: "/SIApplylist/customerSIApply_post",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data),
+            dataType:"text",
+            async: "false",
+            success: function (result) {
+                console.log("服务器请求成功"+result);
+            },
+            error: function () {
+                console.log("404 服务器请求失败");
+            }
+        })
+    })
 </script>
 </body>
 </html>

@@ -175,4 +175,11 @@ public class projectlistController {
         jsonObject=JSONObject.fromObject(retureninfo);
         return jsonObject.toString();
     }
+
+
+    @RequestMapping(value = "findallSubSystem_post",method = RequestMethod.POST)
+    @ResponseBody
+    public List<Subsystem> findallSubSystem(){
+        return subsystemService.Select_subsystem_all();
+    }
 }

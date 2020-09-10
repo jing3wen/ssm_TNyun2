@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
     <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
-    <link href="step-lay/step.css" rel="stylesheet">
+    <link href="../../../step-lay/step.css" rel="stylesheet">
 </head>
 <body>
     <div class="layui-fluid">
@@ -23,39 +23,40 @@
                                     <label class="layui-form-label">系统名称:</label>
                                     <div class="layui-input-block">
                                         <div  class="layui-form-mid layui-word-aux" >
-                                            <span style="font-size: 15px;color: #333;">TNyun超市子系统</span>
+                                            <span style="font-size: 15px;color: #333;" id="sub_system_s_name"></span>
                                         </div>   
                                     </div>
                                 </div> 
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">系统描述:</label>
                                     <div class="layui-input-block">                                    
-                                        <div  class="layui-form-mid layui-word-aux" >
-                                            云超市，是一种社区电子商务的交易形式，即网上预定和下单、线下快速到货的一种超市形式
+                                        <div  class="layui-form-mid layui-word-aux">
+                                            <span style="font-size: 15px;color: #333;" id="sub_system_s_introduction"></span>
                                         </div>   
                                     </div>
                                 </div>                            
                                 <div class="layui-form-item">
-                                    <label class="layui-form-label">购买时长:</label>
+                                    <label class="layui-form-label">购买月数:</label>
                                     <div class="layui-input-block">
-                                        <select lay-verify="required">
-                                            <option value="1" selected>1个月</option>
-                                            <option value="2">2个月</option>
-                                            <option value="2">6个月</option>
-                                            <option value="2">12个月</option>
+                                        <select lay-verify="required" id="time_length">
+                                            <option value="1" selected>1</option>
+                                            <option value="2">2</option>
+                                            <option value="6">6</option>
+                                            <option value="12">12</option>
                                         </select>
+
                                     </div>
                                 </div>                      
                                 
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">备注说明:</label>
                                     <div class="layui-input-block">
-                                        <textarea placeholder="入款备注" value="" class="layui-textarea"></textarea>
+                                        <textarea placeholder="入款备注" value="" class="layui-textarea" id="comments1"></textarea>
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
-                                        <button class="layui-btn" lay-submit lay-filter="formStep">
+                                        <button class="layui-btn" lay-submit lay-filter="formStep" onclick="Cal_moneyAndComment()">
                                             &emsp;下一步&emsp;
                                         </button>
                                     </div>
@@ -64,7 +65,7 @@
                         </div>
                         <div class="layui-row">
                             <div class="layui-col-md5">
-                                <img src="images/万能收款码.jpg" style="width: 300px; height: auto;  padding-left: 60%;">
+                                <img src="../../../images/万能收款码.jpg" style="width: 300px; height: auto;  padding-left: 60%;">
                             </div> 
                             <div class="layui-col-md5">
                                 <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px; padding-left: 10%;">
@@ -72,7 +73,7 @@
                                         <label class="layui-form-label">电话号码:</label>
                                         <div class="layui-input-block">
                                             <div class="layui-form-mid layui-word-aux">
-                                                <span style="color: #333;">13953743132</span>
+                                                <span style="color: #333;">${customer.phone}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +81,7 @@
                                         <label class="layui-form-label">名称:</label>
                                         <div class="layui-input-block">
                                             <div class="layui-form-mid layui-word-aux">
-                                                <span style="color: #333;">诺娃</span>
+                                                <span style="color: #333;">${customer.name}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -88,7 +89,7 @@
                                         <label class="layui-form-label">付款金额:</label>
                                         <div class="layui-input-block">
                                             <div class="layui-form-mid layui-word-aux">
-                                                <span style="color: #333;">1800 元</span>
+                                                <span style="color: #333;" id="sum_money"></span>
                                             </div>
                                         </div>
                                     </div>
@@ -105,13 +106,13 @@
                                     <div class="layui-form-item">
                                         <label class="layui-form-label">备注说明:</label>
                                         <div class="layui-input-block">
-                                            <div class="layui-form-mid layui-word-aux">备注说明</div>
+                                            <div class="layui-form-mid layui-word-aux" id="comments2"></div>
                                         </div>
                                     </div>
                                     <div class="layui-form-item">
                                         <div class="layui-input-block">
                                             <button type="button" class="layui-btn layui-btn-primary pre">上一步</button>
-                                            <button class="layui-btn" lay-submit lay-filter="formStep2">
+                                            <button class="layui-btn" lay-submit lay-filter="formStep2" id="SI_apply_submit">
                                                 &emsp;确认付款&emsp;
                                             </button>
                                         </div>
@@ -147,7 +148,10 @@
         </div>
     </div>
     <script src="https://www.layuicdn.com/layui/layui.js"></script>
-    <script src="step-lay/step.js"></script>
+    <script src="../../../step-lay/step.js"></script>
+    <script src="../../../js/前台js/jquery.min.js"></script>
+    <script src="../../../js/前台js/jquery-3.0.0.min.js"></script>
+    <script src="../../../js/cookie_js/cookie.js"></script>
     <script>
         layui.config({
             base:'step-lay/'
@@ -191,9 +195,49 @@
             });
         })
 
-        function returnfore() {
-            window.location.href="${pageContext.request.contextPath}/";
-        }
     </script>
+<script>
+    $(function () {
+        $("#sub_system_s_name").html(getCookie("sub_system_s_name"));
+        $("#sub_system_s_introduction").html(getCookie("sub_system_s_introduction"));
+    })
+
+    $("#SI_apply_submit").click(function () {
+        var data={
+            "customer_id":"${customer.id}",
+            "subsystem_id":getCookie("sub_system_s_id"),
+            "time_length":$("#time_length").val()
+        }
+        console.log(data);
+        $.ajax({
+            type: "POST",
+            url: "/ServerOrder/addService_post",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(data),
+            dataType:"text",
+            async: "false",
+            success: function (result) {
+                console.log("服务器请求成功"+result);
+                if(result=="you had bought the service"){
+                    alert("您已经购买该系统，不用重复购买");
+                }
+            },
+            error: function () {
+                console.log("404 服务器请求失败");
+            }
+        })
+    })
+
+    function Cal_moneyAndComment() {
+        sum_money=($("#time_length").val())*(getCookie("sub_system_s_price"));
+        $("#sum_money").html(sum_money);
+        $("#comments2").html($("#comments1"));
+    }
+    //回到首页
+    function returnfore() {
+        window.location.href="/frontPage";
+    }
+</script>
+
 </body>
 </html>
