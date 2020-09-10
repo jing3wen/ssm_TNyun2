@@ -55,6 +55,23 @@
     <%@include file="backPublic/backFooter.jsp" %>
 </div>
 
+<script type="text/javascript">
+    $(function () {
+        $("a").click(function () {
+            var agreeLink = $(this).attr("agreeLink");
+            console.log(agreeLink);
+            if("true"==agreeLink){
+                var confirmDelete=confirm("确定同意");
+                if(confirmDelete)
+                    return true;
+                return false;
+            }
+            windows.location.reload();
+        })
+
+    });
+
+</script>
 </body>
 
 </html>

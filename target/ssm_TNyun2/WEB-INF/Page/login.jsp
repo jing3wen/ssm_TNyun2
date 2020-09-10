@@ -140,7 +140,7 @@
 <script>
 
     $("#customer_login").click(function () {
-        var user={
+        var customer={
             "phone":$("#phone").val(),
             "password":$("#password").val()
         }
@@ -149,7 +149,7 @@
                 type: "POST",
                 url: "/login/customerlogin_post",
                 contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(user),
+                data: JSON.stringify(customer),
                 dataType:"text",
                 async: "false",
                 success: function (result) {
