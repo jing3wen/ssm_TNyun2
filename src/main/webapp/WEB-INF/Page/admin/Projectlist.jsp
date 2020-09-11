@@ -229,7 +229,7 @@
                     return true;
                 return false;
             }
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="subsystemlist"; }, 1000);
         })
 
     });
@@ -280,7 +280,7 @@
                 }*/
             });
             $('#myModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="subsystemlist"; }, 1000);
         }
     });
 
@@ -330,7 +330,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="subsystemlist"; }, 1000);
         }
     });
     $("#update_s_price").click(function () {
@@ -362,8 +362,9 @@
                     }
                 },
             });
-            //$('#modifyModal').modal('hide');
-            //windows.location.reload();
+            $('#modifyModal').modal('hide');
+            setTimeout(function(){ window.location.href="subsystemlist"; }, 1000);
+
         }
     });
 
@@ -397,7 +398,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="subsystemlist"; }, 1000);
         }
     });
     $("#update_s_website2").click(function () {
@@ -432,7 +433,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="subsystemlist"; }, 1000);
         }
     });
 
