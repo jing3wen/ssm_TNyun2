@@ -32,7 +32,7 @@ public class SendMail {
         //收件人的邮箱地址
         message.setTo(mailaderss);
         //邮件主题
-        message.setSubject("欢迎注册TN云平台");
+        message.setSubject("管理员通知");
         //邮件内容
         message.setText(context);
         //发送邮件

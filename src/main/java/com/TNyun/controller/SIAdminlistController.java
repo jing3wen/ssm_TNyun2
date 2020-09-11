@@ -4,19 +4,20 @@ import com.TNyun.entity.customer;
 import com.TNyun.entity.SI_admin;
 import com.TNyun.util.Page;
 import com.TNyun.util.Retureninfo;
+import com.TNyun.utils.SendMail;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/SIAdminlist")
@@ -24,6 +25,8 @@ public class SIAdminlistController {
 
         @Autowired
         private com.TNyun.service.SI_adminService SI_adminService;
+        @Autowired
+        SendMail SendMail;
 
         @RequestMapping("/siadminlist")
         public ModelAndView list(Model model, Page page){
@@ -119,5 +122,19 @@ public class SIAdminlistController {
         JSONObject jsonObject=new JSONObject();
         jsonObject=JSONObject.fromObject(retureninfo);
         return jsonObject.toString();
+    }
+
+    @RequestMapping(value = "/sendEmail",method = RequestMethod.POST)
+    @ResponseBody
+    public String sendEmailToSi_admin(@RequestBody Map<String,Object> map) throws IOException, MessagingException {
+        System.out.println("收到sendEmail: ");
+
+        String sendEmail_address=map.get("sendEmail_address").toString();
+        String sendEmail_text=map.get("sendEmail_text").toString();
+        System.out.println("sendEmail:"+sendEmail_address+";"+sendEmail_text);
+
+        System.out.println(SendMail.sendmail(sendEmail_address,sendEmail_text));
+        System.out.println("返回: "+"send is ok");
+        return "send is ok";
     }
 }
