@@ -320,7 +320,7 @@
 				<a href="/buySubsystem" id="mod_system" style="color: blue;text-decoration:underline">点击购买此系统</a>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="icon ion-close-circled btn btn-outline-secondary" data-dismiss="modal" style="color: #6c757d">
+				<button type="button" onclick="iscustomer()" class="icon ion-close-circled btn btn-outline-secondary" data-dismiss="modal" style="color: #6c757d">
 					普通用户
 				</button>
 				<button type="button" onclick="findallServiceOrder()" class="icon ion-checkmark-circled btn btn-outline-dark" style="color: #1e7e34">
@@ -517,7 +517,12 @@
 		}
 		else return 1;
 	}
-
+	//普通用户跳转
+	function iscustomer() {
+		url="http://"+sub_system[getCookie("sub_system_number")].s_website1;
+		//console.log(url);
+		window.location.href=url;
+	}
 
 
 </script>
