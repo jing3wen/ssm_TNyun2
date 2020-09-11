@@ -317,17 +317,14 @@
                 async: "false",
                 success: function (result) {
 
-                    result=JSON.parse(result);
-                    alert(result);
-                    if(result.code==1){
-                        alert("chenggong");
-                        console.log(result.msg);
-                        alert(result.msg.toString());
-                        loadMess(1);
+                    console.log("服务器请求成功");
+                    if(result=="success"){
+                        alert("修改介绍成功")
                         $('#modifyModal').modal('hide');
-                    }else {
-                        alert("shibai");
-                        alert(result.msg);
+                        windows.location.reload();
+                    }
+                    else {
+                        alert(result);
                     }
 
                 },
@@ -354,23 +351,19 @@
                 async: "false",
                 success: function (result) {
 
-                    result=JSON.parse(result);
-                    alert(result);
-                    if(result.code==1){
-                        alert("chenggong");
-                        console.log(result.msg);
-                        alert(result.msg);
-                        loadMess(1);
+                    console.log("服务器请求成功");
+                    if(result=="success"){
+                        alert("修改价格成功")
                         $('#modifyModal').modal('hide');
-                    }else {
-                        alert("shibai");
-                        alert(result.msg);
+                        windows.location.reload();
                     }
-
+                    else {
+                        alert(result);
+                    }
                 },
             });
-            $('#modifyModal').modal('hide');
-            windows.location.reload();
+            //$('#modifyModal').modal('hide');
+            //windows.location.reload();
         }
     });
 
@@ -392,19 +385,15 @@
                 async: "false",
                 success: function (result) {
 
-                    result=JSON.parse(result);
-                    alert(result);
-                    if(result.code==1){
-                        alert("chenggong");
-                        console.log(result.msg);
-                        alert(result.msg);
-                        loadMess(1);
+                    console.log("服务器请求成功");
+                    if(result=="success"){
+                        alert("修改前端站点成功")
                         $('#modifyModal').modal('hide');
-                    }else {
-                        alert("shibai");
-                        alert(result.msg);
+                        windows.location.reload();
                     }
-
+                    else {
+                        alert(result);
+                    }
                 },
             });
             $('#modifyModal').modal('hide');
@@ -430,17 +419,14 @@
                 async: "false",
                 success: function (result) {
 
-                    result=JSON.parse(result);
-                    alert(result);
-                    if(result.code==1){
-                        alert("chenggong");
-                        console.log(result.msg);
-                        alert(result.msg);
-                        loadMess(1);
+                    console.log("服务器请求成功");
+                    if(result=="success"){
+                        alert("修改后端站点成功")
                         $('#modifyModal').modal('hide');
-                    }else {
-                        alert("shibai");
-                        alert(result.msg);
+                        windows.location.reload();
+                    }
+                    else {
+                        alert(result);
                     }
 
                 },
