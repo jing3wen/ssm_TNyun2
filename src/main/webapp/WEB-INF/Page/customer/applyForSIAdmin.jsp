@@ -93,7 +93,7 @@
                             <div style="font-size: 24px;color: #333;font-weight: 500;margin-top: 30px;">
                                 提交成功
                             </div>
-                            <div style="font-size: 14px;color: #666;margin-top: 20px;">您已成为开发商</div>
+                            <div style="font-size: 14px;color: #666;margin-top: 20px;">开发商申请已提交，请等待通知</div>
                         </div>
                         <div style="text-align: center;margin-top: 50px;">
                             <button class="layui-btn" onclick="returnfore()">回到首页</button>
