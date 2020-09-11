@@ -63,16 +63,16 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="http://localhost:8082/">首页</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/frontPage">首页</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="http://localhost:8082/#about"> 关于  </a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/frontPage#about"> 关于  </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="http://localhost:8082/#service"> 服务</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/frontPage#service"> 服务</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="http://localhost:8082/#contact">注册</a>
+                                    <a class="nav-link" href="${pageContext.request.contextPath}/frontPage#contact">注册</a>
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">登陆</a>

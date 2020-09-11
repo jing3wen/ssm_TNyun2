@@ -45,7 +45,7 @@ public class customerController {
         System.out.println("收到register_post: "+cus.cus_print());
         String result = customerService.register(cus);
         String context="亲爱的 "+cus.getName()+"用户，请点击以下链接来激活您的账户:\n" +
-                " http://localhost:8082/customer/activateCustomer?phone=" + cus.getPhone()
+                " http://49.235.51.187:8082/customer/activateCustomer?phone=" + cus.getPhone()
                 +"\n 若非您本人操作，请警惕！";
         System.out.println(SendMail.sendmail(cus.getEmail(),context));
         System.out.println("返回: "+result);
