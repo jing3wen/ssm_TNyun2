@@ -388,6 +388,7 @@
 				},
 				error: function () {
 					console.log("404 服务器请求失败");
+					alert("邮箱有误，请重新确认")
 				}
 			})
 		}
