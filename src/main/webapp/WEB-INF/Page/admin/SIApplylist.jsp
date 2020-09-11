@@ -50,7 +50,7 @@
                                     <c:if test="${sia.si_agree=='0'}">未同意</c:if>
                                 </td>
                                 <td>
-                                    <a agreeLink="true" href="/SIApplylist/agree?s_id=${sia.si_phone}"
+                                    <a agreeLink="true" href="/SIApplylist/agree?si_phone=${sia.si_phone}"
                                        class="my-lg-5" style="text-decoration:underline">
                                         <button type="button" class="btn icon ion-checkmark-circled btn-outline-info" id="">同意</button>
                                         <!--span style="font-min-size:6px " class="label label-danger radius">删除</span-->
