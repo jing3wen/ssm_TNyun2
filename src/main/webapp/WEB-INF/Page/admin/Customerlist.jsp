@@ -183,7 +183,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="customerlist"; }, 1000);
         }
     });
     $("#update_s_phone").click(function () {
@@ -220,7 +220,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="customerlist"; }, 1000);
         }
     });
 
@@ -258,7 +258,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="customerlist"; }, 1000);
         }
     });
 

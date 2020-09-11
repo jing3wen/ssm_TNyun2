@@ -236,7 +236,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="siadminlist"; }, 1000);
         }
     });
     $("#update_phone").click(function () {
@@ -272,7 +272,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="siadminlist"; }, 1000);
         }
     });
 
@@ -309,7 +309,7 @@
                 },
             });
             $('#modifyModal').modal('hide');
-            windows.location.reload();
+            setTimeout(function(){ window.location.href="siadminlist"; }, 1000);
         }
     });
 
